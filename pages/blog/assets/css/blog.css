@@ -1,0 +1,11 @@
+.article-header {
+    @apply mb-12 pb-8 lg:mb-16 border-gray-200 border-b-2;
+  }
+
+  .article-header h1 {
+    @apply mb-0;
+  }
+
+  .article-header .details-cont span {
+    @apply text-opacity-50 text-sm;
+  }
