@@ -2,9 +2,9 @@
   <header id="site-header" class="site-header">
     <div class="wrapper">
       <nuxt-link to="/">
-        <figure class="site-logo">
-          <h1>PortfolioX</h1>
-        </figure>
+        <logo>
+          <h1 slot="logo-text" class="prose">Miracleio</h1>
+        </logo>
       </nuxt-link>
 
       <nav class="site-nav">
@@ -19,17 +19,18 @@
 </template>
 
 <script>
+import Logo from '../Logo.vue'
 export default {}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @layer components {
   .site-header {
-    @apply w-auto p-4 py-8 sticky top-0 bg-white bg-opacity-70 backdrop-filter backdrop-blur-md z-10;
-  }
+    @apply w-auto p-4 py-6 sticky top-0 bg-gray-50 bg-opacity-70 backdrop-filter backdrop-blur-md z-10;
 
-  .site-header .wrapper {
-    @apply m-auto max-w-5xl flex items-center justify-between;
+    .wrapper {
+      @apply m-auto max-w-5xl flex items-center justify-between;
+    }
   }
 }
 </style>
