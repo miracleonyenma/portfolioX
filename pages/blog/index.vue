@@ -1,26 +1,33 @@
 <template>
-  <section class="blog">
-    <header class="blog-header">
-      <h1>It's nice you're here. Welcome.</h1>
-      <p>
-        Have a look what I've been spending hours behind the screen writing
-        about
-      </p>
-    </header>
+  <main class="blog">
+    <div class="sect-wrapper">
+      <header class="hero-header blog-header">
+        <h1>
+          Hello 👋🏾, <br />
+          It's nice you're here. Welcome.
+        </h1>
+        <p>
+          Have a look what I've been spending hours behind the screen writing
+          about
+        </p>
+      </header>
 
-    <ul class="articles">
-      <li class="article" v-for="article of articles" :key="article.slug">
-        <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-          <h2>{{ article.title }}</h2>
-          <p>{{ article.description }}</p>
+      <ul class="articles">
+        <li class="article" v-for="article of articles" :key="article.slug">
+          <nuxt-link
+            :to="{ name: 'blog-slug', params: { slug: article.slug } }"
+          >
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.description }}</p>
 
-          <div class="details-cont">
-            <span>{{ formatDate(article.updatedAt) }}</span>
-          </div>
-        </nuxt-link>
-      </li>
-    </ul>
-  </section>
+            <div class="details-cont">
+              <span>{{ formatDate(article.updatedAt) }}</span>
+            </div>
+          </nuxt-link>
+        </li>
+      </ul>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -47,19 +54,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @layer base {
   .blog {
-    @apply p-4 mt-6 lg:mt-8 m-auto lg:max-w-3xl;
+    .sect-wrapper {
+      @apply p-4 mt-6 lg:mt-8 m-auto lg:max-w-3xl;
+    }
   }
 
   .blog-header {
-    @apply prose lg:prose-xl;
     @apply mb-12 pb-8 lg:mb-16;
-  }
 
-  .blog-header h1 {
-    @apply mb-0;
+    h1 {
+      @apply mb-0;
+    }
   }
 
   .articles .article {

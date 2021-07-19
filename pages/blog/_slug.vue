@@ -1,8 +1,8 @@
 <template>
   <section>
-    <article class="article prose">
+    <article class="article">
       <!-- Our custom injected variables specified with the The YAML front matter goes here  -->
-      <header class="article-header">
+      <header class="article-header hero-header">
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
 
@@ -14,7 +14,7 @@
       </header>
 
       <!-- this is where we will render the article contents -->
-      <nuxt-content :document="article" />
+      <nuxt-content class="prose lg:prose-xl" :document="article" />
     </article>
 
     <!-- Pass the data to the component props -->
@@ -57,7 +57,6 @@ export default {
 <style scoped>
 @layer components {
   .article {
-    @apply prose lg:prose-xl;
     @apply p-4 mt-6 lg:mt-8 m-auto lg:max-w-3xl;
   }
 
