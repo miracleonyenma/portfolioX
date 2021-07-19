@@ -1,0 +1,45 @@
+@layer base {
+  * {
+    @apply text-gray-900;
+  }
+  body {
+    @apply bg-gray-50;
+  }
+}
+@layer components {
+  .icon {
+    @apply inline-block;
+    svg {
+      @apply w-6 h-6;
+    }
+  }
+
+  .sect-wrapper {
+    @apply relative p-4 lg:p-6 max-w-6xl m-auto;
+  }
+
+  .img-cont {
+    img {
+      @apply object-cover;
+    }
+  }
+}
+
+@layer utilities {
+  .header-txt {
+    @apply font-black text-5xl md:text-6xl lg:text-8xl;
+    letter-spacing: -0.25rem;
+  }
+
+  .hero-header {
+    @apply md:text-left;
+
+    h1 {
+      @apply header-txt;
+    }
+
+    p {
+      @apply text-xl leading-tight md:text-2xl;
+    }
+  }
+}
