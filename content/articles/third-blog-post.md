@@ -1,6 +1,7 @@
 ---
 title: The Third duplicate of my First Blog Post
 description: Learning how to create my blog using nuxt, the nuxt content module and tailwindcss
+tags: [dummy, tests]
 ---
 
 Hey there! 👋🏾

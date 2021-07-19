@@ -9,7 +9,7 @@
         <!-- container for article details -->
         <div class="details-cont">
           <!-- the format date function converts the default date to a readable form -->
-          <span>{{ formatDate(article.updatedAt) }}</span>
+          <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
         </div>
       </header>
 
@@ -32,7 +32,7 @@ export default {
       // fetch only the title and slug from the articles
       .only(['title', 'slug', 'updatedAt'])
       // sortby time updated, in ascending order
-      .sortBy('updatedAt', 'asc')
+      .sortBy('updatedAt', 'desc')
       // get the correct slug
       .surround(params.slug)
       // fetch data
@@ -51,21 +51,43 @@ export default {
       })
     },
   },
+  head() {
+    return {
+      title: this.article.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description,
+        },
+        {
+          hid: 'authour',
+          name: 'author',
+          content: 'Miracleio',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: [...this.article.tags]
+        },
+      ],
+    }
+  },
 }
 </script>
 
 <style scoped>
 @layer components {
   .article {
-    @apply p-4 mt-6 lg:mt-8 m-auto lg:max-w-3xl;
+    @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
   }
 
   .article-header {
     @apply mb-12 pb-8 lg:mb-16 border-gray-200 border-b-2;
-  }
 
-  .article-header h1 {
-    @apply mb-0;
+    h1 {
+      @apply mb-2;
+    }
   }
 
   .article-header .details-cont span {

@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'PortfolioX',
+    title: 'Miracleio | PortfolioX',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -48,7 +48,9 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      name: 'Miracleio | PortfolioX',
+      description: 'Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤',
+      lang: 'en',
     }
   },
 

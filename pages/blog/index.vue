@@ -19,11 +19,11 @@
           >
             <h2>{{ article.title }}</h2>
             <p>{{ article.description }}</p>
-
-            <div class="details-cont">
-              <span>{{ formatDate(article.updatedAt) }}</span>
-            </div>
           </nuxt-link>
+          <div class="details-cont">
+            <span>{{ formatDate(article.createdAt) }}</span>
+            <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
+          </div>
         </li>
       </ul>
     </div>
@@ -34,8 +34,8 @@
 export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
-      .only(['title', 'slug', 'updatedAt', 'description'])
-      .sortBy('createdAt', 'asc')
+      .only(['title', 'slug', 'createdAt', 'updatedAt', 'description'])
+      .sortBy('updatedAt', 'desc')
       .fetch()
 
     return { articles }
@@ -58,25 +58,34 @@ export default {
 @layer base {
   .blog {
     .sect-wrapper {
-      @apply p-4 mt-6 lg:mt-8 m-auto lg:max-w-3xl;
+      @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
     }
   }
 
   .blog-header {
     @apply mb-12 pb-8 lg:mb-16;
 
-    h1 {
-      @apply mb-0;
+    // h1 {
+    //   @apply mb-0;
+    // }
+  }
+
+  .articles {
+    .article {
+      @apply prose lg:prose-xl;
+      @apply pl-0 py-2 list-none;
+
+
+      h2, p{
+        @apply mb-0;
+      }
     }
   }
 
-  .articles .article {
-    @apply prose lg:prose-lg;
-    @apply pl-0 py-2 list-none;
-  }
-
-  .articles .article h2 {
-    @apply mb-0;
+  .details-cont{
+    span{
+      @apply mr-2;
+    }
   }
 }
 </style>

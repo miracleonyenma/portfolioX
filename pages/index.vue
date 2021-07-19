@@ -125,9 +125,7 @@
                   </g>
                 </svg>
               </span>
-              <p class="txt">
-                Let's connect
-              </p>
+              <p class="txt">Let's connect</p>
             </div>
           </ul>
         </header>
@@ -178,16 +176,16 @@ export default {}
     }
   }
 
-  .decor-description{
+  .decor-description {
     @apply absolute right-0 bottom-0 transform translate-x-2/3 md:translate-x-3/4 translate-y-full flex gap-2 md:gap-6 items-center;
 
-    .icon{
-      svg{
+    .icon {
+      svg {
         @apply w-16 h-6 md:w-20 md:h-12;
       }
     }
 
-    .txt{
+    .txt {
       @apply text-left leading-none;
     }
   }

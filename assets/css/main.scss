@@ -27,7 +27,7 @@
 
 @layer utilities {
   .header-txt {
-    @apply font-black text-5xl md:text-6xl lg:text-8xl;
+    @apply font-black text-5xl md:text-6xl lg:text-8xl mb-2;
     letter-spacing: -0.25rem;
   }
 
@@ -40,6 +40,12 @@
 
     p {
       @apply text-xl leading-tight md:text-2xl;
+    }
+  }
+
+  .details-cont {
+    span {
+      @apply text-opacity-50 text-sm;
     }
   }
 }
