@@ -21,7 +21,7 @@
             <p>{{ article.description }}</p>
           </nuxt-link>
           <div class="details-cont">
-            <span>{{ formatDate(article.createdAt) }}</span>
+            <span>Posted: {{ formatDate(article.createdAt) }}</span>
             <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
           </div>
         </li>

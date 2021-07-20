@@ -18,7 +18,7 @@
     </article>
 
     <!-- Pass the data to the component props -->
-    <prev-next :prev="prev" :next="next"></prev-next>
+    <prev-next :prev="prev" :next="next" class="sect-wrapper"></prev-next>
   </section>
 </template>
 

@@ -1,6 +1,6 @@
 ---
 title: Quick note on Array map
-description: Here's a quick and basic explanation and use of the array.prototype.map() function
+description: Here's a quick, basic explanation and use of the array.prototype.map() function
 tags: [Array methods, Javascript, Notes, web]
 ---
 
@@ -21,8 +21,8 @@ let weebs = [
     {
         name: "Fredrick",
         honorific : "Kun",
-        likes: "Mobile Legends",
-        dislikes: "Milk power"
+        likes: {"Mobile Legends","Yn@sh"},
+        dislikes: {"Milk power","DENSE MC"}
     },
     {
         name: "Shori",
@@ -52,4 +52,4 @@ We access the `name` and `honorific` of each object in our original `weebs` arra
 
 Let's look at our new array of weebs
 
-<img-cont src-url="assets/img/articles/quick-note-on-array-map/quick-note-on-array-map-output-1.png" alt="Inline output of new array" style="zoom:150%;"></img-cont>
+<img-cont src="quick-note-on-array-map/quick-note-on-array-map-output-1.png" alt="Inline output of new array" style="zoom:150%;"></img-cont>

@@ -174,7 +174,7 @@ export default {}
     @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white shadow-lg rounded-lg;
 
     &__item {
-      @apply rounded-md p-2 inline-flex transform hover:scale-105 hover:shadow;
+      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:shadow;
     }
   }
 
