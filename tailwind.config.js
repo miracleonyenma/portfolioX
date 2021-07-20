@@ -5,6 +5,7 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
+    './assets/scss/*.{css,scss}'
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

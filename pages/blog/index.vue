@@ -41,6 +41,18 @@ export default {
     return { articles }
   },
 
+  head: {
+    title: 'Miracleio | Blog',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Have a look what I've been spending hours behind the screen writing about",
+      },
+    ],
+  },
+
   methods: {
     formatDate(date) {
       // format the date to be displayed in a readable format
@@ -75,15 +87,15 @@ export default {
       @apply prose lg:prose-xl;
       @apply pl-0 py-2 list-none;
 
-
-      h2, p{
+      h2,
+      p {
         @apply mb-0;
       }
     }
   }
 
-  .details-cont{
-    span{
+  .details-cont {
+    span {
       @apply mr-2;
     }
   }

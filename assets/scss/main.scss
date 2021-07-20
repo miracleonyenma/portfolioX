@@ -8,7 +8,6 @@
 }
 @layer components {
   .icon {
-    @apply inline-block;
     svg {
       @apply w-6 h-6;
     }

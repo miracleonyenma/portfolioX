@@ -18,8 +18,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // CSS file in the project
-    '@/assets/css/tailwind.css',
-    '@/assets/css/main.scss',
+    '@/assets/scss/tailwind.css',
+    '@/assets/scss/main.scss',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -30,7 +30,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/svg'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
