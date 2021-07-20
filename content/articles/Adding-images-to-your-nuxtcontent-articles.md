@@ -28,7 +28,7 @@ Let's dive straight into adding images to our article contents
 
 ## Creating an image container component
 
-Let's say we have a file in our project  `content/articles/an-article.md`
+Let's say we have a file in our project `content/articles/an-article.md`
 
 ```markdown
 ---
@@ -37,13 +37,14 @@ description: this is an article
 ---
 
 ## Hello, this is an article
+
 Some text in the article.
 ```
 
 And, we have an image in our `assets/` directory, say `assets/img/article-1/article-img.png` <br/>
 For the sake of organization, we'll keep `article-img.png` in a subfolder that corresponds with our article title `article-1/`.
 
-If want to add that image to our article, we can create a component for that.
+If we want to add that image to our article, we can create a component for that.
 
 ### Making the component globally available
 
@@ -64,10 +65,10 @@ Let's create a new component `component/global/imgCont.vue`
 
 ```html
 <template>
-	<div class="img-cont">
-        <img :src="getImg()" :alt="{{ alt }}" />
-        <span class="img-caption">{{alt}}</span>
-    </div>
+  <div class="img-cont">
+    <img :src="getImg()" :alt="{{ alt }}" />
+    <span class="img-caption">{{alt}}</span>
+  </div>
 </template>
 ```
 
@@ -75,33 +76,33 @@ In our `<script>` we'll have
 
 ```html
 <script>
-    export default: {
-        //declare props for the 'src' and 'alt' of the image
-        props: {
-            src: {
-                type: String,
-                required: true
-            },
-            alt: {
-                type: String,
-                required: true
-            }
-        },
-        methods: {
-            /* function to get and return the final url to our processed image
-            using the require function */
-            getImg(){
-                try{
-                    // place the '~/' before 'assets/'
-                    return require(`~/assets/img/articles/${src}`)
-                } catch(err){
-                    console.warn(err);
-                    // return null if any error
-                    return null
-                }
-            }
-        }
-    }
+  export default: {
+      //declare props for the 'src' and 'alt' of the image
+      props: {
+          src: {
+              type: String,
+              required: true
+          },
+          alt: {
+              type: String,
+              required: true
+          }
+      },
+      methods: {
+          /* function to get and return the final url to our processed image
+          using the require function */
+          getImg(){
+              try{
+                  // place the '~/' before 'assets/'
+                  return require(`~/assets/img/articles/${src}`)
+              } catch(err){
+                  console.warn(err);
+                  // return null if any error
+                  return null
+              }
+          }
+      }
+  }
 </script>
 ```
 
@@ -123,7 +124,7 @@ try{
 
 This 'processing' is done using the `require` function which treats the string passed to it as a module, which would be resolved by `webpack` and the respective loaders during the build.
 
->  The `~/ `  is a way of telling nuxt to look for that file from the base directory
+> The `~/ ` is a way of telling nuxt to look for that file from the base directory
 
 ## Adding our component to our markdown
 
@@ -136,6 +137,7 @@ description: this is an article
 ---
 
 ## Hello, this is an article
+
 Some text in the article.
 
 <img-cont src="article-1/article-img.png" alt="An image in my article" />
