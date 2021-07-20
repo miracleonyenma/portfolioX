@@ -30,7 +30,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/svg'],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/svg', '@nuxtjs/google-analytics'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -52,6 +52,10 @@ export default {
       description: 'Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤',
       lang: 'en',
     }
+  },
+
+  googleAnalytics: {
+    id: 'G-33S5XZXK0L', // Use as fallback if no runtime config is provided
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
