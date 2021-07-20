@@ -13,6 +13,10 @@
         </div>
       </header>
 
+      <toc class="prose lg:prose-xl" :toc="article.toc">
+        <h2 slot="heading"> What we'll cover </h2>
+      </toc>
+
       <!-- this is where we will render the article contents -->
       <nuxt-content class="prose lg:prose-xl" :document="article" />
     </article>
@@ -23,7 +27,9 @@
 </template>
 
 <script>
+import toc from '~/components/global/toc.vue'
 export default {
+  components: { toc },
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch()
 
