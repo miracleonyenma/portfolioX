@@ -1,8 +1,8 @@
 <template>
   <main>
     <section id="site-section" class="site-hero">
-      <div class="sect-wrapper">
-        <header class="hero-header">
+      <div class="sect-wrapper" data-page-trans="children">
+        <header class="hero-header" data-page-trans="children">
           <h1 class="header-txt">
             Hey 👋🏾, <br />
             I'm Miracleio.

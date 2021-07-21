@@ -1,8 +1,8 @@
 <template>
   <section>
-    <article class="article">
+    <article class="article" data-page-trans="children">
       <!-- Our custom injected variables specified with the The YAML front matter goes here  -->
-      <header class="article-header hero-header">
+      <header class="article-header hero-header" data-page-trans="children">
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
 

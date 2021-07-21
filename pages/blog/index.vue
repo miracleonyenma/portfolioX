@@ -1,12 +1,12 @@
 <template>
   <main class="blog">
-    <div class="sect-wrapper">
+    <div class="sect-wrapper" data-page-trans="children">
       <header class="hero-header blog-header">
         <h1>
           Hello 👋🏾, <br />
           It's nice you're here. Welcome.
         </h1>
-        <p>
+        <p data-page-trans="self">
           Have a look what I've been spending hours behind the screen writing
           about
         </p>
