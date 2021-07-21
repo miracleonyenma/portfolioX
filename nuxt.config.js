@@ -15,6 +15,9 @@ export default {
     ]
   },
 
+  // loading bar config
+  loading: '~/components/loadingBar.vue',
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // CSS file in the project
