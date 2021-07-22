@@ -50,25 +50,34 @@
     }
   }
 
-  [data-page-trans="self"], [data-page-trans="children"] > *{
-    @apply relative transform translate-y-0 opacity-100;
-    @apply transition-all duration-1000;
+  // [data-page-trans='self'],
+  // [data-page-trans='children'] > * {
+  //   @apply relative transform translate-y-0 opacity-100;
+  //   @apply transition-all duration-1000;
+  // }
+
+  // .page-enter,
+  // .page-leave-to {
+  //   [data-page-trans='self'],
+  //   [data-page-trans='children'] > * {
+  //     @apply relative transform translate-y-8 opacity-0;
+  //   }
+  // }
+
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 0.5s;
   }
-
-
-  .page-enter, .page-leave-to{
-    [data-page-trans="self"], [data-page-trans="children"] > *{
-      @apply relative transform translate-y-8 opacity-0;
-    }
+  .page-enter,
+  .page-leave-to {
+    opacity: 0;
   }
-
 }
 
-[data-page-trans="children"] > *{
+[data-page-trans='children'] > * {
   @for $count from 1 through 5 {
-    &:nth-child(#{$count}){
+    &:nth-child(#{$count}) {
       transition-delay: #{$count / 5}s;
     }
   }
 }
-
