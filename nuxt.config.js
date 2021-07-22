@@ -58,7 +58,7 @@ export default {
   },
 
   googleAnalytics: {
-    id: 'G-33S5XZXK0L', // Use as fallback if no runtime config is provided
+    id: 'UA-202968570-1', // Use as fallback if no runtime config is provided
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
