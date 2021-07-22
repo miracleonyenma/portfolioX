@@ -9,6 +9,7 @@
         <!-- container for article details -->
         <div class="details-cont">
           <!-- the format date function converts the default date to a readable form -->
+          <span>Posted: {{ formatDate(article.createdAt) }}</span>
           <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
         </div>
       </header>
