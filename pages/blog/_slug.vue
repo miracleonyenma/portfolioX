@@ -11,6 +11,8 @@
           <!-- the format date function converts the default date to a readable form -->
           <span>Posted: {{ formatDate(article.createdAt) }}</span>
           <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
+          <br>
+          <span> {{article.readingStats.text}} </span>
         </div>
       </header>
 
@@ -90,15 +92,11 @@ export default {
   }
 
   .article-header {
-    @apply mb-12 pb-8 lg:mb-16 border-gray-200 border-b-2;
+    @apply mb-12 pb-4 lg:mb-16 border-gray-200 border-b-2;
 
     h1 {
       @apply mb-2;
     }
-  }
-
-  .article-header .details-cont span {
-    @apply text-opacity-50 text-sm;
   }
 }
 </style>

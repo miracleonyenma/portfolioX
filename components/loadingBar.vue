@@ -7,6 +7,7 @@ export default {
   data() {
     return {
       loading: false,
+      loaded: false,
       err: false,
       increaseNum: 50,
     }
@@ -14,9 +15,11 @@ export default {
   methods: {
     start() {
       this.loading = true
+      this.loaded = false
     },
     finish() {
       this.loading = false
+      this.loaded = true
     },
 
     fail(err) {
@@ -34,11 +37,15 @@ export default {
   }
 
   .loading {
-    animation: load 0.35s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
-  .err{
-      @apply w-full bg-red-600;
+  .loaded {
+    @apply w-full;
+  }
+
+  .err {
+    @apply w-full bg-red-600;
   }
 
   @keyframes load {
