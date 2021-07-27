@@ -21,8 +21,16 @@
             <p>{{ article.description }}</p>
           </nuxt-link>
           <div class="details-cont">
+            <div class="article-tags">
+              <li v-for="tag in article.tags" :key="tag" class="tag">
+                {{ tag }}
+              </li>
+            </div>
+
+            <!-- the format date function converts the default date to a readable form -->
             <span>Posted: {{ formatDate(article.createdAt) }}</span>
-            <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
+            <span>Updated: {{ formatDate(article.updatedAt) }}</span>
+            <span> {{ article.readingStats.text }} </span>
           </div>
         </li>
       </ul>
@@ -34,7 +42,15 @@
 export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
-      .only(['title', 'slug', 'createdAt', 'updatedAt', 'description'])
+      .only([
+        'title',
+        'slug',
+        'createdAt',
+        'updatedAt',
+        'description',
+        'readingStats',
+        'tags',
+      ])
       .sortBy('updatedAt', 'desc')
       .fetch()
 
@@ -95,8 +111,17 @@ export default {
   }
 
   .details-cont {
+    @apply mt-1;
     span {
       @apply mr-2;
+    }
+  }
+
+  .article-tags {
+    @apply block list-none my-0;
+
+    li {
+      @apply text-xs;
     }
   }
 }

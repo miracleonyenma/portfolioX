@@ -8,16 +8,22 @@
 
         <!-- container for article details -->
         <div class="details-cont">
+          <ul class="article-tags">
+            <li v-for="tag in article.tags" :key="tag" class="tag">
+              {{ tag }}
+            </li>
+          </ul>
+
           <!-- the format date function converts the default date to a readable form -->
           <span>Posted: {{ formatDate(article.createdAt) }}</span>
-          <span>Last updated: {{ formatDate(article.updatedAt) }}</span>
+          <span>Updated: {{ formatDate(article.updatedAt) }}</span>
           <br>
-          <span> {{article.readingStats.text}} </span>
+          <span> {{ article.readingStats.text }} </span>
         </div>
       </header>
 
       <toc class="prose lg:prose-xl" :toc="article.toc">
-        <h2 slot="heading"> What we'll cover </h2>
+        <h2 slot="heading">What we'll cover</h2>
       </toc>
 
       <!-- this is where we will render the article contents -->
@@ -77,7 +83,7 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: [...this.article.tags]
+          content: [...this.article.tags],
         },
       ],
     }
@@ -85,7 +91,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @layer components {
   .article {
     @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;

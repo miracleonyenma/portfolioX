@@ -50,6 +50,13 @@
     }
   }
 
+  .article-tags {
+    @apply flex my-2;
+    .tag {
+      @apply inline-block py-1 px-2 mr-2 text-sm text-white bg-gradient-to-tr from-blue-400 to-purple-800 rounded-sm shadow-md;
+    }
+  }
+
   // [data-page-trans="self"], [data-page-trans="children"] > *{
   //   @apply transition-all duration-1000;
   //   @apply relative transform translate-y-0 opacity-100;
@@ -63,7 +70,8 @@
 
   .page-enter-active,
   .page-leave-active {
-    &, & *{
+    &,
+    & * {
       @apply transition-all duration-1000;
     }
   }
