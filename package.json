@@ -16,7 +16,9 @@
     "@tailwindcss/typography": "^0.4.1",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
+    "reading-time": "^1.3.0",
     "sass": "^1.32.8",
+    "v-smooth-scroll": "^2.0.0-beta.1",
     "vue-server-renderer": "^2.6.14"
   },
   "devDependencies": {

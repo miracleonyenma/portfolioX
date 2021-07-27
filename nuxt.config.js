@@ -16,7 +16,7 @@ export default {
   },
 
   // loading bar config
-  loading: '~/components/loadingBar.vue',
+  // loading: '~/components/loadingBar.vue',
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -59,6 +59,18 @@ export default {
 
   googleAnalytics: {
     id: 'UA-202968570-1', // Use as fallback if no runtime config is provided
+  },
+
+  // Add readingTime to document before rendering: https://content.nuxtjs.org/advanced#contentfilebeforeinsert
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === ".md") {
+        const stats = require('reading-time')(document.text)
+
+        document.readingStats = stats
+        console.log(stats)
+      }
+    }
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
