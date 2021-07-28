@@ -1,6 +1,6 @@
 <template>
   <div class="info-box">
-    <feather-icon :name="info" />
+    <feather-icon name="info" />
     <span>
       <slot name="info-box"> Some information gets diaplayed here </slot>
     </span>

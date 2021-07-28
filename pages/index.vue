@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <section id="site-section" class="site-hero">
+  <main class="home-main">
+    <section class="site-hero">
       <div class="sect-wrapper" data-page-trans="children">
         <header class="hero-header" data-page-trans="children">
           <h1 class="header-txt">
@@ -112,6 +112,10 @@ export default {}
 
 <style lang="scss" scoped>
 @layer components {
+  .home-main{
+    @apply min-h-screen;
+  }
+
   .sect-wrapper {
     @apply grid md:grid-cols-2 gap-6 items-center text-center h-full;
   }

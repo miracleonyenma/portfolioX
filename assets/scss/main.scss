@@ -57,10 +57,10 @@
     }
   }
 
-  // [data-page-trans="self"], [data-page-trans="children"] > *{
-  //   @apply transition-all duration-1000;
-  //   @apply relative transform translate-y-0 opacity-100;
-  // }
+  [data-page-trans="self"], [data-page-trans="children"] > *{
+    @apply transition-all duration-1000;
+    // @apply relative transform translate-y-0 opacity-100;
+  }
 
   // .page-enter, .page-leave-to {
   //   [data-page-trans="self"], [data-page-trans="children"] > *{
