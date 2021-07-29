@@ -93,12 +93,15 @@
             </div>
           </ul>
         </header>
-        <div class="hero-media">
-          <div class="img-cont hero-media__avatar">
-            <img
-              src="@/assets/img/halo-transparent-bg.png"
-              alt="Miracleio with his halo"
-            />
+        <div class="hero-media slides__container">
+          <div class="slides" ref="slides" @mouseenter="startFollowCursor($event)" @mousemove="followCursor($event)" @mouseleave="resetFollowCursor($event)">
+            <div class="img-cont hero-media__avatar slides__item">
+              <img
+                src="@/assets/img/FullSizeRender (2)-edit.webp"
+                alt="Miracleio with his halo"
+                class="slides__content"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -107,12 +110,72 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      mouseCoords: {},
+      slides: '',
+      slidesItem: ''
+      // containerCoords: {},
+    }
+  },
+
+  methods:{
+    startFollowCursor(e){
+      this.slidesItem.style.setProperty("--S", `1.05`)
+      this.slidesContent.style.setProperty("--S", `1.15`)
+    },
+
+
+    followCursor(e){
+      this.mouseCoords.x = e.pageX - this.slides.offsetLeft;
+      this.mouseCoords.y = e.pageY - this.slides.offsetTop;
+
+      this.mouseCoords.percentX = ((this.mouseCoords.x / this.slides.clientWidth) * 100);
+      this.mouseCoords.percentY = ((this.mouseCoords.y / this.slides.clientHeight) * 100);
+
+      // console.log(`X: ${e.pageX} - ${this.slides.offsetLeft} = ${this.mouseCoords.x}`);
+      // console.log(`W: ${this.slides.clientWidth}`);
+      // console.log(`%X: ${this.mouseCoords.percentX}`);
+      // console.log(`%X: ${this.mouseCoords.percentX} - ${50} = ${this.mouseCoords.percentX - 50}`);
+      // console.log(`H: ${this.slides.clientHeight}`);
+      // console.log(`%Y: ${this.mouseCoords.percentY}`);
+      // console.log(`Y: ${e.pageY} - ${this.slides.offsetTop} = ${this.mouseCoords.y}`);
+
+      this.slidesItem.style.setProperty("--X", `${Math.floor(this.mouseCoords.percentX - 65) / 2}%`)
+      this.slidesItem.style.setProperty("--Y", `${Math.floor(this.mouseCoords.percentY - 65) / 2}%`)
+
+      this.slidesContent.style.setProperty("--X", `${Math.floor(this.mouseCoords.percentX - 65) / 10}%`)
+      this.slidesContent.style.setProperty("--Y", `${Math.floor(this.mouseCoords.percentY - 65) / 10}%`)
+
+      // console.log(`--X: ${Math.floor(this.mouseCoords.percentX - 50) / 2}`);
+      // console.log(`--Y: ${Math.floor(this.mouseCoords.percentY - 50) / 2}`);
+    },
+
+    resetFollowCursor(e){
+      this.slidesItem.style.setProperty("--X", `0%`)
+      this.slidesItem.style.setProperty("--Y", `0%`)
+      this.slidesItem.style.setProperty("--S", `1`)
+
+      this.slidesContent.style.setProperty("--X", `0%`)
+      this.slidesContent.style.setProperty("--Y", `0%`)
+      this.slidesContent.style.setProperty("--S", `1`)
+    }
+
+  },
+
+  mounted(){
+      this.slides = this.$refs.slides;
+      this.slidesItem = this.slides.querySelector(".slides__item");
+      this.slidesContent = this.slides.querySelector(".slides__content");
+  }
+
+}
 </script>
 
 <style lang="scss" scoped>
 @layer components {
-  .home-main{
+  .home-main {
     @apply min-h-screen;
   }
 
@@ -125,6 +188,7 @@ export default {}
   }
 
   .hero-media {
+    @apply flex justify-center lg:justify-end max-w-3xl h-72 sm:h-96 w-full lg:h-full;
     &__avatar {
       img {
         @apply w-96 m-auto md:ml-auto md:mr-0;
@@ -151,6 +215,47 @@ export default {}
 
     .txt {
       @apply text-left leading-none;
+    }
+  }
+
+  .slides {
+    &__container {
+      @apply flex w-full h-full items-center justify-center md:justify-end;
+
+      * {
+        @apply transition-all duration-300;
+        transition-timing-function: cubic-bezier(0.05, 0.985, 0.32, 1.085);
+      }
+    }
+
+    & {
+      @apply relative cursor-pointer;
+    }
+
+    &,
+    &__item {
+      @apply w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96;
+    }
+
+    &__item {
+      @apply overflow-hidden rounded-full;
+
+      &:active{
+        --S: 0.95;
+      }
+    }
+
+    &__item,
+    &__content {
+      @apply absolute;
+      --X: 0%;
+      --Y: 0%;
+      --S: 1;
+      transform: translate(var(--X), var(--Y)) scale(var(--S));
+    }
+
+    &__content {
+      transform: translate(var(--X), var(--Y)) scale(var(--S));
     }
   }
 }
