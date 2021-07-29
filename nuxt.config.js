@@ -8,7 +8,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤' }
+      { hid: 'description', name: 'description', content: 'Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤' },
+	  { hid: 'google-site-verification', name: 'google-site-verification', content: 'hRt_nx15rRTqJoV-b8mjBMKM3uH5ONJLM_qAfmXTni0'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
