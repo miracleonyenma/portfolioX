@@ -113,7 +113,7 @@
 export default {
   data() {
     return {
-      mouseCoords: {},
+      cursorCoords: {},
       slides: '',
       slidesItem: ''
       // containerCoords: {},
@@ -128,38 +128,38 @@ export default {
 
 
     followCursor(e){
-      this.mouseCoords.x = e.pageX - this.slides.offsetLeft;
-      this.mouseCoords.y = e.pageY - this.slides.offsetTop;
+      this.cursorCoords.x = e.pageX - this.slides.offsetLeft;
+      this.cursorCoords.y = e.pageY - this.slides.offsetTop;
 
-      this.mouseCoords.percentX = ((this.mouseCoords.x / this.slides.clientWidth) * 100);
-      this.mouseCoords.percentY = ((this.mouseCoords.y / this.slides.clientHeight) * 100);
+      this.cursorCoords.percentX = ((this.cursorCoords.x / this.slides.clientWidth) * 100);
+      this.cursorCoords.percentY = ((this.cursorCoords.y / this.slides.clientHeight) * 100);
 
-      // console.log(`X: ${e.pageX} - ${this.slides.offsetLeft} = ${this.mouseCoords.x}`);
+      // console.log(`X: ${e.pageX} - ${this.slides.offsetLeft} = ${this.cursorCoords.x}`);
       // console.log(`W: ${this.slides.clientWidth}`);
-      // console.log(`%X: ${this.mouseCoords.percentX}`);
-      // console.log(`%X: ${this.mouseCoords.percentX} - ${50} = ${this.mouseCoords.percentX - 50}`);
+      // console.log(`%X: ${this.cursorCoords.percentX}`);
+      // console.log(`%X: ${this.cursorCoords.percentX} - ${50} = ${this.cursorCoords.percentX - 50}`);
       // console.log(`H: ${this.slides.clientHeight}`);
-      // console.log(`%Y: ${this.mouseCoords.percentY}`);
-      // console.log(`Y: ${e.pageY} - ${this.slides.offsetTop} = ${this.mouseCoords.y}`);
+      // console.log(`%Y: ${this.cursorCoords.percentY}`);
+      // console.log(`Y: ${e.pageY} - ${this.slides.offsetTop} = ${this.cursorCoords.y}`);
 
-      this.slidesItem.style.setProperty("--X", `${Math.floor(this.mouseCoords.percentX - 65) / 2}%`)
-      this.slidesItem.style.setProperty("--Y", `${Math.floor(this.mouseCoords.percentY - 65) / 2}%`)
+      this.slidesItem.style.setProperty("--X", `${Math.floor(this.cursorCoords.percentX - 70) / 2}%`)
+      this.slidesItem.style.setProperty("--Y", `${Math.floor(this.cursorCoords.percentY - 70) / 2}%`)
 
-      this.slidesContent.style.setProperty("--X", `${Math.floor(this.mouseCoords.percentX - 65) / 10}%`)
-      this.slidesContent.style.setProperty("--Y", `${Math.floor(this.mouseCoords.percentY - 65) / 10}%`)
+      this.slidesContent.style.setProperty("--X", `${Math.floor(this.cursorCoords.percentX - 65) / 10}%`)
+      this.slidesContent.style.setProperty("--Y", `${Math.floor(this.cursorCoords.percentY - 65) / 10}%`)
 
-      // console.log(`--X: ${Math.floor(this.mouseCoords.percentX - 50) / 2}`);
-      // console.log(`--Y: ${Math.floor(this.mouseCoords.percentY - 50) / 2}`);
+      // console.log(`--X: ${Math.floor(this.cursorCoords.percentX - 50) / 2}`);
+      // console.log(`--Y: ${Math.floor(this.cursorCoords.percentY - 50) / 2}`);
     },
 
     resetFollowCursor(e){
-      this.slidesItem.style.setProperty("--X", `0%`)
-      this.slidesItem.style.setProperty("--Y", `0%`)
-      this.slidesItem.style.setProperty("--S", `1`)
+      this.slidesItem.style.removeProperty("--X")
+      this.slidesItem.style.removeProperty("--Y")
+      this.slidesItem.style.removeProperty("--S")
 
-      this.slidesContent.style.setProperty("--X", `0%`)
-      this.slidesContent.style.setProperty("--Y", `0%`)
-      this.slidesContent.style.setProperty("--S", `1`)
+      this.slidesContent.style.removeProperty("--X")
+      this.slidesContent.style.removeProperty("--Y")
+      this.slidesContent.style.removeProperty("--S")
     }
 
   },
@@ -168,6 +168,10 @@ export default {
       this.slides = this.$refs.slides;
       this.slidesItem = this.slides.querySelector(".slides__item");
       this.slidesContent = this.slides.querySelector(".slides__content");
+
+      window.addEventListener("mousemove", e=>{
+
+      })
   }
 
 }
@@ -187,6 +191,10 @@ export default {
     @apply row-start-2 md:row-start-1;
   }
 
+  .header-txt{
+    @apply font-header;
+  }
+
   .hero-media {
     @apply flex justify-center lg:justify-end max-w-3xl h-72 sm:h-96 w-full lg:h-full;
     &__avatar {
@@ -200,7 +208,7 @@ export default {
     @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white shadow-lg rounded-lg;
 
     &__item {
-      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:shadow;
+      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200;
     }
   }
 
