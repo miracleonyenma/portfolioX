@@ -1,7 +1,7 @@
 ---
 title: Adding images to your nuxt/content articles
 description: Here's a way to add images into your article content in your nuxt/content project
-tags: [Nuxt Content, Nuxt, VueJS, frontend, Blog series]
+tags: [Nuxt, Nuxt Content, Vue, Blog features]
 ---
 
 <!-- ## Outline
@@ -17,7 +17,7 @@ tags: [Nuxt Content, Nuxt, VueJS, frontend, Blog series]
 
 ## Nuxt & Nuxt Content
 
-[Nuxt](https://nuxtjs.org) is a great SSR (Server Side Rendering) framework built for VueJS applications.
+[Nuxt](https://nuxtjs.org) is a great SSR (Server Side Rendering) framework built for Vue applications.
 It's modular, so it comes with a lot of other features that makes creating a Vue app easier and more powerful.
 
 The [nuxt content module](https://content.nuxtjs.org/) is one of those features. It acts as a **Git-based Headless CMS** which helps you render and fetch your Markdown, YAML, JSON, XML and CSV files from your `content/` directory.
