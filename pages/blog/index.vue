@@ -21,15 +21,15 @@
             <p>{{ article.description }}</p>
           </nuxt-link>
           <div class="details-cont">
-            <div class="article-tags">
+            <ul id="article-tags">
               <li v-for="tag in article.tags" :key="tag" class="tag">
                 {{ tag }}
               </li>
-            </div>
+            </ul>
 
             <!-- the format date function converts the default date to a readable form -->
-            <span>Posted: {{ formatDate(article.createdAt) }}</span>
-            <span>Updated: {{ formatDate(article.updatedAt) }}</span>
+            <span>Posted: {{ formatDate(article.gitCreatedAt) }}</span>
+            <span>Updated: {{ formatDate(article.gitUpdatedAt) }}</span>
             <span> {{ article.readingStats.text }} </span>
           </div>
         </li>
@@ -45,13 +45,13 @@ export default {
       .only([
         'title',
         'slug',
-        'createdAt',
-        'updatedAt',
+        'gitCreatedAt',
+        'gitUpdatedAt',
         'description',
         'readingStats',
         'tags',
       ])
-      .sortBy('updatedAt', 'desc')
+      .sortBy('gitUpdatedAt', 'desc')
       .fetch()
 
     return { articles }
@@ -114,14 +114,6 @@ export default {
     @apply mt-1;
     span {
       @apply mr-2;
-    }
-  }
-
-  .article-tags {
-    @apply block list-none my-0;
-
-    li {
-      @apply text-xs;
     }
   }
 }

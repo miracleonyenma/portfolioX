@@ -8,17 +8,17 @@
 
         <!-- container for article details -->
         <div class="details-cont">
-          <ul class="article-tags">
+          <ul id="article-tags">
             <li v-for="tag in article.tags" :key="tag" class="tag">
               {{ tag }}
             </li>
           </ul>
 
           <!-- the format date function converts the default date to a readable form -->
-          <span>Posted: {{ formatDate(article.createdAt) }}</span>
-          <span>Updated: {{ formatDate(article.updatedAt) }}</span>
+          <span>Posted: {{ formatDate(article.gitCreatedAt) }}</span>
+          <span>Updated: {{ formatDate(article.gitUpdatedAt) }}</span>
           <br>
-          <span> {{ article.readingStats.text }} </span>
+          <span class="font-bold"> {{ article.readingStats.text }} </span>
         </div>
       </header>
 
@@ -45,9 +45,9 @@ export default {
     // assign the first two objects in returned array to prev & next constant variables
     const [prev, next] = await $content('articles')
       // fetch only the title and slug from the articles
-      .only(['title', 'slug', 'updatedAt'])
+      .only(['title', 'slug', 'gitUpdatedAt'])
       // sortby time updated, in ascending order
-      .sortBy('updatedAt', 'desc')
+      .sortBy('gitUpdatedAt', 'desc')
       // get the correct slug
       .surround(params.slug)
       // fetch data

@@ -168,10 +168,6 @@ export default {
       this.slides = this.$refs.slides;
       this.slidesItem = this.slides.querySelector(".slides__item");
       this.slidesContent = this.slides.querySelector(".slides__content");
-
-      window.addEventListener("mousemove", e=>{
-
-      })
   }
 
 }
