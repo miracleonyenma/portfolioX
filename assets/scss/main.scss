@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 @layer base {
   * {
-    @apply text-gray-900;
+    @apply text-gray-900 font-sans;
   }
   body {
     @apply bg-gray-50;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header;
+  }
 }
+
 @layer components {
   .icon {
     svg {
@@ -27,7 +39,7 @@
 @layer utilities {
   .header-txt {
     @apply font-black text-5xl md:text-6xl lg:text-8xl mb-2;
-    letter-spacing: -0.25rem;
+    letter-spacing: -0.15rem;
   }
 
   .hero-header {
@@ -46,19 +58,24 @@
     @apply mt-4;
 
     span {
-      @apply text-opacity-50 text-base;
+      @apply text-opacity-50 text-base whitespace-nowrap;
     }
   }
 
-  .article-tags {
-    @apply flex my-2;
-    .tag {
-      @apply inline-block py-1 px-2 mr-2 text-sm text-white bg-gradient-to-tr from-blue-400 to-purple-800 rounded-sm shadow-md;
+  ul#article-tags {
+    @apply block list-none my-0;
+    & > li.tag {
+      @apply inline-block py-1 px-2 mr-2 mb-2 text-sm text-white bg-gradient-to-tr from-blue-400 to-purple-800 rounded-sm shadow-md;
+
+      &::before {
+        display: none;
+      }
     }
   }
 
-  [data-page-trans="self"], [data-page-trans="children"] > *{
-    @apply transition-all duration-1000;
+  [data-page-trans='self'],
+  [data-page-trans='children'] > * {
+    @apply transition-transform duration-1000;
     // @apply relative transform translate-y-0 opacity-100;
   }
 

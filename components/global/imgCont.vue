@@ -44,7 +44,7 @@ export default {
         }
 
         .caption{
-            @apply text-xs text-center mt-2;
+            @apply text-lg text-center mt-2;
         }
     }
 }

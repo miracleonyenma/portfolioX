@@ -26,7 +26,7 @@ export default {
   }
 
   .info-box span {
-    @apply text-gray-800 leading-none;
+    @apply text-gray-800;
   }
 }
 </style>
