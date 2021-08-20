@@ -122,8 +122,8 @@ export default {
 
   methods:{
     startFollowCursor(e){
-      this.slidesItem.style.setProperty("--S", `1.05`)
-      this.slidesContent.style.setProperty("--S", `1.15`)
+      this.slidesItem.style.setProperty("--S", `1`)
+      this.slidesContent.style.setProperty("--S", `1.05`)
     },
 
 
@@ -173,94 +173,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@layer components {
-  .home-main {
-    @apply min-h-screen;
-  }
-
-  .sect-wrapper {
-    @apply grid md:grid-cols-2 gap-6 items-center text-center h-full;
-  }
-
-  .hero-header {
-    @apply row-start-2 md:row-start-1;
-  }
-
-  .header-txt{
-    @apply font-header;
-  }
-
-  .hero-media {
-    @apply flex justify-center lg:justify-end max-w-3xl h-72 sm:h-96 w-full lg:h-full;
-    &__avatar {
-      img {
-        @apply w-96 m-auto md:ml-auto md:mr-0;
-      }
-    }
-  }
-
-  .socials {
-    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white shadow-lg rounded-lg;
-
-    &__item {
-      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200;
-    }
-  }
-
-  .decor-description {
-    @apply absolute right-0 bottom-0 transform translate-x-2/3 md:translate-x-3/4 translate-y-full flex gap-2 md:gap-6 items-center;
-
-    .icon {
-      svg {
-        @apply w-16 h-6 md:w-20 md:h-12;
-      }
-    }
-
-    .txt {
-      @apply text-left leading-none;
-    }
-  }
-
-  .slides {
-    &__container {
-      @apply flex w-full h-full items-center justify-center md:justify-end;
-
-      * {
-        @apply transition-all duration-300;
-        transition-timing-function: cubic-bezier(0.05, 0.985, 0.32, 1.085);
-      }
-    }
-
-    & {
-      @apply relative cursor-pointer;
-    }
-
-    &,
-    &__item {
-      @apply w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96;
-    }
-
-    &__item {
-      @apply overflow-hidden rounded-full;
-
-      &:active{
-        --S: 0.95;
-      }
-    }
-
-    &__item,
-    &__content {
-      @apply absolute;
-      --X: 0%;
-      --Y: 0%;
-      --S: 1;
-      transform: translate(var(--X), var(--Y)) scale(var(--S));
-    }
-
-    &__content {
-      transform: translate(var(--X), var(--Y)) scale(var(--S));
-    }
-  }
-}
+<style scoped>
+@import url('~/assets/css/index.css');
 </style>

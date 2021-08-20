@@ -35,17 +35,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@layer components{
-    .article-img{
-        @apply mt-0;
-        .img-cont{
-            @apply overflow-hidden rounded-md shadow-lg;
-        }
-
-        .caption{
-            @apply text-lg text-center mt-2;
-        }
-    }
+<style scoped>
+@layer components {
+  .article-img {
+    @apply mt-0;
+  }
+  .article-img .img-cont {
+    @apply overflow-hidden rounded-md shadow-lg;
+  }
+  .article-img .caption {
+    @apply text-lg text-center mt-2;
+  }
 }
 </style>

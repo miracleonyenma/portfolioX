@@ -9,7 +9,7 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './assets/scss/*.{css,scss}'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -21,11 +21,32 @@ module.exports = {
           'Lato',
           ...defaultTheme.fontFamily.sans,
         ]
-      }
+      },
+      spacing: {
+        '102': '28rem'
+      },
+
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: theme("colors.gray.50"),
+            code: {color: theme("colors.gray.50"), fontFamily: theme("font.mono")},
+            a: {color: theme("colors.gray.50")},
+            'a code': {color: theme("colors.gray.50")},
+
+            h1: { color: theme("colors.gray.50") },
+            h2: { color: theme("colors.gray.50") },
+            h3: { color: theme("colors.gray.50") },
+            h4: { color: theme("colors.gray.50") },
+          }
+        }
+      }),
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      typography: ['dark']
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

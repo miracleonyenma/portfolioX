@@ -1,3 +1,5 @@
+import {getHighlighter} from 'shiki';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -22,8 +24,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     // CSS file in the project
-    '@/assets/scss/tailwind.css',
-    '@/assets/scss/main.scss',
+    '@/assets/css/tailwind.css',
+    '@/assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -80,7 +82,20 @@ export default {
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: {},
+  content: {
+    markdown: {
+      async highlighter(){
+        const highlighter = await getHighlighter({
+
+          theme: 'ayu-dark'
+        })
+
+        return (rawCode, lang) => {
+          return highlighter.codeToHtml(rawCode, lang)
+        }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

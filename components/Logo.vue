@@ -159,36 +159,25 @@
 export default {}
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 @layer components {
   .site-logo {
     @apply flex gap-4 items-center;
-
-    &:hover {
-      .logo-txt-cont {
-        > * {
-          @apply translate-x-1/2;
-        }
-      }
-    }
-
-    * {
-      @apply inline-block align-middle transition-all duration-150;
-    }
   }
-
-  .icon {
-    svg {
-      @apply w-10 h-10;
-    }
+  .site-logo:hover .logo-txt-cont > * {
+    @apply translate-x-1/2;
   }
-
+  .site-logo * {
+    @apply inline-block align-middle transition-all duration-150;
+  }
+  .icon svg {
+    @apply w-10 h-10;
+  }
   .logo-txt-cont {
     @apply relative overflow-hidden;
-
-    > * {
-      @apply relative -left-1/2 transform -translate-x-1/2;
-    }
+  }
+  .logo-txt-cont > * {
+    @apply relative -left-1/2 transform -translate-x-1/2;
   }
 }
 </style>

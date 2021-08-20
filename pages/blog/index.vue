@@ -82,39 +82,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@layer base {
-  .blog {
-    .sect-wrapper {
-      @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
-    }
-  }
-
-  .blog-header {
-    @apply mb-12 pb-8 lg:mb-16;
-
-    // h1 {
-    //   @apply mb-0;
-    // }
-  }
-
-  .articles {
-    .article {
-      @apply prose lg:prose-xl;
-      @apply pl-0 py-2 list-none;
-
-      h2,
-      p {
-        @apply mb-0;
-      }
-    }
-  }
-
-  .details-cont {
-    @apply mt-1;
-    span {
-      @apply mr-2;
-    }
-  }
-}
+<style scoped>
+@import url('~/assets/css/blog-index.css');
 </style>

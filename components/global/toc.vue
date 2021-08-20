@@ -27,15 +27,12 @@
 
 </script>
 
-<style lang="scss" scoped>
-  .toc {
-    @apply mb-8;
+<style scoped>
+.toc {
+  @apply mb-8;
+}
 
-    &__item {
-      &.depth-3 {
-        @apply ml-8;
-      }
-    }
-  }
-
+.toc__item.depth-3 {
+  @apply ml-8;
+}
 </style>

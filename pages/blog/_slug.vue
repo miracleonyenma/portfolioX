@@ -22,12 +22,12 @@
         </div>
       </header>
 
-      <toc class="prose lg:prose-xl" :toc="article.toc">
+      <toc class="prose lg:prose-xl dark:prose-dark" :toc="article.toc">
         <h2 slot="heading">What we'll cover</h2>
       </toc>
 
       <!-- this is where we will render the article contents -->
-      <nuxt-content class="prose lg:prose-xl" :document="article" />
+      <nuxt-content class="prose lg:prose-xl dark:prose-dark" :document="article" />
     </article>
 
     <!-- Pass the data to the component props -->
@@ -91,18 +91,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@layer components {
-  .article {
-    @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
-  }
-
-  .article-header {
-    @apply mb-12 pb-4 lg:mb-16 border-gray-200 border-b-2;
-
-    h1 {
-      @apply mb-2;
-    }
-  }
-}
+<style scoped>
+@import url('~/assets/css/slug.css');
 </style>
