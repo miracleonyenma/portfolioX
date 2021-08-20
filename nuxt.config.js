@@ -1,4 +1,5 @@
-import {getHighlighter} from 'shiki';
+import {getHighlighter, loadTheme} from 'shiki';
+// import { join } from 'path';
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -85,9 +86,11 @@ export default {
   content: {
     markdown: {
       async highlighter(){
+        // const t = await loadTheme(join(process.cwd(), './custom-themes/ayu-dark.json'))
         const highlighter = await getHighlighter({
 
-          theme: 'ayu-dark'
+          theme: 'material-ocean',
+          // theme: t
         })
 
         return (rawCode, lang) => {
