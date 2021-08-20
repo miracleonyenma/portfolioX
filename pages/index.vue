@@ -21,8 +21,8 @@
                 <feather-icon name="twitter" />
               </a>
             </li>
-            <li class="socials__item" title="GitHub" target="github">
-              <a class="icon" href="https://github.com/miracleonyenma">
+            <li class="socials__item" title="GitHub">
+              <a class="icon" href="https://github.com/miracleonyenma" target="github">
                 <feather-icon name="github" />
               </a>
             </li>
