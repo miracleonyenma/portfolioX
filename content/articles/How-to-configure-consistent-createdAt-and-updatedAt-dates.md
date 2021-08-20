@@ -10,7 +10,7 @@ One of these features is the `createdAt` and `updatedAt` time stamp that Nuxt Co
 
 To fix this, we need to provide a consistent date value to our content and use that data instead. We'll be using [`nuxt-content-git`,](https://github.com/dword-design/nuxt-content-git) a module by [@dword-design](https://github.com/dword-design). It is an additional module for @nuxt/content that replaces or adds createdAt and updatedAt dates based on the git history.
 
-I'll assume that you've installed and setup [Nuxt](https://nuxtjs.org/docs/2.x/get-started/installation) and [Nuxt Content](https://content.nuxtjs.org/) already. If you haven't, I have an article on that, check it out [here](https://content.nuxtjs.org/)
+I'll assume that you've installed and setup [Nuxt](https://nuxtjs.org/docs/2.x/get-started/installation) and [Nuxt Content](https://content.nuxtjs.org/) already. If you haven't, I have an article on that, check it out [here](https://miracleio.me/blog/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS)
 
 ## Installing The Module
 
