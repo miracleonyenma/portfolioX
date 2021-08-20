@@ -1,0 +1,76 @@
+@layer components {
+  .home-main {
+    @apply min-h-screen;
+  }
+  .sect-wrapper {
+    @apply grid md:grid-cols-2 gap-6 items-center text-center h-full;
+  }
+  .hero-header {
+    @apply row-start-2 md:row-start-1;
+  }
+  .header-txt {
+    @apply font-header lg:text-7xl;
+  }
+  .hero-media {
+    @apply flex justify-center lg:justify-end max-w-3xl h-72 sm:h-96 w-full lg:h-full;
+  }
+  .hero-media__avatar img {
+    @apply w-96 lg:w-102 m-auto md:ml-auto md:mr-0;
+  }
+  .socials {
+    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg;
+  }
+  .socials__item {
+    @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700;
+  }
+  .decor-description {
+    @apply absolute right-0 bottom-0 transform translate-x-2/3 md:translate-x-3/4 translate-y-full flex gap-2 md:gap-6 items-center;
+  }
+  .decor-description .icon svg {
+    @apply w-16 h-6 md:w-20 md:h-12;
+  }
+  .decor-description .txt {
+    @apply text-left leading-none;
+  }
+  .slides__container {
+    @apply flex w-full h-full items-center justify-center md:justify-end;
+  }
+  .slides__container * {
+    @apply transition-all duration-300;
+    -webkit-transition-timing-function: cubic-bezier(0.05, 0.985, 0.32, 1.085);
+            transition-timing-function: cubic-bezier(0.05, 0.985, 0.32, 1.085);
+  }
+  .slides {
+    @apply relative cursor-pointer;
+  }
+  .slides, .slides__item {
+    @apply w-72 h-72 sm:w-80 sm:h-80 lg:w-102 lg:h-102;
+  }
+  .slides__item {
+    @apply relative overflow-hidden rounded-full;
+  }
+  .slides__item:active {
+    --S: 0.95;
+  }
+  .slides__item::before {
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-blue-400 to-purple-800;
+    content: '';
+  }
+  .slides__item::after {
+    @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-50 dark:bg-gray-900;
+    content: '';
+  }
+  .slides__item, .slides__content {
+    @apply absolute rounded-full z-10;
+    --X: 0%;
+    --Y: 0%;
+    --S: 0.9;
+    -webkit-transform: translate(var(--X), var(--Y)) scale(var(--S));
+            transform: translate(var(--X), var(--Y)) scale(var(--S));
+  }
+  .slides__content {
+    -webkit-transform: translate(var(--X), var(--Y)) scale(var(--S));
+            transform: translate(var(--X), var(--Y)) scale(var(--S));
+  }
+}
+/*# sourceMappingURL=index.css.map */

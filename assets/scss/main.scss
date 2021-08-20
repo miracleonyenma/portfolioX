@@ -3,10 +3,10 @@
 
 @layer base {
   * {
-    @apply text-gray-900 font-sans;
+    @apply text-gray-900 dark:text-gray-50;
   }
   body {
-    @apply bg-gray-50;
+    @apply bg-gray-50 dark:bg-gray-900 font-sans;
   }
   h1,
   h2,
@@ -16,6 +16,7 @@
   h6 {
     @apply font-header;
   }
+
 }
 
 @layer components {
@@ -38,7 +39,7 @@
 
 @layer utilities {
   .header-txt {
-    @apply font-black text-5xl md:text-6xl lg:text-8xl mb-2;
+    @apply font-black text-4xl md:text-5xl lg:text-6xl mb-2;
     letter-spacing: -0.15rem;
   }
 

@@ -1,0 +1,12 @@
+@layer components {
+  .article {
+    @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
+  }
+  .article-header {
+    @apply mb-12 pb-4 lg:mb-16 border-gray-200 dark:border-gray-800 border-b-2;
+  }
+  .article-header h1 {
+    @apply mb-2;
+  }
+}
+/*# sourceMappingURL=slug.css.map */

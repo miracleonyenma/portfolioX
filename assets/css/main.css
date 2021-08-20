@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@layer base {
+  * {
+    @apply text-gray-900 dark:text-gray-50;
+  }
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-header;
+  }
+}
+
+@layer components {
+  .icon svg {
+    @apply w-6 h-6;
+  }
+  .sect-wrapper {
+    @apply relative p-4 lg:p-6 max-w-6xl m-auto;
+  }
+  .img-cont img {
+    @apply object-cover m-0;
+  }
+}
+
+@layer utilities {
+  .header-txt {
+    @apply font-black text-4xl md:text-5xl lg:text-6xl mb-2;
+    letter-spacing: -0.15rem;
+  }
+  .hero-header {
+    @apply md:text-left;
+  }
+  .hero-header h1 {
+    @apply header-txt;
+  }
+  .hero-header p {
+    @apply text-xl leading-tight md:text-2xl;
+  }
+  .details-cont {
+    @apply mt-4;
+  }
+  .details-cont span {
+    @apply text-opacity-50 text-base whitespace-nowrap;
+  }
+  ul#article-tags {
+    @apply block list-none my-0;
+  }
+  ul#article-tags > li.tag {
+    @apply inline-block py-1 px-2 mr-2 mb-2 text-sm text-white bg-gradient-to-tr from-blue-400 to-purple-800 rounded-sm shadow-md;
+  }
+  ul#article-tags > li.tag::before {
+    display: none;
+  }
+  [data-page-trans='self'],
+  [data-page-trans='children'] > * {
+    @apply transition-transform duration-1000;
+  }
+  .page-enter-active,
+  .page-enter-active *,
+  .page-leave-active,
+  .page-leave-active * {
+    @apply transition-all duration-1000;
+  }
+  .page-enter-to [data-page-trans='self'],
+  .page-enter-to [data-page-trans='children'] > * {
+    @apply relative transform translate-y-0 opacity-100;
+  }
+  .page-leave-to [data-page-trans='self'],
+  .page-leave-to [data-page-trans='children'] > *,
+  .page-enter [data-page-trans='self'],
+  .page-enter [data-page-trans='children'] > * {
+    @apply relative transform translate-y-8 opacity-0;
+  }
+}
+
+[data-page-trans='children'] > *:nth-child(1) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+[data-page-trans='children'] > *:nth-child(2) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+[data-page-trans='children'] > *:nth-child(3) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+[data-page-trans='children'] > *:nth-child(4) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+[data-page-trans='children'] > *:nth-child(5) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+/*# sourceMappingURL=main.css.map */
