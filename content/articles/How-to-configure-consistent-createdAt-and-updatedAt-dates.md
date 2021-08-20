@@ -1,5 +1,5 @@
 ---
-title: How to configure consistent createdAt and updatedAt dates
+title: How to keep createdAt and updatedAt dates consistent in Nuxt Content
 description: Here, we'll see a quick way to get our Nuxt Content date values working right in both development and production
 tags: [Nuxt, Nuxt Content, Vue, nuxt-content-git, Blog Features]
 ---
@@ -24,7 +24,7 @@ npm install nuxt-content-git
 
 After installation, add the following to `modules` in your `nuxt.config.js` file just before `'@nuxt/content'`.
 
-```javascript
+```javascript[nuxt.config.js]
 // nuxt.config.js
 
 export default {
@@ -134,7 +134,7 @@ This way, it'll be consistent in both development and production.
 ## Further Reading
 
 - [nuxt-content-git documentation](https://github.com/dword-design/nuxt-content-git)
-- [Creating a blog using Nuxt and Nuxt Content with TailwindCSS](http://localhost:3000/blog/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS)
+- [Creating a blog using Nuxt and Nuxt Content with TailwindCSS](https://miracleio.me/blog/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS)
 - [Create a blog with Nuxt Content](https://nuxtjs.org/blog/creating-blog-with-nuxt-content)
 - [Nuxt Content documentation](https://content.nuxtjs.org/)
 

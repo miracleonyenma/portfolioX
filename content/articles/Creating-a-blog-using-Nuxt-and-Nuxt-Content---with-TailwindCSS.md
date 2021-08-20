@@ -290,7 +290,7 @@ pages/blog/_slug.vue
 </script>
 ```
 
-To display our content we are using the <nuxt-content /> component by passing in the variable we returned into the `:document="article"` document prop.
+To display our content we are using the &lt;nuxt-content /&gt; component by passing in the variable we returned into the `:document="article"` document prop.
 
 Go to your site and you should see something like this
 
