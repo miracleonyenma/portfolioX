@@ -1,0 +1,36 @@
+@layer components {
+  .site-nav {
+    @apply fixed top-0 left-0 w-full h-screen p-4 pb-16 bg-transparent pointer-events-none transition;
+    @apply md:relative md:h-auto md:pointer-events-auto md:p-0;
+  }
+  .site-nav.active {
+    @apply pointer-events-auto bg-gray-50 dark:bg-gray-900 md:bg-transparent;
+  }
+  .site-nav.active .nav-wrapper {
+    @apply visible opacity-100 pointer-events-auto;
+  }
+  .nav-wrapper {
+    @apply relative w-full h-full bottom-0 left-0 invisible opacity-0 pointer-events-none;
+    @apply md:visible md:opacity-100 md:pointer-events-auto;
+  }
+  .links {
+    @apply absolute bottom-0 left-0 text-left;
+    @apply md:relative md:flex md:justify-end;
+  }
+  .link {
+    @apply font-header font-bold text-6xl mt-4;
+    @apply md:font-medium md:text-lg md:mt-0 md:ml-6;
+  }
+  .link:hover,
+  .link a {
+    @apply text-gray-500 dark:text-gray-700;
+  }
+  .link:hover a, .link:hover.nuxt-link-active.nuxt-link-exact-active,
+  .link a a,
+  .link a.nuxt-link-active.nuxt-link-exact-active {
+    @apply text-gray-900 dark:text-gray-50;
+  }
+  .nav-btn {
+    @apply absolute md:hidden bottom-4 right-4 w-9 h-9 rounded-xl bg-gray-700 pointer-events-auto;
+  }
+}

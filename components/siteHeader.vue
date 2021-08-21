@@ -2,25 +2,21 @@
   <header id="site-header" class="site-header">
     <div class="wrapper">
       <nuxt-link to="/">
-        <logo>
+        <logo class="relative z-20">
           <h1 slot="logo-text" class="dark:text-gray-50">Miracleio</h1>
         </logo>
       </nuxt-link>
 
-      <nav class="site-nav">
-        <ul class="links">
-          <li class="link">
-            <nuxt-link to="/blog">Blog</nuxt-link>
-          </li>
-        </ul>
-      </nav>
+      <site-nav />
+
     </div>
   </header>
 </template>
 
 <script>
-import Logo from '../Logo.vue'
-export default {}
+import siteNav from './siteNav.vue'
+export default {
+  components: { siteNav },}
 </script>
 
 <style scoped>
