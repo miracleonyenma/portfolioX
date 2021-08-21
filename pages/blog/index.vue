@@ -83,5 +83,5 @@ export default {
 </script>
 
 <style scoped>
-@import url('~/assets/css/blog-index.css');
+@import url('~/assets/css/blog.css');
 </style>

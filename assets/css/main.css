@@ -60,7 +60,7 @@
   }
   [data-page-trans='self'],
   [data-page-trans='children'] > * {
-    @apply transition-transform duration-1000;
+    @apply transition duration-1000;
   }
   .page-enter-active,
   .page-enter-active *,
@@ -104,4 +104,3 @@
   -webkit-transition-delay: 1s;
           transition-delay: 1s;
 }
-/*# sourceMappingURL=main.css.map */

@@ -76,7 +76,7 @@
 
   [data-page-trans='self'],
   [data-page-trans='children'] > * {
-    @apply transition-transform duration-1000;
+    @apply transition duration-1000;
     // @apply relative transform translate-y-0 opacity-100;
   }
 
