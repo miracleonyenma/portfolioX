@@ -31,6 +31,22 @@
     @apply text-gray-900 dark:text-gray-50;
   }
   .nav-btn {
-    @apply absolute md:hidden bottom-4 right-4 w-9 h-9 rounded-xl bg-gray-700 pointer-events-auto;
+    @apply absolute md:hidden bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-blue-800 border-8 border-blue-800 pointer-events-auto;
+  }
+  .nav-btn::before, .nav-btn::after {
+    @apply absolute w-full h-1 bg-blue-200 transform origin-center rounded transition-transform;
+    content: '';
+  }
+  .nav-btn::before {
+    @apply translate-y-1.5 rotate-0;
+  }
+  .nav-btn::after {
+    @apply -translate-y-1.5 rotate-0;
+  }
+  .nav-btn.active::before {
+    @apply rotate-45 translate-y-0;
+  }
+  .nav-btn.active::after {
+    @apply -rotate-45 translate-y-0;
   }
 }

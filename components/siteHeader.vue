@@ -22,8 +22,8 @@ export default {
 <style scoped>
 @layer components {
   .site-header {
-    @apply w-auto p-4 py-4 sticky top-0 bg-gray-50 bg-opacity-70 dark:bg-gray-900 dark:bg-opacity-70 backdrop-filter backdrop-blur-md z-20;
-    @apply border-2 border-gray-50 border-opacity-20 dark:border-gray-900 dark:border-opacity-20 bg-clip-padding;
+    @apply w-auto p-4 py-4 sticky top-0 md:bg-gray-50 md:bg-opacity-70 md:dark:bg-gray-900 md:dark:bg-opacity-70 md:backdrop-filter md:backdrop-blur-md z-20;
+    @apply md:border-2 md:border-gray-50 md:border-opacity-20 md:dark:border-gray-900 md:dark:border-opacity-20 md:bg-clip-padding;
   }
   .site-header .wrapper {
     @apply m-auto max-w-5xl flex items-center justify-between;

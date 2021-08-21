@@ -11,7 +11,7 @@
       </ul>
     </div>
 
-    <button class="nav-btn" @click="navActive = !navActive"></button>
+    <button class="nav-btn" :class="{active: navActive}" @click="navActive = !navActive"></button>
   </nav>
 </template>
 
