@@ -29,15 +29,17 @@ module.exports = {
       typography: (theme) => ({
         dark: {
           css: {
-            color: theme("colors.gray.50"),
-            code: {color: theme("colors.gray.50"), fontFamily: theme("font.mono")},
-            a: {color: theme("colors.gray.50")},
-            'a code': {color: theme("colors.gray.50")},
+            color: theme("colors.gray.100"),
+            code: {color: theme("colors.gray.100"), fontFamily: theme("font.mono")},
+            a: {color: theme("colors.gray.100")},
+            'a code': {color: theme("colors.gray.100")},
+            em: {color: theme("colors.gray.100")},
+            strong: {color: theme("colors.gray.100")},
 
-            h1: { color: theme("colors.gray.50") },
-            h2: { color: theme("colors.gray.50") },
-            h3: { color: theme("colors.gray.50") },
-            h4: { color: theme("colors.gray.50") },
+            h1: { color: theme("colors.gray.100") },
+            h2: { color: theme("colors.gray.100") },
+            h3: { color: theme("colors.gray.100") },
+            h4: { color: theme("colors.gray.100") },
           }
         }
       }),

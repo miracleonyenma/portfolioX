@@ -18,10 +18,10 @@
     @apply w-96 lg:w-102 m-auto md:ml-auto md:mr-0;
   }
   .socials {
-    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg;
+    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white dark:bg-gray-700 shadow-lg rounded-lg;
   }
   .socials__item {
-    @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700;
+    @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-600;
   }
   .decor-description {
     @apply absolute right-0 bottom-0 transform translate-x-2/3 md:translate-x-3/4 translate-y-full flex gap-2 md:gap-6 items-center;
@@ -57,7 +57,7 @@
     content: '';
   }
   .slides__item::after {
-    @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-50 dark:bg-gray-900;
+    @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-100 dark:bg-gray-800;
     content: '';
   }
   .slides__item, .slides__content {

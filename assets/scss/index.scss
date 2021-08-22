@@ -25,10 +25,10 @@
   }
 
   .socials {
-    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white dark:bg-gray-800 shadow-lg rounded-lg;
+    @apply relative inline-flex items-center gap-4 p-2 mt-4 bg-white dark:bg-gray-700 shadow-lg rounded-lg;
 
     &__item {
-      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-700;
+      @apply rounded-md p-2 inline-flex transform hover:scale-110 hover:bg-gray-200 dark:hover:bg-gray-600;
     }
   }
 
@@ -78,7 +78,7 @@
       }
 
       &::after {
-        @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-50 dark:bg-gray-900;
+        @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-100 dark:bg-gray-800;
         content: '';
       }
     }
