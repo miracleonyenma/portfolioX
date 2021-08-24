@@ -7,7 +7,8 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    './assets/scss/*.{css,scss}'
+    './assets/scss/*.{css,scss}',
+    './assets/css/*.{css,scss}'
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
@@ -23,7 +24,8 @@ module.exports = {
         ]
       },
       spacing: {
-        '102': '28rem'
+        '102': '28rem',
+        '134' : '36rem'
       },
 
       typography: (theme) => ({
