@@ -134,7 +134,7 @@ export default {
           try {
             await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
           } catch (err) {
-            console.log(err, 'uunable to create path');
+            console.log(err, 'unable to create path');
           }
         }
 

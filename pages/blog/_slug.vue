@@ -1,38 +1,49 @@
 <template>
-  <section>
-    <article class="article" data-page-trans="children">
-      <!-- Our custom injected variables specified with the The YAML front matter goes here  -->
-      <header class="article-header hero-header" data-page-trans="children">
-        <h1>{{ article.title }}</h1>
-        <p>{{ article.description }}</p>
+  <main>
+    <section>
+      <article class="article" data-page-trans="children">
+        <!-- Our custom injected variables specified with the The YAML front matter goes here  -->
+        <header class="article-header hero-header" data-page-trans="children">
+          <div class="img-cont">
+            <img :src="getCoverImg(article.coverUrl)" :alt="article.title" />
+          </div>
 
-        <!-- container for article details -->
-        <div class="details-cont">
-          <ul id="article-tags">
-            <li v-for="tag in article.tags" :key="tag" class="tag">
-              {{ tag }}
-            </li>
-          </ul>
+          <div class="wrapper">
+            <h1>{{ article.title }}</h1>
+            <p>{{ article.description }}</p>
 
-          <!-- the format date function converts the default date to a readable form -->
-          <span>Posted: {{ formatDate(article.createdAt) }}</span>
-          <span>Updated: {{ formatDate(article.updatedAt) }}</span>
-          <br>
-          <span class="font-bold"> {{ article.readingStats.text }} </span>
-        </div>
-      </header>
+            <!-- container for article details -->
+            <div class="details-cont">
+              <ul id="article-tags">
+                <li v-for="tag in article.tags" :key="tag" class="tag">
+                  {{ tag }}
+                </li>
+              </ul>
 
-      <toc class="prose lg:prose-xl dark:prose-dark" :toc="article.toc">
-        <h2 slot="heading">What we'll cover</h2>
-      </toc>
+              <!-- the format date function converts the default date to a readable form -->
+              <span>Posted: {{ formatDate(article.createdAt) }}</span>
+              <span>Updated: {{ formatDate(article.updatedAt) }}</span>
+              <br />
+              <span class="font-bold"> {{ article.readingStats.text }} </span>
+            </div>
+          </div>
+        </header>
 
-      <!-- this is where we will render the article contents -->
-      <nuxt-content class="prose lg:prose-xl dark:prose-dark" :document="article" />
-    </article>
+        <toc class="article-toc prose lg:prose-xl dark:prose-dark" :toc="article.toc">
+          <h2 slot="heading">What we'll cover</h2>
+        </toc>
+
+        <!-- this is where we will render the article contents -->
+        <nuxt-content
+          class="article-content prose lg:prose-xl dark:prose-dark"
+          :document="article"
+        />
+      </article>
+    </section>
 
     <!-- Pass the data to the component props -->
     <prev-next :prev="prev" :next="next" class="sect-wrapper"></prev-next>
-  </section>
+  </main>
 </template>
 
 <script>
@@ -66,7 +77,15 @@ export default {
         day: 'numeric',
       })
     },
+    getCoverImg(coverUrl) {
+      console.log(coverUrl)
+      if (coverUrl) return require(`~/assets/img/articles/${coverUrl}`)
+      return require(`~/assets/img/articles/${this.article.slug}/cover.png`)
+    },
   },
+
+  computed: {},
+
   head() {
     return {
       title: this.article.title,

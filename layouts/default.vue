@@ -5,4 +5,3 @@
     <site-footer />
   </div>
 </template>
-

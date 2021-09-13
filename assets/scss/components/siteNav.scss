@@ -24,11 +24,11 @@
 
   .link {
     @apply font-header font-bold text-6xl mt-4;
-    @apply md:font-medium md:text-lg md:mt-0 md:ml-6;
+    @apply md:font-normal md:text-lg md:mt-0 md:ml-6;
 
     &:hover,
     a {
-      @apply text-gray-400 dark:text-gray-500;
+      @apply text-gray-500 dark:text-gray-400;
 
       a,
       &.nuxt-link-active.nuxt-link-exact-active {
@@ -38,7 +38,7 @@
   }
 
   .nav-btn {
-    @apply absolute md:hidden bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-gray-700 border-8 border-gray-700 pointer-events-auto shadow-lg;
+    @apply absolute md:hidden bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 border-8 border-gray-800 dark:bg-gray-700  dark:border-gray-700  pointer-events-auto shadow-lg;
 
     &::before,
     &::after {

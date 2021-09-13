@@ -19,7 +19,8 @@
 
 @layer components {
   .icon svg {
-    @apply w-6 h-6;
+    width: inherit;
+    height: inherit;
   }
   .sect-wrapper {
     @apply relative p-4 lg:p-6 max-w-6xl m-auto;
@@ -53,7 +54,8 @@
     @apply block list-none my-0;
   }
   ul#article-tags > li.tag {
-    @apply inline-block py-1 px-2 mr-2 mb-2 text-sm text-white bg-gradient-to-tr from-blue-400 to-purple-800 rounded-sm shadow-md;
+    @apply inline-block py-1 px-2 mr-2 mb-2 text-sm text-white rounded-sm shadow-md;
+    @apply bg-gradient-to-tr from-blue-400 to-purple-800;
   }
   ul#article-tags > li.tag::before {
     display: none;

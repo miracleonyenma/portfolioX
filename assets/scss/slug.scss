@@ -1,13 +1,28 @@
 @layer components {
   .article {
-    @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
+    @apply p-4 m-auto max-w-2xl lg:max-w-4xl;
   }
 
   .article-header {
-    @apply mb-12 pb-4 lg:mb-16 border-gray-200 dark:border-gray-800 border-b-2;
+    @apply w-full mb-12 pb-4 lg:mb-16 border-gray-200 dark:border-gray-800 border-b-2;
+
+    .img-cont {
+      @apply overflow-hidden mb-6 rounded-lg shadow-xl;
+
+      &,
+      img {
+        @apply max-h-72 w-full;
+      }
+    }
 
     h1 {
       @apply mb-2;
     }
+  }
+
+  .article-toc,
+  .article-header .wrapper,
+  .article-content {
+    @apply m-auto lg:max-w-3xl;
   }
 }

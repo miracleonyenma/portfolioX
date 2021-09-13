@@ -1,0 +1,14 @@
+@layer components {
+  .dark-mode {
+    @apply relative w-6 h-6 ml-6 overflow-hidden;
+
+    &.active {
+      .wrapper {
+        @apply transform -translate-x-1/2;
+      }
+    }
+    .wrapper {
+      @apply inline-flex transition;
+    }
+  }
+}

@@ -2,9 +2,9 @@
   <nav class="site-nav" :class="{active: navActive}">
     <div class="nav-wrapper">
       <ul class="links">
-        <li class="link">
+        <!-- <li class="link">
           <nuxt-link to="/">Home</nuxt-link>
-        </li>
+        </li> -->
         <li class="link">
           <nuxt-link to="/blog">Blog</nuxt-link>
         </li>
