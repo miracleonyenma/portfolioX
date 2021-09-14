@@ -1,7 +1,7 @@
 <template>
   <button
     class="dark-mode"
-    :class="{ active: darkMode }"
+    :class="{ active: theme.mode === 'dark' }"
     @click="toggle()"
   >
     <div class="wrapper">
@@ -15,39 +15,50 @@
 export default {
   data() {
     return {
-      darkMode: false,
-      clickSound : ""
+      theme: {
+        mode: 'dark',
+      },
+      clickSound: '',
     }
   },
 
   watch: {
-    darkMode(status) {
-      let htmlClsLst = document.documentElement.classList;
+    theme: {
+      deep: true,
 
-      status ? htmlClsLst.add('dark') : htmlClsLst.remove('dark')
-      localStorage.darkMode = status
+      handler(data) {
+        let htmlClsLst = document.documentElement.classList
+        let { mode } = data
+
+        mode === 'dark' ? htmlClsLst.add('dark') : htmlClsLst.remove('dark')
+        localStorage.theme = JSON.stringify(data)
+      },
     },
   },
 
   methods: {
     setTheme() {
-      localStorage.darkMode ||
-      (!localStorage.darkMode &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ? (this.darkMode = true)
-        : (this.darkMode = false)
+      ;(!localStorage.theme &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches) ||
+      (localStorage.theme && JSON.parse(localStorage.theme).mode === 'dark')
+        ? (this.theme.mode = 'dark')
+        : (this.theme.mode = 'light')
+
+      localStorage.theme = JSON.stringify(this.theme)
     },
 
-    async toggle(){
-        this.darkMode = !this.darkMode;
-        let played = await this.clickSound.play()
-        console.log(played);
-    }
+    toggle() {
+      this.theme.mode === 'dark'
+        ? (this.theme.mode = 'light')
+        : (this.theme.mode = 'dark')
+
+        this.clickSound.play()
+    },
   },
 
-  mounted() {
-      this.setTheme();
-      this.clickSound = new Audio('/audio/mixkit-classic-click-1117.mp3')
+  beforeMount() {
+    this.setTheme()
+    this.clickSound = new Audio('/audio/mixkit-classic-click-1117.mp3')
   },
 }
 </script>
