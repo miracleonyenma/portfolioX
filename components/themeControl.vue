@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       theme: {
-        mode: 'dark',
+        mode: '',
       },
       clickSound: '',
     }
@@ -38,7 +38,7 @@ export default {
 
   methods: {
     setTheme() {
-      ;(!localStorage.theme &&
+      (!localStorage.theme &&
         window.matchMedia('(prefers-color-scheme: dark)').matches) ||
       (localStorage.theme && JSON.parse(localStorage.theme).mode === 'dark')
         ? (this.theme.mode = 'dark')
@@ -56,7 +56,7 @@ export default {
     },
   },
 
-  beforeMount() {
+  mounted() {
     this.setTheme()
     this.clickSound = new Audio('/audio/mixkit-classic-click-1117.mp3')
   },
