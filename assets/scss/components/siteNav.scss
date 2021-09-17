@@ -4,7 +4,7 @@
     @apply md:relative md:h-auto md:pointer-events-auto md:p-0;
 
     &.active {
-      @apply pointer-events-auto bg-gray-100 dark:bg-gray-800 md:bg-transparent;
+      @apply pointer-events-auto bg-gray-50 dark:bg-gray-800 md:bg-transparent;
 
       .nav-wrapper {
         @apply visible opacity-100 pointer-events-auto;

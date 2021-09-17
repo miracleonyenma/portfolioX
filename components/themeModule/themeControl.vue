@@ -1,5 +1,5 @@
 <template>
-  <button class="dark-mode" @click="toggle()">
+  <button class="toggler" @click="toggle()">
     <div class="wrapper">
       <feather-icon name="sun" />
       <feather-icon name="moon" />

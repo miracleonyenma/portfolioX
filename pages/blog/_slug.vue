@@ -21,7 +21,7 @@
               </ul>
 
               <!-- the format date function converts the default date to a readable form -->
-              <span>Posted: {{ formatDate(article.createdAt) }}</span>
+              <span class="mr-2">Posted: {{ formatDate(article.createdAt) }}</span>
               <span>Updated: {{ formatDate(article.updatedAt) }}</span>
               <br />
               <span class="font-bold"> {{ article.readingStats.text }} </span>
