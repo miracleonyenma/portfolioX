@@ -78,7 +78,7 @@
       }
 
       &::after {
-        @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-100 dark:bg-gray-800;
+        @apply absolute top-0 left-0 w-full h-full rounded-full transform scale-95 bg-gray-50 dark:bg-gray-800;
         content: '';
       }
     }

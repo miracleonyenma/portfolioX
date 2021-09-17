@@ -22,11 +22,11 @@ export default {
   }
 
   .info-box {
-    @apply flex gap-4 items-start p-6 bg-blue-200 text-gray-800 border-blue-500 border-l-4 rounded-md;
+    @apply flex gap-4 items-start p-6 bg-blue-200 dark:bg-gray-900 border-blue-500 dark:border-gray-700 text-gray-800 border-l-4 rounded-md;
   }
 
   .info-box span {
-    @apply text-gray-800;
+    @apply text-gray-800 dark:text-gray-100;
   }
 }
 </style>

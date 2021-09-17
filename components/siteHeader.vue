@@ -17,7 +17,7 @@
 <script>
 import FeatherIcon from './featherIcon.vue'
 import siteNav from './siteNav.vue'
-import ThemeControl from './themeControl.vue'
+import ThemeControl from './themeModule/themeControl.vue'
 export default {
   components: { siteNav, FeatherIcon, ThemeControl },
 }

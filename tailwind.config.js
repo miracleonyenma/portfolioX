@@ -49,7 +49,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      typography: ['dark']
+      typography: ['dark'],
+      translate: ['dark']
     },
   },
   plugins: [
