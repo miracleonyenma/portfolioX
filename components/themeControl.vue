@@ -1,9 +1,5 @@
 <template>
-  <button
-    class="dark-mode"
-    :class="{ active: theme.mode === 'dark' }"
-    @click="toggle()"
-  >
+  <button class="dark-mode" @click="toggle()">
     <div class="wrapper">
       <feather-icon name="sun" />
       <feather-icon name="moon" />
@@ -15,49 +11,18 @@
 export default {
   data() {
     return {
-      theme: {
-        mode: '',
-      },
       clickSound: '',
     }
   },
 
-  watch: {
-    theme: {
-      deep: true,
-
-      handler(data) {
-        let htmlClsLst = document.documentElement.classList
-        let { mode } = data
-
-        mode === 'dark' ? htmlClsLst.add('dark') : htmlClsLst.remove('dark')
-        localStorage.theme = JSON.stringify(data)
-      },
-    },
-  },
-
   methods: {
-    setTheme() {
-      (!localStorage.theme &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches) ||
-      (localStorage.theme && JSON.parse(localStorage.theme).mode === 'dark')
-        ? (this.theme.mode = 'dark')
-        : (this.theme.mode = 'light')
-
-      localStorage.theme = JSON.stringify(this.theme)
-    },
-
     toggle() {
-      this.theme.mode === 'dark'
-        ? (this.theme.mode = 'light')
-        : (this.theme.mode = 'dark')
-
-        this.clickSound.play()
+      this.$nuxt.$emit('toggle-theme')
+      this.clickSound.play()
     },
   },
 
-  mounted() {
-    this.setTheme()
+  beforeMount() {
     this.clickSound = new Audio('/audio/mixkit-classic-click-1117.mp3')
   },
 }
