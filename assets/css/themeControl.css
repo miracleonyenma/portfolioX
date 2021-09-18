@@ -1,11 +1,8 @@
 @layer components {
-  .dark-mode {
+  .toggler {
     @apply relative w-6 h-6 ml-6 overflow-hidden;
   }
-  .dark-mode.active .wrapper {
-    @apply transform -translate-x-1/2;
-  }
-  .dark-mode .wrapper {
-    @apply inline-flex transition;
+  .toggler .wrapper {
+    @apply inline-flex transition transform dark:-translate-x-1/2;
   }
 }
