@@ -38,6 +38,11 @@
           class="article-content prose lg:prose-xl dark:prose-dark"
           :document="article"
         />
+		
+		<footer class="mt-4 pt-4 text-center">
+			<em> Any feedback? Shoot me a mail at <a href="mailto:miracleiodev@gmail.com"> <b> miracleiodev@gmail.com  </b> </a> </em>
+		</footer>
+		
       </article>
     </section>
 
