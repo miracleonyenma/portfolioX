@@ -18,13 +18,13 @@ So here, I'll discuss how to emit custom events from our components using the Co
 
 Before I dive right into how to use Custom events with the Composition API in Vue 3, here's how we normally use custom events inline. To emit custom events inline, maybe in an input field or button, we can define events using the `v-on` or `@` drective:
 
-```vue
+```html
 <button @click="$emit('btn-click')">Click me</button>
 ```
 
 Then, in our parent component, we can listen for the event like so:
 
-```vue
+```html
 <child @btn-click="doSomething()" />
 ```
 
@@ -69,7 +69,7 @@ export default {
 		const doSomething => (){
 			context.emit('btn-click')
 		}
-	}
+	},
     
     // OR
     
