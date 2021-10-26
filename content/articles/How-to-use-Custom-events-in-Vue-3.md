@@ -66,7 +66,7 @@ export default {
     
 	...
     setup(props, context){
-		const doSomething => (){
+		const doSomething = () => {
 			context.emit('btn-click')
 		}
 	},
@@ -81,7 +81,7 @@ OR, using destructuring,
 
 // here we're getting the emit method by destructuring the context argument
 setup(props, { emit }){
-    const doSomething => (){
+    const doSomething = () => {
     	emit('btn-click')
 	}
 }
