@@ -91,4 +91,14 @@ setup(props, { emit }){
 
 And there you have it! That's how we can use custom events in the Composition API. 
 
+## Further Reading
+
+Check out these resources for more information on this topic:
+
+- [Introduction | Vue.js (vuejs.org)](https://v3.vuejs.org/guide/composition-api-introduction.html#standalone-computed-properties)
+
+- [A Guide to Vue $emit - How to Emit Custom Events in Vue – LearnVue](https://learnvue.co/2021/05/a-guide-to-vue-emit-how-to-emit-custom-events-in-vue/#Emitting_Events_in_the_Composition_API_with_contextemit)
+- [vue.js - Vue Composition API: Defining emits - Stack Overflow](https://stackoverflow.com/questions/65844419/vue-composition-api-defining-emits)
+
+
 Thanks for reading 💖.  Let me know if you have any questions or suggestions ✨
