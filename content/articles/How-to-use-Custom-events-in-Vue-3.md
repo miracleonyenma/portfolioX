@@ -70,17 +70,23 @@ export default {
 			context.emit('btn-click')
 		}
 	},
-    
-    // OR
-    
-	// here we're getting the emit method by destructuring the context argument
-	setup(props, { emit }){
-		const doSomething => (){
-			emit('btn-click')
-		}
-	}
 };
 </script>
+```
+
+OR, using destructuring,
+
+```javascript
+...
+
+// here we're getting the emit method by destructuring the context argument
+setup(props, { emit }){
+    const doSomething => (){
+    	emit('btn-click')
+	}
+}
+
+...
 ```
 
 And there you have it! That's how we can use custom events in the Composition API. 
