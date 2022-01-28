@@ -36,6 +36,17 @@
               </a>
             </li>
 
+            <li class="socials__item" title="My Resume">
+              <a
+                class="icon"
+                href="https://docs.google.com/document/d/1jqlXD4OjNMssz_IBJOe7NuKp8uQaYRs5_3XK-6_lf4Y/edit?usp=sharing"
+                target="dribble"
+              >
+                <feather-icon name="file-text" />
+              </a>
+            </li>
+
+
             <div class="decor-description prose-xl">
               <span class="icon">
                 <svg
