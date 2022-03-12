@@ -1,5 +1,5 @@
 <template>
-  <nav class="site-nav" :class="{active: navActive}">
+  <nav class="site-nav" :class="{ active: navActive }">
     <div class="nav-wrapper">
       <ul class="links">
         <!-- <li class="link">
@@ -11,17 +11,26 @@
       </ul>
     </div>
 
-    <button class="nav-btn" :class="{active: navActive}" @click="navActive = !navActive"></button>
+    <button
+      class="nav-btn"
+      :class="{ active: navActive }"
+      @click="navActive = !navActive"
+    ></button>
   </nav>
 </template>
 
 <script>
 export default {
-data() {
+  data() {
     return {
-        navActive: false
+      navActive: false,
     }
-}
+  },
+  watch: {
+    $route() {
+      this.navActive = false
+    },
+  },
 }
 </script>
 

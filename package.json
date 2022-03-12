@@ -22,8 +22,7 @@
     "shiki": "^0.9.6",
     "shiki-themes": "^0.2.7",
     "v-smooth-scroll": "^2.0.0-beta.1",
-    "vue-server-renderer": "^2.6.14",
-    "puppeteer": "10.2.0"
+    "vue-server-renderer": "^2.6.14"
   },
   "devDependencies": {
     "@nuxtjs/svg": "^0.1.12",
