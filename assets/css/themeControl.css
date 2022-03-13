@@ -1,6 +1,6 @@
 @layer components {
   .toggler {
-    @apply relative w-6 h-6 ml-6 overflow-hidden;
+    @apply relative w-6 h-6 ml-6 mr-4 overflow-hidden;
   }
   .toggler .wrapper {
     @apply inline-flex transition transform dark:-translate-x-1/2;

@@ -38,7 +38,8 @@
   }
 
   .nav-btn {
-    @apply absolute md:hidden bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 border-8 border-gray-800 dark:bg-gray-700  dark:border-gray-700  pointer-events-auto shadow-lg;
+    @apply fixed md:hidden right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 border-8 border-gray-800 dark:bg-gray-700  dark:border-gray-700  pointer-events-auto shadow-lg z-10;
+    top: calc(100vh - 56px);
 
     &::before,
     &::after {
