@@ -6,10 +6,6 @@ import fs from 'fs'
 // import { promises } from 'dns';
 // import { join } from 'path';
 
-var port = 8070
-axios.defaults.baseURL = 'http://localhost' + ':' + port
-
-console.log(axios.defaults.baseURL)
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -99,7 +95,7 @@ export default {
 
       try {
         console.log('ABOUT TO -->')
-        const res = await axios.post('/.netlify/functions/generate-preview', {
+        const res = await axios.post(process.env.FUNCTIONS_URL, {
           targetURL: 'https://cover-gen.netlify.app/',
           document,
         })
@@ -109,7 +105,7 @@ export default {
         const data = await res.json()
         console.log('===>>>', data)
       } catch (err) {
-        console.log('ERR -->', err)
+        console.log('ERR -->', err.response.data)
       }
 
       // const url = process.env.COVER_GEN_URL || 'http://localhost:3000';

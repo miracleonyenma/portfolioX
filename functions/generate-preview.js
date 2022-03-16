@@ -93,7 +93,7 @@ exports.handler = async function (event, context) {
         `./assets/img/articles/${document.slug}/cover.png`
       )
     } catch (error) {
-      console.log(error)
+      console.log('ERROR --- fs.promises.access -->', error)
 
       try {
         await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
