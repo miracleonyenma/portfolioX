@@ -17,6 +17,7 @@
     "chrome-aws-lambda": "^10.1.0",
     "core-js": "^3.8.3",
     "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.7",
     "nuxt": "^2.14.12",
     "nuxt-content-git": "^2.0.9",
     "puppeteer-core": "^13.5.1",
