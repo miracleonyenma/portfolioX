@@ -78,19 +78,19 @@ module.exports = async ({ targetURL, document, wsEndpoint }) => {
 
     await h1.click()
 
-    try {
-      await fs.promises.access(
-        `./assets/img/articles/${document.slug}/cover.png`
-      )
-    } catch (error) {
-      console.log('ERROR --- fs.promises.access -->', error)
+    // try {
+    //   await fs.promises.access(
+    //     `./assets/img/articles/${document.slug}/cover.png`
+    //   )
+    // } catch (error) {
+    //   console.log('ERROR --- fs.promises.access -->', error)
 
-      try {
-        await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
-      } catch (err) {
-        console.log(err, 'unable to create path')
-      }
-    }
+    //   try {
+    //     await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
+    //   } catch (err) {
+    //     console.log(err, 'unable to create path')
+    //   }
+    // }
 
     const screenshot = await page.screenshot({
       path: `./assets/img/articles/${document.slug}/cover.png`,
@@ -100,13 +100,13 @@ module.exports = async ({ targetURL, document, wsEndpoint }) => {
     // document.coverUrl = `${document.slug}/cover.png`;
 
     // close the browser
-    await browser.close()
+    // await browser.close()
 
     // send the page details
     return screenshot
   } catch (err) {
     console.log(err)
-    await browser.close()
+    // await browser.close()
 
     return null
   }

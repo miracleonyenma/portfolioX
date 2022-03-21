@@ -9,6 +9,7 @@ const chromium = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
 
 import takeScreenshot from './modules/takeScreenshot'
+import checkImage from './modules/checkImage'
 
 const createBrowser = async () => {
   try {
@@ -117,27 +118,37 @@ export default {
         console.log(stats)
       }
 
-      try {
-        if (!browser) {
-          browser = await createBrowser()
-          console.log('browser ====================>', browser)
-        }
-        const screenshotOptions = {
-          targetURL: 'https://cover-gen.netlify.app/',
-          document: {
-            title: document.title,
-            description: document.description,
-            slug: document.slug,
-            updatedAt: document.updatedAt,
-          },
-          wsEndpoint: (await browser).wsEndpoint(),
-        }
-        const screenshot = await takeScreenshot(screenshotOptions)
-      } catch (error) {
-        console.log(error)
-      } finally {
+      const imagePresent = await checkImage(document.slug)
+      console.log('imagePresent ===========>', imagePresent)
+
+      if (imagePresent) {
         document.coverUrl = `${document.slug}/cover.png`
-        console.log('document.coverUrl ===>', document.coverUrl)
+      } else {
+        try {
+          if (!browser) {
+            browser = await createBrowser()
+            console.log(
+              'browser ====================>',
+              await browser.version()
+            )
+          }
+          const screenshotOptions = {
+            targetURL: 'https://cover-gen.netlify.app/',
+            document: {
+              title: document.title,
+              description: document.description,
+              slug: document.slug,
+              updatedAt: document.updatedAt,
+            },
+            wsEndpoint: (await browser).wsEndpoint(),
+          }
+          const screenshot = await takeScreenshot(screenshotOptions)
+        } catch (error) {
+          console.log(error)
+        } finally {
+          document.coverUrl = `${document.slug}/cover.png`
+          console.log('document.coverUrl ===>', document.coverUrl)
+        }
       }
       // try {
       //   console.log('ABOUT TO -->', process.env.COVER_GEN_API_ENDPOINT)
@@ -233,6 +244,7 @@ export default {
     build: {
       done(builder) {
         ;(async () => {
+          console.log('build done', await browser.version())
           ;(await browser).close()
         })()
       },
