@@ -241,13 +241,14 @@ export default {
 
       // await browser.close()
     },
-    build: {
-      done(builder) {
-        ;(async () => {
-          console.log('build done', await browser.version())
-          ;(await browser).close()
-        })()
-      },
+    'build:before': async () => {
+      try {
+        console.log('build done', await browser.version())
+        ;(await browser).close()
+      } catch (error) {
+        console.log(error)
+        console.log("browser wasn't open", browser)
+      }
     },
   },
 
