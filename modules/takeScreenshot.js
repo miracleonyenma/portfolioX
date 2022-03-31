@@ -102,6 +102,8 @@ module.exports = async ({ targetURL, document, wsEndpoint }) => {
     // close the browser
     // await browser.close()
 
+    console.log('screenshot ==>', screenshot)
+
     // send the page details
     return screenshot
   } catch (err) {

@@ -96,37 +96,33 @@ export default {
       })
     },
     getCoverImg(coverUrl) {
-      try {
-        let local = require(`~/assets/img/articles/${coverUrl}`)
-        console.log('LOCAL', local)
-        // throw Error('Dummy error')
-        return local
-      } catch (error) {
-        console.log('===>', error)
-        // throw Error('Dummy error')
-        return `http://res.cloudinary.com/alphas/image/upload/v1647700159/miracleio.me/covers/${this.article.slug}/cover.png`
-      }
+      let local = require(`~/assets/img/articles/${coverUrl}`)
+      console.log('LOCAL', local)
+      return local
     },
     async setFallBackImg(e) {
       let src
       try {
         src = (
-          await fetch(process.env.COVER_GEN_API_ENDPOINT, {
-            method: 'POST',
-            body: JSON.stringify({
-              targetURL: 'https://cover-gen.netlify.app/',
-              document: {
-                title: this.article.title,
-                description: this.article.description,
-                updatedAt: this.article.updatedAt,
-                slug: this.article.slug,
-              },
-            }),
-          })
+          await fetch(
+            'https://covergen-api.herokuapp.com/screenshot/miracleio.me',
+            {
+              method: 'POST',
+              body: JSON.stringify({
+                targetURL: 'https://cover-gen.netlify.app/',
+                document: {
+                  title: this.article.title,
+                  description: this.article.description,
+                  updatedAt: this.article.updatedAt,
+                  slug: this.article.slug,
+                },
+              }),
+            }
+          )
         ).url
       } catch (error) {
         console.log('Errrrrrrrrr', error)
-        src = `http://res.cloudinary.com/alphas/image/upload/v1647700159/miracleio.me/covers/${this.article.slug}/cover.png?fallback=true`
+        src = await require(`~/assets/img/articles/hello/cover.png`)
       }
 
       console.log('SRCCCCC', src)

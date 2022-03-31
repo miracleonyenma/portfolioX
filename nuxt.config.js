@@ -128,12 +128,12 @@ export default {
           if (!browser) {
             browser = await createBrowser()
             console.log(
-              'browser ====================>',
+              'browser =============================>',
               await browser.version()
             )
           }
           const screenshotOptions = {
-            targetURL: 'https://cover-gen.netlify.app/',
+            targetURL: 'http://localhost:3000/',
             document: {
               title: document.title,
               description: document.description,
@@ -143,6 +143,7 @@ export default {
             wsEndpoint: (await browser).wsEndpoint(),
           }
           const screenshot = await takeScreenshot(screenshotOptions)
+          console.log('screenshot ==>', screenshot)
         } catch (error) {
           console.log(error)
         } finally {
@@ -246,7 +247,7 @@ export default {
         console.log('build done', await browser.version())
         ;(await browser).close()
       } catch (error) {
-        console.log(error)
+        console.log('CAUGHT ERR ===>', error)
         console.log("browser wasn't open", browser)
       }
     },

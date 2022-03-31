@@ -9,6 +9,7 @@ const checkImage = async (slug) => {
 
     try {
       await fs.promises.mkdir(`./assets/img/articles/${slug}`)
+      console.log(`new path ./assets/img/articles/${slug} created`)
     } catch (err) {
       console.log(err, 'unable to create path')
     }
