@@ -1,15 +1,37 @@
 import axios from 'axios'
-// import fetch from 'node-fetch'
 import { getHighlighter, loadTheme } from 'shiki'
 // import puppeteer from 'puppeteer'
 import fs from 'fs'
 // import { promises } from 'dns';
 // import { join } from 'path';
 
-var port = 8070
-axios.defaults.baseURL = 'http://localhost' + ':' + port
+const chromium = require('chrome-aws-lambda')
+const puppeteer = require('puppeteer-core')
 
-console.log(axios.defaults.baseURL)
+import takeScreenshot from './modules/takeScreenshot'
+import checkImage from './modules/checkImage'
+
+const createBrowser = async () => {
+  try {
+    const browser = await puppeteer.launch({
+      args: chromium.args,
+      // get path to browser
+      executablePath:
+        process.env.EXCECUTABLE_PATH || (await chromium.executablePath),
+      headless: true,
+    })
+
+    return browser
+  } catch (err) {
+    console.log(err)
+    return null
+  }
+}
+
+let browser
+
+// const browser = createBrowser()
+console.log('browser =============>', browser)
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -92,25 +114,64 @@ export default {
     'content:file:beforeInsert': async (document) => {
       if (document.extension === '.md') {
         const stats = require('reading-time')(document.text)
-
         document.readingStats = stats
         console.log(stats)
       }
 
-      try {
-        console.log('ABOUT TO -->')
-        const res = await axios.post('/.netlify/functions/generate-preview', {
-          targetURL: 'https://cover-gen.netlify.app/',
-          document,
-        })
+      const imagePresent = await checkImage(document.slug)
+      console.log('imagePresent ===========>', imagePresent)
 
-        // axios.post()
-
-        const data = await res.json()
-        console.log('===>>>', data)
-      } catch (err) {
-        console.log('ERR -->', err)
+      if (imagePresent) {
+        document.coverUrl = `${document.slug}/cover.png`
+      } else {
+        try {
+          if (!browser) {
+            browser = await createBrowser()
+            console.log(
+              'browser =============================>',
+              await browser.version()
+            )
+          }
+          const screenshotOptions = {
+            targetURL: 'http://localhost:3000/',
+            document: {
+              title: document.title,
+              description: document.description,
+              slug: document.slug,
+              updatedAt: document.updatedAt,
+            },
+            wsEndpoint: (await browser).wsEndpoint(),
+          }
+          const screenshot = await takeScreenshot(screenshotOptions)
+          console.log('screenshot ==>', screenshot)
+        } catch (error) {
+          console.log(error)
+        } finally {
+          document.coverUrl = `${document.slug}/cover.png`
+          console.log('document.coverUrl ===>', document.coverUrl)
+        }
       }
+      // try {
+      //   console.log('ABOUT TO -->', process.env.COVER_GEN_API_ENDPOINT)
+      //   const res = await axios.post(process.env.COVER_GEN_API_ENDPOINT, {
+      //     targetURL: 'https://cover-gen.netlify.app/',
+      //     document: {
+      //       title: document.title,
+      //       description: document.description,
+      //       slug: document.slug,
+      //       updatedAt: document.updatedAt,
+      //     },
+      //   })
+
+      //   // axios.post()
+      //   console.log('res.data', res.data)
+      //   const data = res.data
+      //   console.log('===>>>', data)
+      //   document.coverUrl = data.url
+      // } catch (err) {
+      //   console.log('ERR -->', err)
+      //   document.coverUrl = `${document.slug}/cover.png`
+      // }
 
       // const url = process.env.COVER_GEN_URL || 'http://localhost:3000';
 
@@ -180,7 +241,15 @@ export default {
       // }
 
       // await browser.close()
-      document.coverUrl = `${document.slug}/cover.png`
+    },
+    'build:before': async () => {
+      try {
+        console.log('build done', await browser.version())
+        ;(await browser).close()
+      } catch (error) {
+        console.log('CAUGHT ERR ===>', error)
+        console.log("browser wasn't open", browser)
+      }
     },
   },
 
@@ -202,7 +271,9 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // transpile: ['node-fetch'],
+  },
 
   // serverMiddleware: [{ path: '/hello', handler: '~/server-middleware/hello.js' }]
 }

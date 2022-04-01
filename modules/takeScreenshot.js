@@ -1,21 +1,20 @@
+const fs = require('fs')
 const chromium = require('chrome-aws-lambda')
 const puppeteer = require('puppeteer-core')
-const fs = require('fs')
 
-// const targetURL = process.env.COVER_GEN_URL || 'http://localhost:3000';
-exports.handler = async function (event, context) {
-  // parse body of POST request to valid object and
-  // use object destructuring to obtain target url
-  const { targetURL, document } = JSON.parse(event.body)
-  console.log('--> chromium.executablePath', await chromium.executablePath)
-  console.log('--> process.env.EXCECUTABLE_PATH', process.env.EXCECUTABLE_PATH)
-
+module.exports = async ({ targetURL, document, wsEndpoint }) => {
+  console.log('options ==-->', { targetURL, document })
   // launch browser
-  const browser = await puppeteer.launch({
-    args: chromium.args,
-    // get path to browser
-    executablePath:
-      process.env.EXCECUTABLE_PATH || (await chromium.executablePath),
+  // const browser = await puppeteer.launch({
+  //   args: chromium.args,
+  //   // get path to browser
+  //   executablePath:
+  //     process.env.EXCECUTABLE_PATH || (await chromium.executablePath),
+  //   headless: true,
+  // })
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: wsEndpoint,
+    ignoreHTTPSErrors: true,
     headless: true,
   })
 
@@ -23,7 +22,6 @@ exports.handler = async function (event, context) {
 
   // open new page in browser
   const page = await browser.newPage()
-  console.log(await page.title())
 
   // set the viewport of the page
   await page.setViewport({
@@ -37,18 +35,10 @@ exports.handler = async function (event, context) {
     { name: 'prefers-color-scheme', value: 'dark' },
   ])
 
-  // try {
-  // } catch (err) {
-  //   console.log('unable to generate image', err)
-  // }
-
-  // await browser.close()
-
-  // navigate to target URL and get page details and screenshot
   try {
     //...
     await page.goto(targetURL, {
-      timeout: 0,
+      waitUntil: 'networkidle2',
     })
 
     const formCont = await page.waitForSelector('#form-cont', {
@@ -88,46 +78,38 @@ exports.handler = async function (event, context) {
 
     await h1.click()
 
-    try {
-      await fs.promises.access(
-        `./assets/img/articles/${document.slug}/cover.png`
-      )
-    } catch (error) {
-      console.log('ERROR --- fs.promises.access -->', error)
+    // try {
+    //   await fs.promises.access(
+    //     `./assets/img/articles/${document.slug}/cover.png`
+    //   )
+    // } catch (error) {
+    //   console.log('ERROR --- fs.promises.access -->', error)
 
-      try {
-        await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
-      } catch (err) {
-        console.log(err, 'unable to create path')
-      }
-    }
+    //   try {
+    //     await fs.promises.mkdir(`./assets/img/articles/${document.slug}`)
+    //   } catch (err) {
+    //     console.log(err, 'unable to create path')
+    //   }
+    // }
 
-    await page.screenshot({
+    const screenshot = await page.screenshot({
       path: `./assets/img/articles/${document.slug}/cover.png`,
+      // encoding: 'binary',
     })
 
-    document.coverUrl = `${document.slug}/cover.png`
+    // document.coverUrl = `${document.slug}/cover.png`;
 
     // close the browser
-    await browser.close()
+    // await browser.close()
+
+    console.log('screenshot ==>', screenshot)
 
     // send the page details
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        targetURL,
-        coverUrl: document.coverUrl,
-      }),
-    }
+    return screenshot
   } catch (err) {
     console.log(err)
-    await browser.close()
+    // await browser.close()
 
-    return {
-      statusCode: 400,
-      body: JSON.stringify({
-        err,
-      }),
-    }
+    return null
   }
 }
