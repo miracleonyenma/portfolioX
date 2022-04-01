@@ -6,7 +6,7 @@ tags: [NVM, Node]
 
 The best way I’ve tried to do this on my Linux machine is with [nvm](https://github.com/nvm-sh/nvm).
 
-# What's NVM
+## What's NVM
 
 `nvm` allows you to quickly install and use different versions of Node via the command line.
 You can read more about it and how to install it on the [README](https://github.com/nvm-sh/nvm#readme).
