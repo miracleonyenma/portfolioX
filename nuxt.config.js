@@ -133,7 +133,7 @@ export default {
             )
           }
           const screenshotOptions = {
-            targetURL: 'http://localhost:3000/',
+            targetURL: 'https://cover-gen.netlify.app/',
             document: {
               title: document.title,
               description: document.description,
