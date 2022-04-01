@@ -4,9 +4,10 @@ description: Here's how you can install a specific Node version and use differen
 tags: [NVM, Node]
 ---
 
-# Manage multiple version of Node on your machine
-
 The best way I’ve tried to do this on my Linux machine is with [nvm](https://github.com/nvm-sh/nvm).
+
+# What's NVM
+
 `nvm` allows you to quickly install and use different versions of Node via the command line.
 You can read more about it and how to install it on the [README](https://github.com/nvm-sh/nvm#readme).
 `nvm` was originally developed for Linux systems, however it can be installed separately for Windows.
