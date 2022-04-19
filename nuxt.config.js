@@ -118,6 +118,8 @@ export default {
         console.log(stats)
       }
 
+      const targetURL = process.env.COVER_GEN_URL
+      console.log('process.env.COVER_GEN_URL ==============>', process.env.COVER_GEN_URL);
       const imagePresent = await checkImage(document.slug)
       console.log('imagePresent ===========>', imagePresent)
 
@@ -133,7 +135,7 @@ export default {
             )
           }
           const screenshotOptions = {
-            targetURL: 'http://localhost:3000/',
+            targetURL,
             document: {
               title: document.title,
               description: document.description,
@@ -245,7 +247,7 @@ export default {
     'build:before': async () => {
       try {
         console.log('build done', await browser.version())
-        ;(await browser).close()
+          ; (await browser).close()
       } catch (error) {
         console.log('CAUGHT ERR ===>', error)
         console.log("browser wasn't open", browser)

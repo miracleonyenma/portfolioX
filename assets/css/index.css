@@ -3,6 +3,9 @@
     @apply min-h-screen overflow-x-hidden;
     overflow-y: clip;
   }
+  .home-main .site-hero > * {
+    @apply md:pt-32;
+  }
   .sect-wrapper {
     @apply grid md:grid-cols-2 gap-6 items-center text-center h-full;
   }
