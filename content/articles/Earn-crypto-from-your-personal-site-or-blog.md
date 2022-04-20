@@ -4,11 +4,11 @@ description: Allow folks that visit your portfolio site or blog pay you in crypt
 tags: [BAT, Crypto]
 ---
 
-I think it’s amazing, the idea that your readers can say thank you for taking the time to write a post that helped them solve a problem or taught them something very important. It’s even more amazing if they could say thank you in sweet cash or better , crypto, in this case.
+I think it’s amazing, the idea that your readers can say thank you for taking the time to write a post that helped them solve a problem,  taught them something very important or even say thank you for being so awesome on the internet. It’s even more amazing if they could say thank you in sweet cash or better , crypto, in this case.
 
 Well, ways to do that have been around for a while now, with options like [Buy Me a Coffee](https://www.buymeacoffee.com/?source=fba1&utm_source=FriendlyGAd&utm_medium=BmcAdSearch&utm_campaign=April2020) or maybe you might consider placing [Carbon Ads](https://www.carbonads.net/) (not google ads plss 😂) on your site.
 
-You can also use a crypto payment gateway like the one [100pay](https://100pay.co) provides, which is awesome because you can receive crypto in a variety of crypto currencies and add it to your site directly, more on that later.
+You can also use a crypto payment gateway like the one [100pay](https://100pay.co) provides, which is awesome because you can add it to your site directly and receive crypto in a variety of crypto currencies. I'll talk more on that later in this article.
 
 These are cool options, but if you’ve used [Brave browser](https://brave.com/) before you’ll probably be familiar with [Brave rewards](https://brave.com/brave-rewards/) which are a way for you to earn tokens just by browsing and getting private ads. You might also be familiar with the contribute and “Send Tip” options in brave where you can send a monthly contribution or a one-time tip to a verified creator from your BAT(Basic Attention Token) balance right from your browser.
 
@@ -98,13 +98,13 @@ Next, click on the **Send Tip** button and this lovely banner will pop up. If it
 
 You can choose **One-Time Tip** or **Monthly**. Then select the amount of BAT you want to send. You can select any amount or set a custom amount by clicking on **custom tip amount**, I’m not picky you know but the 10BAT option looks very very nice, don’t you think?
 
-Anyways, once you’ve chosen the amount, click send, take a screenshot and give yourself a big hug 🤗.  You can send the screenshot and a text that says “it works 🚀” to me in the comments or via [mail](mailto:miracleiodev@gmail.com) or twitter. I have something exclusive for you.
+Anyways, once you’ve chosen the amount, click send, take a screenshot and give yourself a big hug 🤗.  You can send the screenshot and a text that says “it works 🚀” to me in the comments or via [mail](mailto:miracleiodev@gmail.com) or [twitter](https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fmiracleio.me%2Fblog%2FEarn-crypto-from-your-personal-site-or-blog%2F%26text%3D%22It%20works!%22%2C%20Earn%20crypto%20from%20your%20personal%20site%20or%20blog%20via%20%40miracleio%26related%3Dmiracleio%2Cbrave%2C100pay). I have something exclusive for you.
 
 ## Conclusion
 
 Well, you’ve seen how you can add the option of receiving BAT through your site and other channels, though we just covered the site option. This is great and you can build a community around it and earn rewards in ways aside from regular ads.
 
-I also mentioned another crypto option earlier, [100pay](https://100pay.co). Receiving payments from your site with 100pay is in many ways more preferable. It’s a checkout option built for businesses and creators alike, since it allows you to receive payment in multiple crypto currencies and is not dependent on the browser your visitor uses, unlike brave 😂. In short, receiving payments with 100pay deserves an article of its own and I’ll be posting that soon so ear to the ground and stay tuned.
+I also mentioned another crypto option earlier, [100pay](https://100pay.co). Receiving payments from your site with 100pay is in many ways more preferable. It’s a checkout option built for businesses and creators alike, since it allows you to receive payment in multiple crypto currencies and is not dependent on the browser your visitor uses, unlike brave 😂. In short, receiving payments with 100pay deserves an article of its own and I’ll be posting that soon. So, ear to the ground and stay tuned.
 
 On the bright side, you can get started with 100pay right now, just head over to the site - <https://100pay.co> and go to integrations, and choose the [Javascript option](https://100pay.co/integrations/js-integration) which works in most cases, especially if you have access to the site code.
 
