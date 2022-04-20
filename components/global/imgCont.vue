@@ -1,8 +1,8 @@
 <template>
   <figure class="article-img">
-      <div class="img-cont">
-        <img :src="getImg()" :alt="alt" />
-      </div>
+    <div class="img-cont">
+      <img :src="getImg()" :alt="alt" />
+    </div>
     <figcaption class="caption">
       {{ alt }}
     </figcaption>
@@ -24,6 +24,7 @@ export default {
 
   methods: {
     getImg() {
+      if (this.src.includes('https')) return this.src
       try {
         return require(`~/assets/img/articles/${this.src}`)
       } catch (err) {

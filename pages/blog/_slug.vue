@@ -5,7 +5,11 @@
         <!-- Our custom injected variables specified with the The YAML front matter goes here  -->
         <header class="article-header hero-header" data-page-trans="children">
           <div class="img-cont">
-            <img :src="getCoverImg(article.coverUrl)" :alt="article.title" />
+            <img
+              :src="getCoverImg(article.coverUrl)"
+              :alt="article.title"
+              @error="setFallBackImg"
+            />
           </div>
 
           <div class="wrapper">
@@ -21,7 +25,9 @@
               </ul>
 
               <!-- the format date function converts the default date to a readable form -->
-              <span class="mr-2">Posted: {{ formatDate(article.createdAt) }}</span>
+              <span class="mr-2"
+                >Posted: {{ formatDate(article.createdAt) }}</span
+              >
               <span>Updated: {{ formatDate(article.updatedAt) }}</span>
               <br />
               <span class="font-bold"> {{ article.readingStats.text }} </span>
@@ -29,7 +35,10 @@
           </div>
         </header>
 
-        <toc class="article-toc prose lg:prose-xl dark:prose-dark" :toc="article.toc">
+        <toc
+          class="article-toc prose lg:prose-xl dark:prose-dark"
+          :toc="article.toc"
+        >
           <h2 slot="heading">What we'll cover</h2>
         </toc>
 
@@ -38,11 +47,15 @@
           class="article-content prose lg:prose-xl dark:prose-dark"
           :document="article"
         />
-		
-		<footer class="mt-4 pt-4 text-center">
-			<em> Any feedback? Shoot me a mail at <a href="mailto:miracleiodev@gmail.com"> <b> miracleiodev@gmail.com  </b> </a> </em>
-		</footer>
-		
+
+        <footer class="mt-4 pt-4 text-center">
+          <em>
+            Any feedback? Shoot me a mail at
+            <a href="mailto:miracleiodev@gmail.com">
+              <b> miracleiodev@gmail.com </b>
+            </a>
+          </em>
+        </footer>
       </article>
     </section>
 
@@ -83,9 +96,37 @@ export default {
       })
     },
     getCoverImg(coverUrl) {
-      console.log(coverUrl)
-      if (coverUrl) return require(`~/assets/img/articles/${coverUrl}`)
-      return require(`~/assets/img/articles/${this.article.slug}/cover.png`)
+      let local = require(`~/assets/img/articles/${coverUrl}`)
+      console.log('LOCAL', local)
+      return local
+    },
+    async setFallBackImg(e) {
+      let src
+      try {
+        src = (
+          await fetch(
+            'https://covergen-api.herokuapp.com/screenshot/miracleio.me',
+            {
+              method: 'POST',
+              body: JSON.stringify({
+                targetURL: 'https://cover-gen.netlify.app/',
+                document: {
+                  title: this.article.title,
+                  description: this.article.description,
+                  updatedAt: this.article.updatedAt,
+                  slug: this.article.slug,
+                },
+              }),
+            }
+          )
+        ).url
+      } catch (error) {
+        console.log('Errrrrrrrrr', error)
+        src = await require(`~/assets/img/articles/hello/cover.png`)
+      }
+
+      console.log('SRCCCCC', src)
+      e.target.src = src
     },
   },
 
@@ -140,7 +181,7 @@ export default {
         {
           hid: 'og-image',
           property: 'og:image',
-          content: require(`~/assets/img/articles/${this.article.slug}/cover.png`),
+          content: this.getCoverImg(this.article.coverUrl),
         },
 
         //Twitter
@@ -167,7 +208,7 @@ export default {
         {
           hid: 'twitter-image',
           property: 'twitter:image',
-          content: require(`~/assets/img/articles/${this.article.slug}/cover.png`),
+          content: this.getCoverImg(this.article.coverUrl),
         },
       ],
     }

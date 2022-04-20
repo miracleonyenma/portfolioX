@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: miracleio.me
+Token: f7d09dc1f2341341881de9c9d5504f18502a42092bcb2bf27162d8a0288c8d21
