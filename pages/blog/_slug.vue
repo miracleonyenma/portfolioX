@@ -12,7 +12,7 @@
             />
           </div>
 
-          <div class="wrapper">
+          <div class="wrapper py-12">
             <h1>{{ article.title }}</h1>
             <p>{{ article.description }}</p>
 
@@ -36,7 +36,7 @@
         </header>
 
         <toc
-          class="article-toc prose lg:prose-xl dark:prose-dark"
+          class="article-toc prose lg:prose-xl dark:prose-dark mb-4"
           :toc="article.toc"
         >
           <h2 slot="heading">What we'll cover</h2>
@@ -44,23 +44,23 @@
 
         <!-- this is where we will render the article contents -->
         <nuxt-content
-          class="article-content prose lg:prose-xl dark:prose-dark"
+          class="article-content prose lg:prose-xl dark:prose-dark m-auto"
           :document="article"
         />
 
-        <footer class="mt-4 pt-4 text-center">
-          <em>
+        <footer class="mt-12 mb-6 p-4 text-center ">
+          <!-- <em> -->
             Any feedback? Shoot me a mail at
             <a href="mailto:miracleiodev@gmail.com">
               <b> miracleiodev@gmail.com </b>
             </a>
-          </em>
+          <!-- </em> -->
         </footer>
       </article>
     </section>
 
     <!-- Pass the data to the component props -->
-    <prev-next :prev="prev" :next="next" class="sect-wrapper"></prev-next>
+    <prev-next :prev="prev" :next="next" class="sect-wrapper w-full border dark:border-gray-800 rounded-lg"></prev-next>
   </main>
 </template>
 
