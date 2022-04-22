@@ -208,7 +208,7 @@ export default {
         {
           hid: 'twitter-image',
           property: 'twitter:image',
-          content: this.getCoverImg(this.article.coverUrl),
+          content: `https://miracleio.me${this.getCoverImg(this.article.coverUrl)}`,
         },
       ],
     }
