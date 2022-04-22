@@ -181,7 +181,7 @@ export default {
         {
           hid: 'og-image',
           property: 'og:image',
-          content: this.getCoverImg(this.article.coverUrl),
+          content: `https://miracleio.me${this.getCoverImg(this.article.coverUrl)}`,
         },
 
         //Twitter

@@ -53,6 +53,59 @@ export default {
         name: 'google-site-verification',
         content: 'hRt_nx15rRTqJoV-b8mjBMKM3uH5ONJLM_qAfmXTni0',
       },
+      //Open Graph
+      {
+        hid: 'og-type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og-url',
+        property: 'og:url',
+        content: `https://miracleio.me/`,
+      },
+      {
+        hid: 'og-title',
+        property: 'og:title',
+        content: `Miracleio | PortfolioX`,
+      },
+      {
+        hid: 'og-description',
+        property: 'og:description',
+        content: `Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤`,
+      },
+      {
+        hid: 'og-image',
+        property: 'og:image',
+        content: `https://miracleio.me/img/cover.png`,
+      },
+
+      //Twitter
+      {
+        hid: 'twitter-card',
+        property: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter-url',
+        property: 'twitter:url',
+        content: `https://miracleio.me/`,
+      },
+      {
+        hid: 'twitter-title',
+        property: 'twitter:title',
+        content: `Miracleio | PortfolioX`,
+      },
+      {
+        hid: 'twitter-description',
+        property: 'twitter:description',
+        content: `Designer & Frontend Developer portfolio site. Built by Miracleio with love ❤`,
+      },
+      {
+        hid: 'twitter-image',
+        property: 'twitter:image',
+        content: `https://miracleio.me/img/cover.png`,
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
