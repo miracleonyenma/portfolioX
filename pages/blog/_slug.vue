@@ -37,7 +37,9 @@
 
         <div class="article-wrapper flex flex-col gap-4 lg:flex-row-reverse">
           <toc class="article-toc prose dark:prose-dark" :toc="article.toc">
-            <h2 slot="heading">What we'll cover</h2>
+            <h3 slot="heading">
+              <span class="font-header font-black"> What we'll cover </span>
+            </h3>
           </toc>
 
           <!-- this is where we will render the article contents -->
