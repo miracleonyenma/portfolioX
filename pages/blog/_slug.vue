@@ -35,32 +35,31 @@
           </div>
         </header>
 
-        <toc
-          class="article-toc prose lg:prose-xl dark:prose-dark mb-4"
-          :toc="article.toc"
-        >
-          <h2 slot="heading">What we'll cover</h2>
-        </toc>
+        <div class="article-wrapper flex flex-col gap-4 lg:flex-row-reverse">
+          <toc class="article-toc prose dark:prose-dark" :toc="article.toc">
+            <h2 slot="heading">What we'll cover</h2>
+          </toc>
 
-        <!-- this is where we will render the article contents -->
-        <nuxt-content
-          class="article-content prose lg:prose-xl dark:prose-dark m-auto"
-          :document="article"
-        />
+          <!-- this is where we will render the article contents -->
+          <nuxt-content
+            class="article-content prose lg:prose-xl dark:prose-dark"
+            :document="article"
+          />
+        </div>
 
-        <footer class="mt-12 mb-6 p-4 text-center ">
+        <footer class="mt-12 mb-6 p-4 text-center">
           <!-- <em> -->
-            Any feedback? Shoot me a mail at
-            <a href="mailto:miracleiodev@gmail.com">
-              <b> miracleiodev@gmail.com </b>
-            </a>
+          Any feedback? Shoot me a mail at
+          <a href="mailto:miracleiodev@gmail.com">
+            <b> miracleiodev@gmail.com </b>
+          </a>
           <!-- </em> -->
         </footer>
       </article>
     </section>
 
     <!-- Pass the data to the component props -->
-    <prev-next :prev="prev" :next="next" class="sect-wrapper w-full border dark:border-gray-800 rounded-lg"></prev-next>
+    <prev-next :prev="prev" :next="next" class="sect-wrapper"></prev-next>
   </main>
 </template>
 
@@ -181,7 +180,9 @@ export default {
         {
           hid: 'og-image',
           property: 'og:image',
-          content: `https://miracleio.me${this.getCoverImg(this.article.coverUrl)}`,
+          content: `https://miracleio.me${this.getCoverImg(
+            this.article.coverUrl
+          )}`,
         },
 
         //Twitter
@@ -208,7 +209,9 @@ export default {
         {
           hid: 'twitter-image',
           property: 'twitter:image',
-          content: `https://miracleio.me${this.getCoverImg(this.article.coverUrl)}`,
+          content: `https://miracleio.me${this.getCoverImg(
+            this.article.coverUrl
+          )}`,
         },
       ],
     }

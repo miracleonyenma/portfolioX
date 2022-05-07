@@ -15,12 +15,11 @@
   .article-header h1 {
     @apply mb-2;
   }
-  .article-toc,
+  .article-wrapper {
+    @apply max-w-5xl m-auto;
+  }
   .article-header .wrapper,
   .article-content {
     @apply w-full m-auto lg:max-w-3xl;
-  }
-  .article-toc {
-    @apply mb-12;
   }
 }

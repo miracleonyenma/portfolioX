@@ -1,5 +1,6 @@
 <template>
-  <section id="prev-next" class="prev-next">
+  <section id="prev-next" class=" px-4">
+    <div class="prev-next wrapper w-full px-4 border dark:border-gray-800 rounded-lg">
     <!-- if prev data is available display the link -->
     <nuxt-link v-if="prev" :to="{ name: 'blog-slug', params: { slug: prev.slug } }" class="prev">
       <feather-icon name="arrow-left" />
@@ -17,6 +18,7 @@
     </nuxt-link>
     <!-- else display empty span for styling purposes -->
     <span class="next" v-else> </span>
+    </div>
   </section>
 </template>
 
