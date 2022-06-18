@@ -98,7 +98,7 @@ Next, click on the **Send Tip** button and this lovely banner will pop up. If it
 
 You can choose **One-Time Tip** or **Monthly**. Then select the amount of BAT you want to send. You can select any amount or set a custom amount by clicking on **custom tip amount**, I’m not picky you know but the 10BAT option looks very very nice, don’t you think?
 
-Anyways, once you’ve chosen the amount, click send, take a screenshot and give yourself a big hug 🤗.  You can send the screenshot and a text that says “it works 🚀” to me in the comments or via [mail](mailto:miracleiodev@gmail.com) or [twitter](https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Furl%3Dhttps%3A%2F%2Fmiracleio.me%2Fblog%2FEarn-crypto-from-your-personal-site-or-blog%2F%26text%3D%22It%20works!%22%2C%20Earn%20crypto%20from%20your%20personal%20site%20or%20blog%20via%20%40miracleio%26related%3Dmiracleio%2Cbrave%2C100pay). I have something exclusive for you.
+Anyways, once you’ve chosen the amount, click send, take a screenshot and give yourself a big hug 🤗.  You can send the screenshot and a text that says “it works 🚀” to me in the comments or via [mail](mailto:miracleiodev@gmail.com) or [twitter](https://twitter.com/intent/tweet?url=https://miracleio.me/blog/Earn-crypto-from-your-personal-site-or-blog/&text=%22It%20works!%22%2C%20Earn%20crypto%20from%20your%20personal%20site%20or%20blog%20via%20%40miracleio&related=miracleio,brave,100pay). I have something exclusive for you.
 
 ## Conclusion
 
