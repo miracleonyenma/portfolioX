@@ -53,7 +53,7 @@ export default {
   async fetch() {
     const nowPlayingURL =
       process.env.SPOTIFY_NOW_PLAYING_URL ||
-      'http://localhost:8888/.netlify/functions/spotify'
+      'https://miracleio.me/.netlify/functions/spotify'
     console.log({ nowPlayingURL })
     this.song = await fetch(nowPlayingURL).then((res) => res.json())
     this.isPlaying = this.song.isPlaying
