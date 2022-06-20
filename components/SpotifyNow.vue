@@ -118,7 +118,9 @@ export default {
         let song = await this.getSong(`/.netlify/functions/spotify`)
         console.log({ song })
       }
-    }, 1000)
+    }, 30000)
+    let song = await this.getSong(`/.netlify/functions/spotify`)
+    console.log({ song })
   },
 }
 </script>
