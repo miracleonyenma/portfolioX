@@ -71,8 +71,8 @@ export default {
     console.log({ song: this.song })
   },
   async mounted() {
-    console.log({ song: this.song })
-    if (!this.song.name) {
+    console.log({ song: this.song, isPlaying: this.isPlaying })
+    if (!this.isPlaying) {
       let data = await this.getSong(`/.netlify/functions/spotify`)
       console.log({ data })
     }
