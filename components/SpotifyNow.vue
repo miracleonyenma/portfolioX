@@ -44,12 +44,27 @@ export default {
     }
   },
   methods: {
-    getArtists(artists) {
-      // const response = await fetch(`./netlify/functions/spotify`)
-      // console.log(res);
+    async getSong(url) {
+      console.log({ url })
+      let song = await fetch(url)
+        .then((res) => res.json())
+        .catch((err) => {
+          console.log({ err })
+          return {}
+        })
+      this.song = song
+      this.isPlaying = song.isPlaying
+
+      console.log({ song: this.song })
+      return song
     },
   },
-  activated() {},
+  activated() {
+    // Call fetch again if last fetch more than 30 sec ago
+    if (this.$fetchState.timestamp <= Date.now() - 30000) {
+      this.$fetch()
+    }
+  },
   async fetch() {
     const nowPlayingURL =
       process.env.SPOTIFY_NOW_PLAYING_URL ||
@@ -59,6 +74,13 @@ export default {
     this.isPlaying = this.song.isPlaying
 
     console.log({ song: this.song })
+  },
+  async mounted() {
+    console.log({ song: this.song, isPlaying: this.isPlaying })
+    if (!this.isPlaying) {
+      let data = await this.getSong(`/.netlify/functions/spotify`)
+      console.log({ data })
+    }
   },
 }
 </script>
@@ -88,7 +110,7 @@ export default {
   @apply text-2xl font-bold;
 }
 
-.spotify-icon-cont{
+.spotify-icon-cont {
   @apply flex justify-end;
 }
 </style>
