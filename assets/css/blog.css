@@ -5,17 +5,20 @@
   .blog .sect-wrapper {
     @apply p-4 mt-6 lg:mt-8 m-auto max-w-xl lg:max-w-3xl;
   }
+
   .blog-header {
     @apply mb-12 pb-8 lg:mb-16;
   }
+
   .articles .article {
     @apply prose lg:prose-xl dark:prose-dark;
     @apply pl-0 py-2 list-none;
   }
   .articles .article h2,
-  .articles .article p {
+.articles .article p {
     @apply mb-0;
   }
+
   .details-cont {
     @apply mt-1;
   }

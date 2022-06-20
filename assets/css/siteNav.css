@@ -9,33 +9,37 @@
   .site-nav.active .nav-wrapper {
     @apply visible opacity-100 pointer-events-auto;
   }
+
   .nav-wrapper {
     @apply relative w-full h-full bottom-0 left-0 invisible opacity-0 pointer-events-none;
     @apply md:visible md:opacity-100 md:pointer-events-auto;
   }
+
   .links {
     @apply absolute bottom-0 left-0 text-left;
     @apply md:relative md:flex md:justify-end;
   }
+
   .link {
     @apply font-header font-bold text-6xl mt-4;
     @apply md:font-normal md:text-lg md:mt-0 md:ml-6;
   }
   .link:hover,
-  .link a {
+.link a {
     @apply text-gray-500 dark:text-gray-400;
   }
   .link:hover a, .link:hover.nuxt-link-active.nuxt-link-exact-active,
-  .link a a,
-  .link a.nuxt-link-active.nuxt-link-exact-active {
+.link a a,
+.link a.nuxt-link-active.nuxt-link-exact-active {
     @apply text-gray-800 dark:text-gray-100;
   }
+
   .nav-btn {
     @apply fixed md:hidden right-4 w-10 h-10 flex items-center justify-center rounded-xl bg-gray-800 border-8 border-gray-800 dark:bg-gray-700  dark:border-gray-700  pointer-events-auto shadow-lg z-10;
   }
   .nav-btn::before, .nav-btn::after {
     @apply absolute w-full h-1 bg-gray-200 transform origin-center rounded transition-transform;
-    content: '';
+    content: "";
   }
   .nav-btn::before {
     @apply translate-y-1.5 rotate-0;

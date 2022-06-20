@@ -3,30 +3,24 @@
   @apply z-30;
   min-width: 240px;
 }
-
 .toc .wrapper {
   @apply sticky lg:top-24 p-2 lg:p-4 rounded-xl overflow-y-auto;
   @apply bg-gray-200 bg-opacity-70 dark:bg-gray-800 dark:bg-opacity-70 backdrop-filter backdrop-blur-md;
   @apply md:border-2 md:border-gray-200 md:border-opacity-20 md:dark:border-gray-800 md:dark:border-opacity-20 md:bg-clip-padding;
-  max-height: calc(100vh - (96px * 1.25));
+  max-height: calc(100vh - 120px);
 }
-
 .toc__header {
   @apply flex gap-4 items-center lg:mb-2;
 }
-
 .toc__header > * {
   @apply m-0;
 }
-
 .toc__list {
   @apply text-lg m-0 max-h-0 overflow-hidden lg:max-h-full;
 }
-
 .toc.expanded .toc__header {
   @apply mb-2;
 }
-
 .toc.expanded .toc__list {
   @apply max-h-full;
 }
