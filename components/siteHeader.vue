@@ -3,7 +3,7 @@
     <div class="wrapper">
       <nuxt-link to="/">
         <logo class="relative z-20">
-          <h1 slot="logo-text" class="dark:text-gray-100">Miracleio</h1>
+          <h1 slot="logo-text" class="text-xl font-bold dark:text-gray-100">Miracleio</h1>
         </logo>
       </nuxt-link>
 

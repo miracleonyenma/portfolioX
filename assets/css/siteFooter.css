@@ -1,0 +1,21 @@
+.site-footer {
+  @apply p-4 pt-12 mt-12;
+}
+.site-footer .wrapper {
+  @apply m-auto max-w-5xl;
+}
+
+.top-cont {
+  @apply flex gap-8 flex-wrap items-center justify-between;
+}
+
+.links-group {
+  @apply grid grid-cols-3;
+}
+.links-group .heading {
+  @apply font-semibold text-lg mb-2;
+}
+
+.links {
+  @apply flex flex-col gap-2;
+}
