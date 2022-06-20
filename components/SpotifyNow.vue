@@ -41,7 +41,25 @@ export default {
     return {
       isPlaying: false,
       song: {},
+      timeNow: Date.now(),
     }
+  },
+  computed: {
+    timeRemaining() {
+      let dur = this.song?.duration_ms / 1000 / 60
+      let progress = this.song?.progress / 1000 / 60
+      let timeLeft = dur - progress
+      let timeToEnd = Date.now() / 1000 / 60 + timeLeft
+
+      console.log({ dur, progress, timeLeft, timeToEnd })
+
+      return {
+        dur,
+        progress,
+        timeLeft,
+        timeToEnd,
+      }
+    },
   },
   methods: {
     async getSong(url) {
@@ -66,21 +84,41 @@ export default {
     }
   },
   async fetch() {
-    const nowPlayingURL =
-      process.env.SPOTIFY_NOW_PLAYING_URL ||
-      'https://miracleio.me/.netlify/functions/spotify'
-    console.log({ nowPlayingURL })
-    this.song = await fetch(nowPlayingURL).then((res) => res.json())
-    this.isPlaying = this.song.isPlaying
+    try {
+      const nowPlayingURL =
+        process.env.SPOTIFY_NOW_PLAYING_URL ||
+        'https://miracleio.me/.netlify/functions/spotify'
+      console.log({ nowPlayingURL })
+      this.song = await fetch(nowPlayingURL)
+        .then((res) => res.json())
+        .catch((err) => {
+          console.log({ err })
+        })
+      this.isPlaying = this.song.isPlaying
 
-    console.log({ song: this.song })
+      console.log({ song: this.song })
+    } catch (error) {
+      console.log(error)
+    }
   },
   async mounted() {
-    console.log({ song: this.song, isPlaying: this.isPlaying })
-    if (!this.isPlaying) {
+    if (this.$fetchState.timestamp <= Date.now() - 30000) {
+      this.$fetch()
+      // if (!this.isPlaying) {
       let data = await this.getSong(`/.netlify/functions/spotify`)
       console.log({ data })
+      // }
     }
+    setInterval(async () => {
+      this.timeNow = Date.now() / 1000 / 60
+      let trackEnd = this.timeNow - this.timeRemaining.timeToEnd
+      // console.log(trackEnd)
+
+      if (trackEnd > -0.2 || !trackEnd) {
+        let song = await this.getSong(`/.netlify/functions/spotify`)
+        console.log({ song })
+      }
+    }, 1000)
   },
 }
 </script>
