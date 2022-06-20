@@ -2,7 +2,7 @@
   <div class="spotify">
     <feather-icon v-if="!isPlaying" name="spotify-2" class="" />
     <div v-else class="album-cover">
-      <a :href="song?.external_urls.spotify" target="_blank">
+      <a :href="song.external_urls.spotify" target="_blank">
         <div class="img-cont">
           <img :src="song.album.images[0].url" alt="" class="album-cover" />
         </div>
