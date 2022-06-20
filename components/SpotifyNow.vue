@@ -2,7 +2,7 @@
   <div class="spotify">
     <feather-icon v-if="!isPlaying" name="spotify-2" class="" />
     <div v-else class="album-cover">
-      <a :href="song.external_urls.spotify" target="_blank">
+      <a :href="song?.external_urls.spotify" target="_blank">
         <div class="img-cont">
           <img :src="song.album.images[0].url" alt="" class="album-cover" />
         </div>
@@ -83,25 +83,28 @@ export default {
       this.$fetch()
     }
   },
-  async fetch() {
-    try {
-      const nowPlayingURL =
-        process.env.SPOTIFY_NOW_PLAYING_URL ||
-        'https://miracleio.me/.netlify/functions/spotify'
-      console.log({ nowPlayingURL })
-      this.song = await fetch(nowPlayingURL)
-        .then((res) => res.json())
-        .catch((err) => {
-          console.log({ err })
-        })
-      this.isPlaying = this.song.isPlaying
+  // async fetch() {
+  //   try {
+  //     const nowPlayingURL =
+  //       process.env.SPOTIFY_NOW_PLAYING_URL ||
+  //       'https://miracleio.me/.netlify/functions/spotify'
+  //     console.log({ nowPlayingURL })
+  //     this.song = await fetch(nowPlayingURL)
+  //       .then((res) => res.json())
+  //       .catch((err) => {
+  //         console.log({ err })
+  //       })
+  //     this.isPlaying = this.song.isPlaying
 
-      console.log({ song: this.song })
-    } catch (error) {
-      console.log(error)
-    }
-  },
+  //     console.log({ song: this.song })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // },
   async mounted() {
+    let song = await this.getSong(`/.netlify/functions/spotify`)
+    console.log({ song })
+
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
       this.$fetch()
       // if (!this.isPlaying) {
@@ -119,8 +122,6 @@ export default {
         console.log({ song })
       }
     }, 30000)
-    let song = await this.getSong(`/.netlify/functions/spotify`)
-    console.log({ song })
   },
 }
 </script>
