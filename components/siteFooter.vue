@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="top-cont">
         <header>
-          <logo :showText="true" class="relative z-20 mb-2">
+          <logo :showText="true" class="relative mb-2">
             <h1 slot="logo-text" class="text-xl font-bold dark:text-gray-100">
               Miracleio
             </h1>
