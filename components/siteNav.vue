@@ -8,6 +8,9 @@
         <li class="link">
           <nuxt-link to="/blog">Blog</nuxt-link>
         </li>
+        <li class="link">
+          <nuxt-link to="/snippets">Snippets</nuxt-link>
+        </li>
       </ul>
     </div>
 
