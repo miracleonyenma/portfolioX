@@ -6,37 +6,37 @@
         <header class="article-header hero-header" data-page-trans="children">
           <div class="img-cont">
             <img
-              :src="getCoverImg(article.coverUrl)"
-              :alt="article.title"
+              :src="getCoverImg(snippet.coverUrl)"
+              :alt="snippet.title"
               @error="setFallBackImg"
             />
           </div>
 
           <div class="wrapper py-12">
-            <h1>{{ article.title }}</h1>
-            <p>{{ article.description }}</p>
+            <h1>{{ snippet.title }}</h1>
+            <p>{{ snippet.description }}</p>
 
-            <!-- container for article details -->
+            <!-- container for snippet details -->
             <div class="details-cont">
               <ul id="article-tags">
-                <li v-for="tag in article.tags" :key="tag" class="tag">
+                <li v-for="tag in snippet.tags" :key="tag" class="tag">
                   {{ tag }}
                 </li>
               </ul>
 
               <!-- the format date function converts the default date to a readable form -->
               <span class="mr-2"
-                >Posted: {{ formatDate(article.createdAt) }}</span
+                >Posted: {{ formatDate(snippet.createdAt) }}</span
               >
-              <span>Updated: {{ formatDate(article.updatedAt) }}</span>
+              <span>Updated: {{ formatDate(snippet.updatedAt) }}</span>
               <br />
-              <span class="font-bold"> {{ article.readingStats.text }} </span>
+              <span class="font-bold"> {{ snippet.readingStats.text }} </span>
             </div>
           </div>
         </header>
 
         <div class="article-wrapper flex flex-col gap-4 lg:flex-row-reverse">
-          <toc class="article-toc prose dark:prose-dark" :toc="article.toc">
+          <toc class="article-toc prose dark:prose-dark" :toc="snippet.toc">
             <h3 slot="heading">
               <span class="font-header font-black"> What we'll cover </span>
             </h3>
@@ -45,7 +45,7 @@
           <!-- this is where we will render the article contents -->
           <nuxt-content
             class="article-content prose lg:prose-xl dark:prose-dark"
-            :document="article"
+            :document="snippet"
           />
         </div>
 
@@ -70,11 +70,11 @@ import toc from '~/components/global/toc.vue'
 export default {
   components: { toc },
   async asyncData({ $content, params }) {
-    const article = await $content('articles', params.slug).fetch()
+    const snippet = await $content('snippets', params.slug).fetch()
 
     // assign the first two objects in returned array to prev & next constant variables
-    const [prev, next] = await $content('articles')
-      // fetch only the title and slug from the articles
+    const [prev, next] = await $content('snippets')
+      // fetch only the title and slug from the snippets
       .only(['title', 'slug', 'updatedAt'])
       // sortby time updated, in ascending order
       .sortBy('updatedAt', 'desc')
@@ -84,7 +84,7 @@ export default {
       .fetch()
 
     // return the data to be vailable for use in the file
-    return { article, prev, next }
+    return { snippet, prev, next }
   },
 
   methods: {
@@ -112,10 +112,10 @@ export default {
               body: JSON.stringify({
                 targetURL: 'https://cover-gen.netlify.app/',
                 document: {
-                  title: this.article.title,
-                  description: this.article.description,
-                  updatedAt: this.article.updatedAt,
-                  slug: this.article.slug,
+                  title: this.snippet.title,
+                  description: this.snippet.description,
+                  updatedAt: this.snippet.updatedAt,
+                  slug: this.snippet.slug,
                 },
               }),
             }
@@ -135,17 +135,17 @@ export default {
 
   head() {
     return {
-      title: this.article.title,
+      title: this.snippet.title,
       meta: [
         {
           hid: 'title',
           name: 'title',
-          content: this.article.title,
+          content: this.snippet.title,
         },
         {
           hid: 'description',
           name: 'description',
-          content: this.article.description,
+          content: this.snippet.description,
         },
         {
           hid: 'author',
@@ -155,7 +155,7 @@ export default {
         {
           hid: 'keywords',
           name: 'keywords',
-          content: [...this.article.tags],
+          content: [...this.snippet.tags],
         },
 
         //Open Graph
@@ -167,23 +167,23 @@ export default {
         {
           hid: 'og-url',
           property: 'og:url',
-          content: `https://miracleio.me/blog/${this.article.slug}`,
+          content: `https://miracleio.me/blog/${this.snippet.slug}`,
         },
         {
           hid: 'og-title',
           property: 'og:title',
-          content: `${this.article.title}`,
+          content: `${this.snippet.title}`,
         },
         {
           hid: 'og-description',
           property: 'og:description',
-          content: `${this.article.description}`,
+          content: `${this.snippet.description}`,
         },
         {
           hid: 'og-image',
           property: 'og:image',
           content: `https://miracleio.me${this.getCoverImg(
-            this.article.coverUrl
+            this.snippet.coverUrl
           )}`,
         },
 
@@ -196,23 +196,23 @@ export default {
         {
           hid: 'twitter-url',
           property: 'twitter:url',
-          content: `https://miracleio.me/blog/${this.article.slug}`,
+          content: `https://miracleio.me/blog/${this.snippet.slug}`,
         },
         {
           hid: 'twitter-title',
           property: 'twitter:title',
-          content: `${this.article.title}`,
+          content: `${this.snippet.title}`,
         },
         {
           hid: 'twitter-description',
           property: 'twitter:description',
-          content: `${this.article.description}`,
+          content: `${this.snippet.description}`,
         },
         {
           hid: 'twitter-image',
           property: 'twitter:image',
           content: `https://miracleio.me${this.getCoverImg(
-            this.article.coverUrl
+            this.snippet.coverUrl
           )}`,
         },
       ],

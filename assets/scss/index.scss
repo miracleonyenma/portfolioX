@@ -2,6 +2,10 @@
   .home-main {
     @apply min-h-screen overflow-x-hidden;
     overflow-y: clip;
+
+    .site-hero > * {
+      @apply md:pt-32;
+    }
   }
 
   .sect-wrapper {

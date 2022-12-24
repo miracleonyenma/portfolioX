@@ -1,5 +1,5 @@
 <template>
-  <figure class="site-logo">
+  <figure class="site-logo" :class="{ 'show-txt': showText }">
     <span class="icon">
       <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -156,19 +156,24 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: { showText: Boolean },
+}
 </script>
 
 <style scoped>
 @layer components {
   .site-logo {
-    @apply flex gap-4 items-center;
+    @apply flex gap-2 items-center;
   }
   .site-logo:hover .logo-txt-cont > * {
     @apply translate-x-1/2;
   }
   .site-logo * {
     @apply inline-block align-middle transition-all duration-150;
+  }
+  .show-txt .logo-txt-cont > * {
+    @apply translate-x-1/2;
   }
   .icon svg {
     @apply w-10 h-10;

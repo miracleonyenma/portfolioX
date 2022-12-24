@@ -47,5 +47,8 @@ export default {
   .article-img .caption {
     @apply text-lg text-center mt-2;
   }
+  .img-cont img {
+    @apply w-full;
+  }
 }
 </style>
