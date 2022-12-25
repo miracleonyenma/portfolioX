@@ -2,13 +2,15 @@
 import { useIsChristmas } from "./composables/special-days/useChristmas";
 
 const isChristmas = useIsChristmas();
+const metaTitle = ref(
+  isChristmas.value ? "Merry Christmas! 🎄" : "Miracleio | PortfolioX"
+);
 
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} | Miracleio` : "Miracleio | PortfolioX";
   },
-  title:
-    (isChristmas.value && "Merry Christmas! 🎄") || "Miracleio | PortfolioX",
+  title: metaTitle.value,
   meta: [
     {
       name: "description",
@@ -30,7 +32,7 @@ useHead({
     {
       key: "og-title",
       property: "og:title",
-      content: `Miracleio | PortfolioX`,
+      content: metaTitle.value,
     },
     {
       key: "og-description",
@@ -56,7 +58,7 @@ useHead({
     {
       key: "twitter-title",
       property: "twitter:title",
-      content: `Miracleio | PortfolioX`,
+      content: metaTitle.value,
     },
     {
       key: "twitter-description",
