@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { SunIcon, MoonIcon } from "@heroicons/vue/24/solid";
+import {
+  SunIcon,
+  MoonIcon,
+  AcademicCapIcon,
+  Bars2Icon,
+} from "@heroicons/vue/24/solid/index";
 
 const siteThemeCookie = useCookie("site-theme");
 const theme = useSiteTheme();
@@ -21,7 +26,7 @@ const toggleTheme = () => {
 };
 </script>
 <template>
-  <button class="cta py-3" @click="toggleTheme">
+  <button class="cta py-2" @click="toggleTheme">
     <span v-if="theme === 'dark'">
       <MoonIcon class="icon" />
     </span>

@@ -89,6 +89,7 @@ useHead({
 });
 </script>
 <template>
-  <ThemeButton />
-  <NuxtPage />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
