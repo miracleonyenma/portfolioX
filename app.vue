@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { useIsChristmas } from "./composables/special-days/useChristmas";
-
 const isChristmas = useIsChristmas();
+
+const siteThemeCookie = useCookie("site-theme");
+const theme = useSiteTheme();
+const setTheme = useSetSiteTheme;
+setTheme(siteThemeCookie.value || "dark");
+
 const metaTitle = ref(
   isChristmas.value ? "Merry Christmas! 🎄" : "Miracleio | PortfolioX"
 );
@@ -78,8 +83,12 @@ useHead({
       href: isChristmas ? "/logo-christmas.png" : "/logo.png",
     },
   ],
+  htmlAttrs: {
+    class: theme.value === "dark" ? "dark" : "",
+  },
 });
 </script>
 <template>
+  <ThemeButton />
   <NuxtPage />
 </template>
