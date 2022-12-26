@@ -19,7 +19,7 @@ const a = ref(1);
 </template>
 <style scoped>
 .site-header {
-  @apply sticky top-0 left-0 w-full p-4;
+  @apply sticky lg:fixed top-0 left-0 w-full p-4;
 }
 
 .site-header > .wrapper {

@@ -16,4 +16,27 @@ body {
   .cta {
     @apply p-1.5 px-2 border border-slate-100 dark:border-slate-700 rounded-lg;
   }
+
+  .img-cont > img {
+    @apply w-full h-full object-cover;
+  }
+
+  /* site */
+  .site-section {
+    @apply py-12;
+  }
+
+  .site-section > .wrapper {
+    @apply px-4 w-full max-w-7xl mx-auto;
+  }
+
+  /* blog */
+
+  .tags {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .tags .tag {
+    @apply font-medium px-2 py-1 bg-slate-100 border border-slate-200 hover:bg-slate-200  dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-100 rounded-lg cursor-pointer;
+  }
 }

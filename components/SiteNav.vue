@@ -19,14 +19,14 @@ const toggleNav = () => {
     </div>
   </nav>
   <div class="site-nav-action-cont">
-    <button @click="toggleNav" class="site-nav-btn cta py-2">
+    <button @click="toggleNav" class="site-nav-btn cta bg-slate-50 dark:bg-slate-900 py-2 shadow-lg">
       <Bars3Icon class="icon w-6 h-6" />
     </button>
   </div>
 </template>
 <style scoped>
 .site-nav {
-  @apply fixed top-0 left-0 w-full h-screen bg-slate-50;
+  @apply fixed top-0 left-0 w-full h-screen bg-slate-50 dark:bg-slate-800;
   @apply lg:relative lg:w-auto lg:h-auto lg:bg-transparent;
 
   @apply invisible opacity-0 pointer-events-none;
