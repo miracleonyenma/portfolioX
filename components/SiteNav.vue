@@ -1,9 +1,18 @@
 <script setup lang="ts">
 import { Bars2Icon, Bars3Icon } from "@heroicons/vue/24/solid/index";
+const route = useRoute();
 const navActive = ref(false);
 const toggleNav = () => {
   navActive.value = !navActive.value;
 };
+
+// set up a watcher to deactivate the nav when the route changes
+watch(
+  () => route.path,
+  () => {
+    navActive.value = false;
+  }
+);
 </script>
 <template>
   <nav class="site-nav" :class="{ active: navActive }">
@@ -13,13 +22,16 @@ const toggleNav = () => {
           <NuxtLink to="/blog">Blog</NuxtLink>
         </li>
         <li class="link">
-          <NuxtLink to="/">Snippets</NuxtLink>
+          <NuxtLink to="/snippets">Snippets</NuxtLink>
         </li>
       </ul>
     </div>
   </nav>
   <div class="site-nav-action-cont">
-    <button @click="toggleNav" class="site-nav-btn cta bg-slate-50 dark:bg-slate-900 py-2 shadow-lg">
+    <button
+      @click="toggleNav"
+      class="site-nav-btn cta bg-slate-50 dark:bg-slate-900 py-2 shadow-lg"
+    >
       <Bars3Icon class="icon w-6 h-6" />
     </button>
   </div>
@@ -37,7 +49,7 @@ const toggleNav = () => {
 }
 
 .site-nav > .wrapper {
-  @apply flex flex-col justify-end h-full p-8 py-32;
+  @apply flex flex-col justify-center h-full p-8 py-32;
   @apply flex lg:flex-row lg:h-auto lg:p-0;
 }
 

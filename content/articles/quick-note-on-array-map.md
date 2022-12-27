@@ -2,6 +2,8 @@
 title: Quick note on Array map
 description: Here's a quick, basic explanation and use of the array.prototype.map() function
 tags: [Array methods, Javascript, Notes, web]
+createdAt: 7-19-2021
+updatedAt: 7-20-2021
 ---
 
 The `Array.prototype.map()` runs a function for each element in an array and returns the value of the function into a new array.

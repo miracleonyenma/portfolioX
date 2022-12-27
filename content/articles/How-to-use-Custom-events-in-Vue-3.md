@@ -2,6 +2,8 @@
 title: How to use Custom events in Vue 3
 description: Here, I'll show you how you can work with custom events with the composition API in Vue 3
 tags: [custom events, Composition API, Vue 3, frontend]
+createdAt: 10-26-2022
+updatedAt: 6-7-2022
 ---
 
 As someone who has been using Vue 2 for a while now, switching over to Vue 3 with its new composition API and other cool features is exciting but comes with its little hiccups.

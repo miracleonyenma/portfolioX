@@ -2,33 +2,29 @@
 import { useIsChristmas } from "~~/composables/special-days/useChristmas";
 
 const isChristmas = useIsChristmas();
-const articlesPath = ref("/articles");
-const articleSlug = (path: string) => {
-  // replace "articles/" with "blog"
-  return path.replace("articles", "blog");
-};
+const snippetsPath = ref("/snippets");
+// const snippetSlug = (path: string) => {
+//   // replace "snippets/" with "blog"
+//   return path.replace("articles", "blog");
+// };
 </script>
 <template>
   <main>
-    <header class="articles-page-header page-header">
+    <header class="articles-header page-header">
       <div class="wrapper">
         <span class="py-4" v-if="isChristmas"> Merry Christmas! 🎄 </span>
-        <h1 class="font-heading font-bold text-4xl lg:text-6xl">
-          Hey there, <br />
-          Welcome to my blog!
-        </h1>
+        <h1 class="font-heading font-bold text-4xl lg:text-6xl">Snippets</h1>
         <p class="description text-xl pt-2">
-          Have a look at what I've been spending hours behind a screen on. I
-          hope you find some of them useful. Enjoy!
+          Short code snippets that I've found useful.
         </p>
       </div>
     </header>
-    <section class="articles-list-section site-section">
+    <section class="site-section">
       <div class="wrapper">
         <!-- Render list of all articles in ./content/blog using `path` -->
         <!-- Provide only defined fieldsin the `:query` prop -->
         <ContentList
-          :path="articlesPath"
+          path="/snippets"
           :query="{
             only: [
               'title',
@@ -46,13 +42,13 @@ const articleSlug = (path: string) => {
         >
           <!-- Default list slot -->
           <template v-slot="{ list }">
-            <ul class="articles-list">
+            <ul class="article-list">
               <li
                 v-for="article in list"
                 :key="article._path"
                 class="list-item"
               >
-                <NuxtLink :to="article._path.replace('articles', 'blog')">
+                <NuxtLink :to="article._path">
                   <ArticleListItem :article="article" />
                 </NuxtLink>
               </li>
@@ -67,3 +63,14 @@ const articleSlug = (path: string) => {
     </section>
   </main>
 </template>
+<style scoped>
+.articles-header {
+  @apply p-4 my-12 lg:mt-44;
+}
+.articles-header > .wrapper {
+  @apply w-full max-w-4xl m-auto;
+}
+.article-list {
+  @apply grid lg:grid-cols-1 gap-12 w-full max-w-3xl m-auto;
+}
+</style>

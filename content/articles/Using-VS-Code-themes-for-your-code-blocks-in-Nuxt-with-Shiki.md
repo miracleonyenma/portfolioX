@@ -2,6 +2,8 @@
 title: Using VS Code themes for your code blocks in Nuxt with Shiki
 description: Here's how we can use VS Code themes for syntax highlighting in our Nuxt site using Nuxt Content and Shiki
 tags: [Nuxt 2, Nuxt Content v1, Vue, Shiki, Blog Features]
+createdAt: 8-20-2021
+updatedAt: 8-20-2021
 ---
 
 The Nuxt Content module comes with many great features. One of them is syntax highlighting for code blocks.

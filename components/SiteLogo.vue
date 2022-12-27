@@ -92,7 +92,7 @@
 }
 
 .site-logo {
-  @apply flex gap-2 items-center;
+  @apply relative flex gap-2 items-center z-20;
 }
 
 .site-logo > .icon {

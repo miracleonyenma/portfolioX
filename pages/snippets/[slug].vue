@@ -1,24 +1,23 @@
 <script setup>
-import { ClockIcon, CalendarIcon } from "@heroicons/vue/24/solid/index";
 const route = useRoute();
 const slug = ref(route.params.slug);
 
 const { data, error } = await useAsyncData(
-  `article-${slug.value}`,
+  `snippet-${slug.value}`,
   async () => {
-    const article = queryContent("articles", route.params.slug).findOne();
+    const article = queryContent("snippets", route.params.slug).findOne();
     // get the surround information,
     // which is an array of documeents that come before and after the current document
     let surround = await queryContent()
       .only(["_path", "title", "description"])
       .sort({ date: 1 })
-      .findSurround(`/articles/${slug.value}`);
+      .findSurround(`/snippets/${slug.value}`);
 
     // replace "articles/" with "blog/" in surround paths
-    surround = surround.map((doc) => {
-      doc._path = doc._path.replace("articles", "blog");
-      return doc;
-    });
+    // surround = surround.map((doc) => {
+    //   doc._path = doc._path.replace("articles", "blog");
+    //   return doc;
+    // });
 
     return { article: await article, surround: surround };
   }

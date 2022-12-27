@@ -1,7 +1,9 @@
 ---
 title: Adding images to your nuxt/content articles
 description: Here's a way to add images into your article content in your nuxt/content project
-tags: [Nuxt, Nuxt Content, Vue, Blog features]
+tags: [Nuxt 2, Nuxt Content v1, Vue, Blog features]
+createdAt: 7-20-2022
+updatedAt: 8-19-2022
 ---
 
 <!-- ## Outline
@@ -116,15 +118,15 @@ In our `component/global/imgCont.vue`
 ...
 
 try{
-	// place the '~/' before 'assets/'
-	return require(`~/assets/img/articles/${src}`)
+ // place the '~/' before 'assets/'
+ return require(`~/assets/img/articles/${src}`)
 
 ...
 ```
 
 This 'processing' is done using the `require` function which treats the string passed to it as a module, which would be resolved by `webpack` and the respective loaders during the build.
 
-> The `~/ ` is a way of telling nuxt to look for that file from the base directory
+> The `~/` is a way of telling nuxt to look for that file from the base directory
 
 ## Adding our component to our markdown
 

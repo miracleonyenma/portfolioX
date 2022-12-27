@@ -26,7 +26,7 @@ const toggleTheme = () => {
 };
 </script>
 <template>
-  <button class="cta py-2" @click="toggleTheme">
+  <button class="relative cta py-2 z-20" @click="toggleTheme">
     <span v-if="theme === 'dark'">
       <MoonIcon class="icon" />
     </span>

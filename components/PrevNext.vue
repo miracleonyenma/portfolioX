@@ -24,7 +24,7 @@ defineProps(["prev", "next"]);
 
 <style scoped>
 .prev-next-cont {
-  @apply flex gap-4 justify-between p-4 border border-slate-200 rounded-lg;
+  @apply flex gap-4 justify-between p-4 border border-slate-200 dark:border-slate-800 rounded-lg;
 }
 .link-item a {
   @apply flex gap-2;

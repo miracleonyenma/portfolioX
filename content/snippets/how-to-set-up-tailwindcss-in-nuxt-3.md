@@ -2,6 +2,8 @@
 title: How to set up Tailwindcss in Nuxt 3
 description: Here's how you can set up Tailwindcss 3 in Nuxt 3
 tags: [tailwindcss, nuxt3]
+createdAt: 12-24-2022
+updatedAt: 12-24-2022
 ---
 
 In this snippet post, I'll quickly walk you through how to set up Tailwindcss in your Nuxt 3 application. At the time of writing [v3.2.4](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.2.4) is the latest version of Tailwind and [v3.0.0](https://github.com/nuxt/framework/releases/tag/v3.0.0) is the current stable version of Nuxt 3.

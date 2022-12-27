@@ -10,7 +10,7 @@ body {
 
 @layer components {
   .icon {
-    @apply w-5 h-5 text-slate-800 dark:text-slate-50;
+    @apply shrink-0 w-5 h-5 text-slate-800 dark:text-slate-50;
   }
 
   .cta {
@@ -32,11 +32,23 @@ body {
 
   /* blog */
 
+  .articles-page-header {
+    @apply p-4 my-12 lg:mt-44;
+  }
+
+  .articles-page-header > .wrapper {
+    @apply w-full max-w-3xl m-auto;
+  }
+
+  .articles-list-section .articles-list {
+    @apply grid lg:grid-cols-1 gap-12 lg:gap-16 w-full max-w-3xl m-auto;
+  }
+
   .tags {
     @apply flex flex-wrap gap-2;
   }
 
   .tags .tag {
-    @apply font-medium px-2 py-1 bg-slate-100 border border-slate-200 hover:bg-slate-200  dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-100 rounded-lg cursor-pointer;
+    @apply font-heading font-semibold text-xs px-2 py-1 bg-slate-100 border border-slate-200 hover:bg-slate-200  dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-100 rounded-lg cursor-pointer;
   }
 }
