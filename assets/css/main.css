@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100;
 }
@@ -14,7 +18,7 @@ body {
   }
 
   .cta {
-    @apply p-1.5 px-2 border border-slate-100 dark:border-slate-700 rounded-lg;
+    @apply p-1.5 px-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg;
   }
 
   .img-cont > img {

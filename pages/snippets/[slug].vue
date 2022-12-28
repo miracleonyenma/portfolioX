@@ -14,10 +14,10 @@ const { data, error } = await useAsyncData(
       .findSurround(`/snippets/${slug.value}`);
 
     // replace "articles/" with "blog/" in surround paths
-    // surround = surround.map((doc) => {
-    //   doc._path = doc._path.replace("articles", "blog");
-    //   return doc;
-    // });
+    surround = surround.map((doc) => {
+      doc._path = doc._path.replace("articles", "blog");
+      return doc;
+    });
 
     return { article: await article, surround: surround };
   }

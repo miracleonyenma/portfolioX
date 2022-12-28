@@ -159,25 +159,25 @@ export default defineNitroPlugin((nitroApp) => {
 
       // console.log({ dates });
 
+      console.log("✨✨", file._path);
+
       try {
-        const slug = file._path.split("/").splice(-1)[0];
+        const slug = file._path;
         console.log({ slug });
 
         // check if file exists
         const filePath = path.join(
           process.cwd(),
-          `public/assets/img/articles/${slug}/cover.png`
+          `public/assets/img${slug}/cover.png`
         );
 
         const fileExists = fs.existsSync(filePath);
-        console.log({ filePath, fileExists });
+        file.coverPath = `/assets/img${slug}/cover.png`;
+        console.log({ filePath, fileExists, coverPath: file.coverPath });
 
         if (!fileExists) {
           // create the directory
-          const dirPath = path.join(
-            process.cwd(),
-            `public/assets/img/articles/${slug}`
-          );
+          const dirPath = path.join(process.cwd(), `public/assets/img${slug}`);
           const dir = await fs.promises.mkdir(dirPath, { recursive: true });
 
           console.log({ dirPath, dir });
@@ -202,8 +202,7 @@ export default defineNitroPlugin((nitroApp) => {
           console.log({ coverFile });
 
           file.coverUrl = cover.url;
-          coverFile &&
-            (file.coverPath = `/assets/img/articles/${slug}/cover.png`);
+          coverFile && (file.coverPath = `/assets/img${slug}/cover.png`);
 
           console.log({ file });
         }

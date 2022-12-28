@@ -7,24 +7,93 @@ const { article } = defineProps({
 });
 
 const coverImg = ref<HTMLImageElement | null>(null);
+const showToc = ref(article.body.toc.links.length > 0);
 
 console.log({ article });
 
 const useFallbackImg = () => {
   if (coverImg.value) {
     coverImg.value.src = article.coverUrl || article.coverPath;
+    coverImg.value.onerror = null;
   }
 };
+
+const metaImage =
+  article.coverPath ||
+  article.coverUrl ||
+  `/assets/img${article._path}/cover.png`;
+
+useHead({
+  title: article.title,
+  meta: [
+    {
+      name: "description",
+      content: article.description,
+      key: "description",
+    },
+    //Open Graph
+    {
+      key: "og-type",
+      property: "og:type",
+      content: "website",
+    },
+    {
+      key: "og-url",
+      property: "og:url",
+      content: `https://v3.miracleio.me${article._path}`,
+    },
+    {
+      key: "og-title",
+      property: "og:title",
+      content: article.title,
+    },
+    {
+      key: "og-description",
+      property: "og:description",
+      content: article.description,
+    },
+    {
+      key: "og-image",
+      property: "og:image",
+      content: `https://v3.miracleio.me${metaImage}`,
+    },
+    //Twitter
+    {
+      key: "twitter-card",
+      property: "twitter:card",
+      content: "summary_large_image",
+    },
+    {
+      key: "twitter-url",
+      property: "twitter:url",
+      content: `https://miracleio.me${article._path}`,
+    },
+    {
+      key: "twitter-title",
+      property: "twitter:title",
+      content: article.title,
+    },
+    {
+      key: "twitter-description",
+      property: "twitter:description",
+      content: article.description,
+    },
+    {
+      key: "twitter-image",
+      property: "twitter:image",
+      content: `https://v3.miracleio.me${metaImage}`,
+    },
+  ],
+});
 </script>
 <template>
-  <article class="article max-w-7xl m-auto">
+  <section class="article-section max-w-7xl m-auto">
     <header class="article-header">
       <div class="cover-img img-cont">
         <img
           ref="coverImg"
           :src="`/assets/img${article._path}/cover.png`"
           :alt="article.title"
-          @error="useFallbackImg"
         />
       </div>
       <div class="wrapper max-w-5xl m-auto">
@@ -43,19 +112,30 @@ const useFallbackImg = () => {
       </div>
     </header>
     <hr class="article-hr" />
-    <ContentRenderer
-      class="prose md:prose-lg prose-headings:font-heading prose-headings:!font-bold dark:prose-invert p-4 py-8 lg:p-8 lg:py-12 max-w-4xl m-auto"
-      :value="article"
-    >
-      <template #empty>
-        <p>No content found.</p>
-      </template>
-    </ContentRenderer>
-  </article>
+    <div class="wrapper">
+      <aside v-if="showToc" class="toc-cont">
+        <Toc :links="article.body.toc.links" />
+      </aside>
+      <article class="article" :class="{ '!col-span-7': !showToc }">
+        <ContentRenderer
+          class="prose md:prose-lg prose-headings:font-heading prose-headings:!font-bold prose-headings:scroll-mt-36 lg:prose-headings:scroll-mt-24 dark:prose-invert p-4 py-8 lg:p-8 lg:py-12 max-w-4xl m-auto"
+          :value="article"
+        >
+          <template #empty>
+            <p>No content found.</p>
+          </template>
+        </ContentRenderer>
+      </article>
+    </div>
+  </section>
 </template>
 <style scoped>
-.article {
+.article-section {
   @apply px-4;
+}
+
+.article-section > .wrapper {
+  @apply lg:grid lg:grid-cols-7 gap-4;
 }
 
 /* .cover-img {
@@ -63,7 +143,7 @@ const useFallbackImg = () => {
 } */
 
 .cover-img img {
-  @apply max-h-96;
+  @apply max-h-[29rem];
 }
 
 .img-cont img {
@@ -88,5 +168,17 @@ const useFallbackImg = () => {
 
 .article-hr {
   @apply border border-slate-200 dark:border-slate-800 max-w-5xl m-auto;
+}
+
+.toc-cont {
+  @apply sticky top-16 col-span-2 col-start-6 p-4 py-8;
+}
+
+.toc-cont > :deep(.toc) {
+  @apply lg:sticky top-28;
+}
+
+.article {
+  @apply col-span-5 col-start-1 row-start-1;
 }
 </style>
