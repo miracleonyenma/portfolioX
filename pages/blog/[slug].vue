@@ -1,5 +1,4 @@
 <script setup>
-import { ClockIcon, CalendarIcon } from "@heroicons/vue/24/solid/index";
 const route = useRoute();
 const slug = ref(route.params.slug);
 
@@ -11,7 +10,7 @@ const { data, error } = await useAsyncData(
     // which is an array of documeents that come before and after the current document
     let surround = await queryContent()
       .only(["_path", "title", "description"])
-      .sort({ date: 1 })
+      .sort({ gitUpdatedAt: 1 })
       .findSurround(`/articles/${slug.value}`);
 
     // replace "articles/" with "blog/" in surround paths

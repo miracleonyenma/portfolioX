@@ -3,8 +3,12 @@ title: Add reading time stats to your articles in Nuxt
 description: How to add reading time stats to your articles in Nuxt using the Nuxt Content module and reading-time
 tags: [Nuxt 2, Nuxt Content v1, Vue, Blog features]
 createdAt: 7-27-2022
-updatedAt: 8-19-2022
+updatedAt: 12-27-2022
 ---
+
+::info-box{type="warning"}
+  This article was written for an older version of Nuxt and Nuxt Content.
+::
 
 Many blogs and publications today have a way to tell how how many minutes it may take to read a particular article, mostly by displaying the average reading time at the beginning of the post.
 
@@ -79,7 +83,9 @@ npm run build
 
 and if we check our devtools, we should see `readingStats` as part of our content object
 
-<img-cont src="Add-reading-time-stats-to-your-articles-in-Nuxt/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools" style="zoom:150%;"></img-cont>
+<!-- <img-cont src="Add-reading-time-stats-to-your-articles-in-Nuxt/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools" style="zoom:150%;"></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Add-reading-time-stats-to-your-articles-in-Nuxt/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools"}
 
 Awesome!
 

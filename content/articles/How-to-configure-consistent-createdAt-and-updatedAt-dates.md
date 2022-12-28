@@ -10,7 +10,7 @@ Using the the Nuxt Content Module is a great way to build blogs and documentatio
 
 One of these features is the `createdAt` and `updatedAt` time stamp that Nuxt Content assigns to each content. This data is gotten from the file on the machine and so it can have a different values locally and in production, on a server.
 
-To fix this, we need to provide a consistent date value to our content and use that data instead. We'll be using [`nuxt-content-git`,](https://github.com/dword-design/nuxt-content-git) a module by [@dword-design](https://github.com/dword-design). It is an additional module for @nuxt/content that replaces or adds createdAt and updatedAt dates based on the git history.
+To fix this, we need to provide a consistent date value to our content and use that data instead. We'll be using [`nuxt-content-git`](https://github.com/dword-design/nuxt-content-git), a module by [@dword-design](https://github.com/dword-design). It is an additional module for @nuxt/content that replaces or adds createdAt and updatedAt dates based on the git history.
 
 I'll assume that you've installed and setup [Nuxt](https://nuxtjs.org/docs/2.x/get-started/installation) and [Nuxt Content](https://content.nuxtjs.org/) already. If you haven't, I have an article on that, check it out [here](https://miracleio.me/blog/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS)
 
@@ -26,7 +26,7 @@ npm install nuxt-content-git
 
 After installation, add the following to `modules` in your `nuxt.config.js` file just before `'@nuxt/content'`.
 
-```javascript[nuxt.config.js]
+```javascript
 // nuxt.config.js
 
 export default {
@@ -65,7 +65,7 @@ export default {
     'nuxt-content-git',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-  },
+  ],
 
   ...
 }

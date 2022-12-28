@@ -2,9 +2,14 @@
 title: Creating a blog using Nuxt and Nuxt Content - with TailwindCSS
 description: In this tutorial you'll learn how to create a personal blog using a Git-based CMS - Nuxt Content
 tags: [Nuxt 2, Nuxt Content v1, Vue, TailwindCSS]
-createdAt: 8-19-2022
-updatedAt: 8-20-2022
+createdAt: 8-21-2021
+updatedAt: 12-27-2022
 ---
+
+
+::info-box{type="warning"}
+  This article was written for an older version of Nuxt and Nuxt Content. Luckily, I have a more recent article published on an external blog, [find it here](https://dev.to/asayerio_techblog/power-your-blog-with-nuxt-content-25fn){target="_blank"}
+::
 
 ## What we're going to be building
 
@@ -37,23 +42,35 @@ npx create-nuxt-app <project-name>
 
 Choose _Content - Git-based Headless CMS_ option from Nuxt.js modules
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-install-content-Annotation 2021-07-11 014841.png" alt="create-nuxt-app installation options"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-install-content-Annotation 2021-07-11 014841.png" 
+alt="create-nuxt-app installation options"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-install-content-Annotation 2021-07-11 014841.png" alt="create-nuxt-app installation options"}
 
 Proceed to select other options, here's my preset:
 
 <!-- ![blog-with-nuxt-content-create-nuxt-app-installation-Annotation 2021-07-11 015118.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625966762066/IvOhoXl96.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-Annotation 2021-07-11 015118.png" alt="create-nuxt-app-installation"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-Annotation 2021-07-11 015118.png" 
+alt="create-nuxt-app-installation"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-Annotation 2021-07-11 015118.png" alt="create-nuxt-app-installation"}
 
 Installation complete! 🎉
 
 <!-- ![blog-with-nuxt-content-create-nuxt-app-installation-complete-Annotation 2021-07-11 021302.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625966789225/4LY2jIog5.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-complete-Annotation 2021-07-11 021302.png" alt="Nuxt app installation complete"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-complete-Annotation 2021-07-11 021302.png" 
+alt="Nuxt app installation complete"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-nuxt-app-installation-complete-Annotation 2021-07-11 021302.png" alt="Nuxt app installation complete"}
 
 ### Install nuxt content separately
 
-**If you already have Nuxt setup before now, you can install the content module by running the command**
+If you already have Nuxt setup before now, you can install the content module by running the command
 
 ```bash
 #install nuxt content
@@ -198,7 +215,11 @@ While going through these steps, I ran into an **issue of mismatched packages** 
 
 <!-- ![blog-with-nuxt-content-version-mismatch-error-Annotation 2021-07-11 031752.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625975242485/YCqCkt50g.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-version-mismatch-error-Annotation 2021-07-11 031752.png" alt="Vue version mismatch error"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-version-mismatch-error-Annotation 2021-07-11 031752.png" 
+alt="Vue version mismatch error"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-version-mismatch-error-Annotation 2021-07-11 031752.png" alt="Vue version mismatch error"}
 
 **Here's how I fixed it:**
 
@@ -210,19 +231,31 @@ npm i vue-server-renderer@latest --save
 
 <!-- ![blog-with-nuxt-content-update-vue-renderer-version-Annotation 2021-07-11 032705.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625975276642/JYoReAgk2.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-update-vue-renderer-version-Annotation 2021-07-11 032705.png" alt="Update vue-renderer-version"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-update-vue-renderer-version-Annotation 2021-07-11 032705.png" 
+alt="Update vue-renderer-version"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-update-vue-renderer-version-Annotation 2021-07-11 032705.png" alt="Update vue-renderer-version"}
 
 That fixed it for me, when I ran `npm run dev`
 
 <!-- ![blog-with-nuxt-content-run-dev-succesfull-Annotation 2021-07-11 032953.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625975289781/wtKSJLTIf.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-run-dev-succesfull-Annotation 2021-07-11 032953.png" alt="`run dev` succesfull"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-run-dev-succesfull-Annotation 2021-07-11 032953.png" 
+alt="`run dev` succesfull"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-run-dev-succesfull-Annotation 2021-07-11 032953.png" alt="`run dev` succesfull"}
 
 <!-- ![blog-with-nuxt-content-site-preview-Annotation 2021-07-11 032953.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625975335704/mi9b73FR9.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-site-preview-Annotation 2021-07-11 032953.png" alt="Initial site preview"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-site-preview-Annotation 2021-07-11 032953.png" 
+alt="Initial site preview"
+></img-cont> -->
 
-_Sweet! 🎉, now we can move into the interesting stuff_
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-site-preview-Annotation 2021-07-11 032953.png" alt="Initial site preview"}
+
+Sweet! 🎉, now we can move into the interesting stuff
 
 ## Create your first blog post
 
@@ -253,13 +286,21 @@ This is my first blog post learning nuxt content.
 
 <!-- ![blog-with-nuxt-content-create-content-md-file-Annotation 2021-07-11 034837.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1625975435117/_58aEjwEA.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-content-md-file-Annotation 2021-07-11 034837.png" alt="Create  markdown file in `content/` directory"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-content-md-file-Annotation 2021-07-11 034837.png" 
+alt="Create  markdown file in `content/` directory"
+></img-cont> -->
 
-<info-box>
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-create-content-md-file-Annotation 2021-07-11 034837.png" alt="Create  markdown file in `content/` directory"}
+
+<!-- <info-box>
   <template #info-box>
     Note the YAML front matter section, this will be used later on to insert custom variables like title and description that we will access using `$content`.
   </template>
-</info-box>
+</info-box> -->
+
+::info-box{type="info"}
+  Note the YAML front matter section, this will be used later on to insert custom variables like title and description that we will access using `$content`.
+::
 
 Next, we're going to create a [dynamic page](https://nuxtjs.org/docs/2.x/directory-structure/pages#dynamic-pages) which will be used to:
 
@@ -298,7 +339,11 @@ Go to your site and you should see something like this
 
 <!-- ![blog-with-nuxt-content-render-first-article-Annotation 2021-07-11 123202.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626008969368/_V0QIMEyB.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-render-first-article-Annotation 2021-07-11 123202.png" alt="Previe of first article"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-render-first-article-Annotation 2021-07-11 123202.png" 
+alt="Previe of first article"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-render-first-article-Annotation 2021-07-11 123202.png" alt="Previe of first article"}
 
 ## Accessing default injected variables
 
@@ -388,7 +433,11 @@ We should have something like this:
 
 <!-- ![blog-with-nuxt-content-article-with-injected-variables-Annotation 2021-07-11 135032.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626009001772/l5eXbp4f5.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-article-with-injected-variables-Annotation 2021-07-11 135032.png" alt="Article with injected variables"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-article-with-injected-variables-Annotation 2021-07-11 135032.png" 
+alt="Article with injected variables"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-article-with-injected-variables-Annotation 2021-07-11 135032.png" alt="Article with injected variables"}
 
 Now, we have two heading `<h1>` elements. One from the YAML front matter and the main markdown. We can remove the one in the main markdown.
 We can also add more content for the styles:
@@ -455,7 +504,11 @@ Our page now looks like this:
 
 <!-- ![blog-with-nuxt-content-configure-blog-with-styling-Annotation 2021-07-11 162500.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249266836/ut6jai8_v.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-styling-Annotation 2021-07-11 162500.png" alt="Our page with some styling"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-styling-Annotation 2021-07-11 162500.png" 
+alt="Our page with some styling"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-styling-Annotation 2021-07-11 162500.png" alt="Our page with some styling"}
 
 Sweet indeed 😍
 
@@ -483,7 +536,11 @@ You should have something like this:
 
 <!-- ![blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png](Upload failed. Please re-upload the image) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" alt="Add information box using HTML"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" 
+alt="Add information box using HTML"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" alt="Add information box using HTML"}
 
 Sweet, now we can make this a vue component that can be reused
 
@@ -536,11 +593,15 @@ Create `infoBox.vue` file in `components/global`.
 </style>
 ```
 
-<info-box>
+<!-- <info-box>
   <template #info-box>
     We are creating it in a <code>components/global</code> folder to register the component globally in order for nuxt to be able to auto import it into <code>&lt;nuxt-content&gt;</code>
   </template>
-</info-box>
+</info-box> -->
+
+::info-box{type="info"}
+  We are creating it in a `components/global` folder to register the component globally in order for nuxt to be able to auto import it into `&lt;nuxt-content&gt;`
+::
 
 Now, replace the html with our new `infoBox` component
 
@@ -552,18 +613,23 @@ Now, replace the html with our new `infoBox` component
     Here we have important information we would love to share with you!
   </template>
 </info-box>
+
 ```
 
 If we view our page, we should still see our info box
 
 <!-- ![blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249270340/Z-M_a581s.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" alt="Add information box using Vue components"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" 
+alt="Add information box using Vue components"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-configure-blog-with-html-markup-Annotation 2021-07-11 175231.png" alt="Add information box using Vue components"}
 
 ## The content API
 
 It's pretty awesome that the content module provides an API that we can access on the `http://localhost:3000/_content/` route. we can fetch data for all articles on the `http://localhost:3000/_content/articles` route.
-<br>
+
 We can access a single article using the slug of the article i.e `http://localhost:3000/_content/articles/first-blog-post` to access the data for `http://localhost:3000/blog/first-blog-post`.
 
 ## Adding Previous and Next Article functionality
@@ -573,7 +639,11 @@ So, let's create about three duplicates of our `content/articles/first-blog-post
 
 <!-- ![blog-with-nuxt-content-duplicate-article-Annotation 2021-07-11 190022.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249304972/EHwwhvNxxo.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-duplicate-article-Annotation 2021-07-11 190022.png" alt="Duplicates of article"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-duplicate-article-Annotation 2021-07-11 190022.png" 
+alt="Duplicates of article"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-duplicate-article-Annotation 2021-07-11 190022.png" alt="Duplicates of article"}
 
 Let's create our `prevNext.vue` component in our `components/` folder
 
@@ -694,7 +764,7 @@ Our new component should look something like this:
   @layer components {
     /* styling for the components */
     .prev-next {
-      @apply flex gap-12 py-8 items-center justify-between m-auto max-w-xl lg: max-w-4xl;
+      @apply flex gap-12 py-8 items-center justify-between m-auto max-w-xl lg:max-w-4xl;
     }
 
     .prev-next a {
@@ -745,21 +815,25 @@ Here we go:
 
 <!-- ![blog-with-nuxt-content-prevVext-component-Annotation 2021-07-12 003740.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249332207/9joodc1yS.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-prevVext-component-Annotation 2021-07-12 003740.png" alt="Previous and Next compnont"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-prevVext-component-Annotation 2021-07-12 003740.png" 
+alt="Previous and Next compnont"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-prevVext-component-Annotation 2021-07-12 003740.png" alt="Previous and Next compnont"}
 
 Great!
 
 ## Listing out all our Articles
 
 Now, it'll be really nice if we could display our articles on our blog page.
-<br/>
+
 Let's create a new page in our `blogs/` folder; `pages/blogs/index.vue`
-<br/>
+
 Then in the `<script>`, we pass in `$content` and `params` into our `asyncData` function.
 Within the function we pass `aritcles` which is the folder which our articles are stored into `$content` and chain `.only(['title', 'slug', 'updatedAt', 'description'])` to fetch only those attributes from the articles,
-<br/>
+
 `.sortBy('createdAt', 'asc')` to sort it
-<br>
+
 and lastly `fetch()` to fetch the data and assign it to `const articles`
 
 ```html
@@ -779,7 +853,7 @@ and lastly `fetch()` to fetch the data and assign it to `const articles`
     methods: {
       formatDate(date) {
         // format the date to be displayed in a readable format
-        })
+        }
       },
     },
   }
@@ -844,11 +918,15 @@ Now we can use the `v-for` directive to render our articles from the `articles` 
 </style>
 ```
 
-Let's visit http://localhost:3000/blog, we should see our blog page
+Let's visit <http://localhost:3000/blog>, we should see our blog page
 
 <!-- ![blog-with-nuxt-content-blog-list-index-page-Annotation 2021-07-14 061942.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249390189/c6DL-LK47.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-list-index-page-Annotation 2021-07-14 061942.png" alt="Blog page, list out all blog posts"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-list-index-page-Annotation 2021-07-14 061942.png" 
+alt="Blog page, list out all blog posts"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-list-index-page-Annotation 2021-07-14 061942.png" alt="Blog page, list out all blog posts"}
 
 ## Creating a navigation for our site
 
@@ -913,7 +991,11 @@ Our `siteHeader.vue` It is now automatically imported into our layout. Have a lo
 
 <!-- ![blog-with-nuxt-content-blog-with-site-header-Annotation 2021-07-14 075929.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1626249427110/1v-qmk4z0.png) -->
 
-<img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-with-site-header-Annotation 2021-07-14 075929.png" alt="Blog with Site Header"></img-cont>
+<!-- <img-cont src="Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-with-site-header-Annotation 2021-07-14 075929.png" 
+alt="Blog with Site Header"
+></img-cont> -->
+
+:img-cont{src="/assets/img/articles/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS/blog-with-nuxt-content-blog-with-site-header-Annotation 2021-07-14 075929.png" alt="Blog with Site Header"}
 
 Beautiful 😘
 
@@ -921,7 +1003,7 @@ Beautiful 😘
 
 We've managed to build a pretty simple blog site with important features using just one module, nuxt/content.
 The focus of this article was the content module, so, I'll drop links for more reading on tailwindcss.
-<br>
+
 I think this is a pretty awesome and useful feature in Nuxt.js.I think you would love to play around with it even more because there is a lot more functionality you can add to your project that we didn't cover here.
 
 I hope you see this useful, I will consider writing on deployment in the future but I'll just drop some links that I feel are useful till then.
@@ -932,11 +1014,11 @@ Thanks for reading. Happy coding 😎.
 
 ### Useful links
 
-- The content module documentation: https://content.nuxtjs.org/
-- NuxtJs documentation: https://nuxtjs.org/docs/2.x/get-started/installation
-- Tailwindcss documentation: https://tailwindcss.com/docs/
+- The content module documentation: <https://content.nuxtjs.org/>
+- NuxtJs documentation: <https://nuxtjs.org/docs/2.x/get-started/installation>
+- Tailwindcss documentation: <https://tailwindcss.com/docs/>
 
 ### Awesome reads
 
-- An article on creatung a blog with Nuxt content: https://nuxtjs.org/blog/creating-blog-with-nuxt-content#add-a-search-field
-- An article on building a prtfolio site with NuxtJs: https://itnext.io/building-the-ultimate-portfolio-site-with-nuxt-js-and-netlify-beautiful-blazing-fast-100-seod-102913a60cfd
+- An article on creatung a blog with Nuxt content: <https://nuxtjs.org/blog/creating-blog-with-nuxt-content#add-a-search-field>
+- An article on building a prtfolio site with NuxtJs: <https://itnext.io/building-the-ultimate-portfolio-site-with-nuxt-js-and-netlify-beautiful-blazing-fast-100-seod-102913a60cfd>

@@ -3,7 +3,7 @@ title: Earn crypto from your personal site or blog
 description: Allow folks that visit your portfolio site or blog pay you in crypto
 tags: [BAT, Crypto]
 createdAt: 4-24-2022
-updatedAt: 4-24-2022
+updatedAt: 12-27-2022
 ---
 
 I think it’s amazing, the idea that your readers can say thank you for taking the time to write a post that helped them solve a problem,  taught them something very important or even say thank you for being so awesome on the internet. It’s even more amazing if they could say thank you in sweet cash or better , crypto, in this case.
@@ -16,7 +16,9 @@ These are cool options, but if you’ve used [Brave browser](https://brave.com/)
 
 Well, it turns out that being a Verified creator isn't complicated and you can get verified to receive tips on a variety of platforms, from your personal site, to Twitter, YouTube and more. Now let’s see how we can add that sweet verified badge to our site and earn some crypto.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298337728_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298337728_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298337728_image.png" alt="Verified creator badge on Miracleio.me"}
 
 Hehe 😎
 
@@ -24,30 +26,40 @@ Hehe 😎
 
 The first step to start receiving contributions and tips from brave users is to become a creator. Pretty straightforward, head to <https://creators.brave.com/> and create an account to get started.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298790496_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298790496_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650298790496_image.png"}
 
 Once you’ve created an account, it should take you to the [Brave Rewards page](https://publishers.basicattentiontoken.org/publishers/home?locale=en) where you can access your creator dashboard and see things like 3rd party wallet services, tipping banners, creator referral program and channels.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299273896_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299273896_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299273896_image.png"}
 
 ## Add a channel
 
 A channel is basically the platform you share your content on and Brave supports quite a number of channels at the moment and it looks like they recently added a few more like Github for example. Nice.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299345353_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299345353_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299345353_image.png"}
 
 Go ahead and click on **website** to add your website as a channel. In the domain info page, just enter your website URL and click on continue.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299521972_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299521972_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650299521972_image.png"}
 
  Next, you have to choose a verification method. Brave provides two options:
 
 - Using a trusted file
 - Edit DNS records
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300017314_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300017314_image.png) -->
 
-**Using a trusted file**
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300017314_image.png"}
+
+### Using a trusted file
 
 > Heads up tho, this only works for HTTPS enabled sites
 
@@ -56,34 +68,44 @@ After you’ve placed the file, click on verify but it might take some time befo
 
 However for some reason, it kept telling me that my site wasn't HTTPS, I still don’t understand why but I went for the second option, that worked.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300375077_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300375077_image.png) -->
 
-**Edit DNS record**
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650300375077_image.png"}
+
+### Edit DNS record
 
 Another option is to add a new DNS record to your site.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650301670289_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650301670289_image.png) -->
 
-This is also pretty straightforward especially if you're hosting on [Netlify](https://netlify.com) because that’s where I hosted mine that can show you how to go about modifying DNS records on Netlify. If you don't host on Netlify, if you have access to Cpanel, you can edit the DNS too. If you don't have any of these, I’m pretty sure a Google search would be very helpful.
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650301670289_image.png"}
+
+This is also pretty straightforward especially if you're hosting on [Netlify](https://netlify.com). That's where this site is currently hosted and I can show you how to go about modifying DNS records on Netlify. If you don't host on Netlify, if you have access to Cpanel, you can edit the DNS too. If you don't have any of these, I’m pretty sure a Google search would be very helpful.
 
 Now, login to your [Netlify](https://app.netlify.com), go to the site settings for your site and then to domain settings. Click on the options for the primary domain and click on Go to DNS panel.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303128604_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303128604_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303128604_image.png"}
 
 Once you’re in the DNS settings page, go to DNS records and click on **Add new record** to add a new DNS record.
 
 - Record Type: TXT
 - Name: leave a @
-- Value: <Your brave verification text>
+- Value: `<Your brave verification text>`
 - TTL: You can leave it blank (I did 😉)
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303324238_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303324238_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650303324238_image.png"}
 
 Click on save and head back to your brave creator dashboard to verify. Feel free to be like me and hit that verify button way too many times until that sweet “You’re verified” message shows up. You’re welcome.
 
 Once verified, you can go to your site and look out for that verified badge on your the **BAT icon**, if you don’t see it right away, click on the BAT icon and click **refresh.**
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304517164_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304517164_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304517164_image.png"}
 
 And there we go! Congrats!
 
@@ -96,7 +118,9 @@ Once you’re on <https://miracleio.me>, you should see that verified button up 
 
 Next, click on the **Send Tip** button and this lovely banner will pop up. If it changes in the future to something prettier, better.
 
-![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304917473_image.png)
+<!-- ![](https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304917473_image.png) -->
+
+:img-cont{src="https://paper-attachments.dropbox.com/s_816E3FCC06DD6467E0AAD926097975F0EE89D43F7D38B47EEC4EE1C545CF0586_1650304917473_image.png"}
 
 You can choose **One-Time Tip** or **Monthly**. Then select the amount of BAT you want to send. You can select any amount or set a custom amount by clicking on **custom tip amount**, I’m not picky you know but the 10BAT option looks very very nice, don’t you think?
 

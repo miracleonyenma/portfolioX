@@ -19,7 +19,7 @@ Although it's a well known fact that dark mode offers a ton of benefits to site 
 
 My new [site](https://miracleio.me) runs on [Nuxt](http://nuxtjs.org/) which is basically a server side rendering framework like Next.js (which is for React) but for [Vue](https://vuejs.org/). I'm not going to cover how I set up the site with [Nuxt Content](https://content.nuxtjs.org/) and Tailwind in this article but here's a link to that [here](https://miracleio.me/blog/Creating-a-blog-using-Nuxt-and-Nuxt-Content---with-TailwindCSS).
 
-## **Approaching The Problem**
+## Approaching The Problem
 
 If you look at the Tailwind docs on [dark mode](https://tailwindcss.com/docs/dark-mode), there's an example of a common approach for dark mode and respecting user preference and that approach is what I was looking for.
 
@@ -264,11 +264,12 @@ In `<script>`, I import `initTheme` function then I do the following:
 - Create a `theme` data property in `data()`,
 - Set the `theme` data to the value returned by `initTheme` in `beforeMount()` which runs when the app is visited.
 
-  <info-box>
-    <template #info-box>
-    Take note of <code>this.$nuxt.$on('toggle-theme', this.toggle)</code>, this is a nuxt global custom event listener which will run the <code>toggle()</code> method when the event is emitted from <code>themeModule/themeControl.vue</code>. You'll see this emitter in the component code.
-    </template>
-  </info-box>
+::info-box{type="info"}
+Take note of `this.$nuxt.$on('toggle-theme', this.toggle)`. _View more_  
+
+#details
+This is a _nuxt_ global custom event listener which will run the `toggle()` method when the event is emitted from `themeModule/themeControl.vue`. You'll see this emitter in the component code.
+::
 
 - The `toggle()` method checks if the current theme mode is "dark", if it is, it sets it to "light". If it's not "dark", it set's it to dark. That's the basic toggle functionality right there.
 - Set up a watcher for `theme` data.
@@ -329,7 +330,6 @@ What's left now is to create a button component that users will click to toggle 
       /* dark variant for button */
       @apply dark:-translate-x-1/2;
     }
-  }
 </style>
 ```
 
@@ -344,7 +344,9 @@ It's pretty simple.
 
 Here's my toggler in action:
 
-<img-cont src="How-I-implemented-TailwindCSS-dark-mode-in-my-Nuxt-blog/baa7cee3-5cde-43d6-a971-8b37237d2a60_gif.gif" alt="GIF of the toggler on my blog"></img-cont>
+<!-- <img-cont src="How-I-implemented-TailwindCSS-dark-mode-in-my-Nuxt-blog/baa7cee3-5cde-43d6-a971-8b37237d2a60_gif.gif" alt="GIF of the toggler on my blog"></img-cont> -->
+
+:img-cont{src="/assets/img/articles/How-I-implemented-TailwindCSS-dark-mode-in-my-Nuxt-blog/baa7cee3-5cde-43d6-a971-8b37237d2a60_gif.gif" alt="GIF of the toggler on my blog"}
 
 ### The Toggler Animation
 

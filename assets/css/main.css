@@ -41,7 +41,7 @@ body {
   }
 
   .articles-list-section .articles-list {
-    @apply grid lg:grid-cols-1 gap-12 lg:gap-16 w-full max-w-3xl m-auto;
+    @apply grid lg:grid-cols-1 gap-16 lg:gap-20 w-full max-w-3xl m-auto;
   }
 
   .tags {

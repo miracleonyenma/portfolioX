@@ -3,19 +3,12 @@ title: Adding images to your nuxt/content articles
 description: Here's a way to add images into your article content in your nuxt/content project
 tags: [Nuxt 2, Nuxt Content v1, Vue, Blog features]
 createdAt: 7-20-2022
-updatedAt: 8-19-2022
+updatedAt: 12-27-2022
 ---
 
-<!-- ## Outline
-
-- Nuxt & Nuxt Content
-- Creating an image container component
-  - Making it globally accessible
-  - Using require to get the processed image
-- Adding our component to our markdown
-- Useful links -->
-
----
+::info-box{type="warning"}
+  This article was written for an older version of Nuxt and Nuxt Content.
+::
 
 ## Nuxt & Nuxt Content
 
@@ -43,7 +36,7 @@ description: this is an article
 Some text in the article.
 ```
 
-And, we have an image in our `assets/` directory, say `assets/img/article-1/article-img.png` <br/>
+And, we have an image in our `assets/` directory, say `assets/img/article-1/article-img.png`
 For the sake of organization, we'll keep `article-img.png` in a subfolder that corresponds with our article title `article-1/`.
 
 If we want to add that image to our article, we can create a component for that.
@@ -145,7 +138,8 @@ Some text in the article.
 <img-cont src="article-1/article-img.png" alt="An image in my article" />
 ```
 
-Here, you'll notice that our `src` is referencing the image only from the subfolder and article name. <br/>
+Here, you'll notice that our `src` is referencing the image only from the subfolder and article name.
+
 This is just a structure we can to follow so that we won't run into much complication incase our directory structure changes.
 
 There we have it! Our component should be able to display our images form our articles.
@@ -160,5 +154,5 @@ Here are some related links that I think you might find useful
 - The Nuxt Content module [Introduction - Nuxt Content (nuxtjs.org)](https://content.nuxtjs.org/)
 - [Working with images in Nuxt Content | Woet Flow](https://woetflow.com/posts/working-with-images-in-nuxt-content/)
 
-Thanks for reading! ❤ <br/>
+Thanks for reading! ❤
 I hope you found this useful, feel free to share ✨

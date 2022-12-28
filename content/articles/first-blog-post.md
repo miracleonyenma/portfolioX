@@ -3,7 +3,7 @@ title: My First Blog Post
 description: Learning how to create my blog using nuxt, the nuxt content module and tailwindcss
 tags: [dummy, tests]
 createdAt: 9-14-2022
-updatedAt: 9-19-2022
+updatedAt: 12-27-2022
 ---
 
 Hey there! 👋🏾
@@ -35,10 +35,14 @@ A plugin that provides a set of prose classes you can use to add beautiful typog
 <!-- HTML in markdown
     Info box with svg icon
  -->
-<info-box>
+<!-- <info-box>
     <template #info-box>
         Here we have important information we would love to share with you!
     </template>
-</info-box>
+</info-box> -->
+
+::info-box{type="info"}
+ Here we have important information we would love to share with you!
+::
 
 > Sweet huh?

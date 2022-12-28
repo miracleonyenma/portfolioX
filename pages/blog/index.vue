@@ -40,8 +40,17 @@ const articleSlug = (path: string) => {
               'author',
               'updatedAt',
               'formattedUpdatedAt',
+              'gitUpdatedAt',
+              'formattedGitUpdatedAt',
+              'fileUpdatedAt',
+              'formattedFileUpdatedAt',
             ],
             $sensitivity: 'base',
+            sort: [
+              { gitUpdatedAt: -1 },
+              { fileUpdatedAt: -1 },
+              { updatedAt: -1 },
+            ],
           }"
         >
           <!-- Default list slot -->

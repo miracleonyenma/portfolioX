@@ -1,24 +1,34 @@
 <script setup lang="ts">
-import { ClockIcon, CalendarIcon } from "@heroicons/vue/24/solid/index";
-
 const { article } = defineProps({
   article: {
     type: Object,
     required: true,
   },
 });
+
+const coverImg = ref<HTMLImageElement | null>(null);
+
+console.log({ article });
+
+const useFallbackImg = () => {
+  if (coverImg.value) {
+    coverImg.value.src = article.coverUrl || article.coverPath;
+  }
+};
 </script>
 <template>
   <article class="article max-w-7xl m-auto">
     <header class="article-header">
       <div class="cover-img img-cont">
         <img
-          src="https://miracleio.me/_nuxt/img/cover.2ace172.png"
+          ref="coverImg"
+          :src="`/assets/img${article._path}/cover.png`"
           :alt="article.title"
+          @error="useFallbackImg"
         />
       </div>
       <div class="wrapper max-w-5xl m-auto">
-        <h1 class="title font-heading font-extrabold text-4xl lg:text-6xl mb-2">
+        <h1 class="title font-heading font-bold text-4xl lg:text-6xl mb-2">
           {{ article.title }}
         </h1>
         <p class="description text-xl pt-2">{{ article.description }}</p>

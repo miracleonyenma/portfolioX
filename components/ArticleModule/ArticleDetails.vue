@@ -33,8 +33,16 @@ const { article, options } = defineProps({
     <div class="detail-group justify-end">
       <div class="detail-item date">
         <CalendarIcon class="icon" />
-        <time :datetime="article.updatedAt">
-          {{ article.formattedUpdatedAt }}
+        <time
+          :datetime="
+            article.gitUpdatedAt || article.fileUpdatedAt || article.updatedAt
+          "
+        >
+          {{
+            (article.gitUpdatedAt && article.formattedGitUpdatedAt) ||
+            article.formattedFileUpdatedAt ||
+            article.formattedUpdatedAt
+          }}
         </time>
       </div>
 
