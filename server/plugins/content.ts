@@ -132,6 +132,13 @@ const generateCovers = async (file: {
   coverUrl: any;
 }) => {
   try {
+    console.log("🏁🏁🏁", { env: process.env.NODE_ENV });
+    
+    // throw error if in production environment
+    if (process.env.NODE_ENV === "production") {
+      throw new Error("Cannot generate covers in production environment");
+    }
+
     const slug = file._path;
     // console.log({ slug });
 
