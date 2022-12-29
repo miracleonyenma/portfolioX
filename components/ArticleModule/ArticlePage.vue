@@ -97,7 +97,7 @@ useHead({
         />
       </div>
       <div class="wrapper max-w-5xl m-auto">
-        <h1 class="title font-heading font-bold text-4xl lg:text-6xl mb-2">
+        <h1 class="title font-heading font-extrabold text-4xl lg:text-6xl mb-2">
           {{ article?.title }}
         </h1>
         <p class="description text-xl pt-2">{{ article?.description }}</p>
