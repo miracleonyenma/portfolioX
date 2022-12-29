@@ -133,9 +133,12 @@ const generateCovers = async (file: {
 }) => {
   try {
     console.log("🏁🏁🏁", { env: process.env.NODE_ENV });
-    
+
     // throw error if in production environment
-    if (process.env.NODE_ENV === "production") {
+    if (
+      process.env.NODE_ENV === "production" ||
+      process.env.NODE_ENV === "prerender"
+    ) {
       throw new Error("Cannot generate covers in production environment");
     }
 
