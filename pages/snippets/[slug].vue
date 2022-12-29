@@ -13,7 +13,14 @@ const { data, error } = await useAsyncData(
     try {
       surround = await queryContent()
         .only(["_path", "title", "description", "createdAt"])
-        .where({ _path: { $regex: "snippets" } })
+        .where({
+          _path: {
+            test: (path) => {
+              console.log({ path });
+              return path.startsWith("/snippets");
+            },
+          },
+        })
         .sort({ createdAt: -1 })
         .findSurround(`/snippets/${slug.value}`);
 

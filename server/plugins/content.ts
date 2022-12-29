@@ -123,6 +123,88 @@ const createCover = async ({
   });
 };
 
+const generateCovers = async (file: {
+  updatedAt: any;
+  _path: any;
+  coverPath: string;
+  title: any;
+  description: any;
+  coverUrl: any;
+}) => {
+  try {
+    const slug = file._path;
+    // console.log({ slug });
+
+    // check if file exists
+    const filePath = path.join(
+      process.cwd(),
+      `public/assets/img${slug}/cover.png`
+    );
+
+    const fileExists = fs.existsSync(filePath);
+    // const coverPath = `/assets/img${slug}/cover.png`;
+    // console.log({ filePath, fileExists, coverPath: file.coverPath });
+
+    // console.log({ fileExists, filePath });
+
+    if (!fileExists) {
+      // create the directory
+      const dirPath = path.join(process.cwd(), `public/assets/img${slug}`);
+      const dir = await fs.promises.mkdir(dirPath, { recursive: true });
+
+      console.log({ dirPath, dir });
+
+      const coverData = {
+        slug,
+        title: file.title,
+        description: file.description,
+        updatedAt: file.updatedAt,
+      };
+
+      console.log({ file, coverData });
+
+      console.time("generate cover");
+      await waitForGenerationToFinish();
+      console.timeEnd("generate cover");
+
+      generationInProgress = true;
+      console.log({ generationInProgress });
+      const cover = await getCover(coverData);
+      console.log({ cover });
+      generationInProgress = false;
+      console.log({ generationInProgress });
+
+      const coverFile = await createCover({
+        filePath,
+        url: cover.url,
+      });
+
+      console.log({ coverFile });
+
+      const coverUrl = cover.url;
+      const coverPath = `/assets/img${slug}/cover.png`;
+
+      console.log({ coverUrl, coverPath });
+
+      return {
+        coverUrl,
+        coverPath,
+      };
+    }
+
+    return {
+      coverUrl: null,
+      coverPath: `/assets/img${slug}/cover.png`,
+    };
+  } catch (error) {
+    console.log("🙏🏾🙏🏾🙏🏾", { error });
+    return {
+      coverUrl: null,
+      coverPath: null,
+    };
+  }
+};
+
 export default defineNitroPlugin((nitroApp) => {
   let stats = {};
 
@@ -183,64 +265,15 @@ export default defineNitroPlugin((nitroApp) => {
 
       // console.log("✨✨", file._path);
 
-      try {
-        const slug = file._path;
-        // console.log({ slug });
+      const coverData = await generateCovers(file);
 
-        // check if file exists
-        const filePath = path.join(
-          process.cwd(),
-          `public/assets/img${slug}/cover.png`
-        );
+      file.coverUrl = coverData.coverUrl;
+      file.coverPath = coverData.coverPath;
 
-        const fileExists = fs.existsSync(filePath);
-        file.coverPath = `/assets/img${slug}/cover.png`;
-        // console.log({ filePath, fileExists, coverPath: file.coverPath });
-
-        // console.log({ fileExists, filePath });
-
-        if (!fileExists) {
-          // create the directory
-          const dirPath = path.join(process.cwd(), `public/assets/img${slug}`);
-          const dir = await fs.promises.mkdir(dirPath, { recursive: true });
-
-          console.log({ dirPath, dir });
-
-          const coverData = {
-            slug,
-            title: file.title,
-            description: file.description,
-            updatedAt: dates.updatedAt,
-          };
-
-          console.log({ file, coverData });
-
-          console.time("generate cover");
-          await waitForGenerationToFinish();
-          console.timeEnd("generate cover");
-
-          generationInProgress = true;
-          console.log({ generationInProgress });
-          const cover = await getCover(coverData);
-          console.log({ cover });
-          generationInProgress = false;
-          console.log({ generationInProgress });
-
-          const coverFile = await createCover({
-            filePath,
-            url: cover.url,
-          });
-
-          console.log({ coverFile });
-
-          file.coverUrl = cover.url;
-          coverFile && (file.coverPath = `/assets/img${slug}/cover.png`);
-
-          console.log({ file });
-        }
-      } catch (error) {
-        console.log("🙏🏾🙏🏾🙏🏾", { error });
-      }
+      console.log({
+        coverUrl: file.coverUrl,
+        coverPath: file.coverPath,
+      });
     }
   });
 });
