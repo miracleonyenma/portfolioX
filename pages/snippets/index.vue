@@ -10,7 +10,7 @@ const snippetsPath = ref("/snippets");
 </script>
 <template>
   <main>
-    <header class="articles-header page-header">
+    <header class="articles-page-header page-header">
       <div class="wrapper">
         <span class="py-4" v-if="isChristmas"> Merry Christmas! 🎄 </span>
         <h1 class="font-heading font-bold text-4xl lg:text-6xl">Snippets</h1>
@@ -19,7 +19,7 @@ const snippetsPath = ref("/snippets");
         </p>
       </div>
     </header>
-    <section class="site-section">
+    <section class="articles-list-section site-section">
       <div class="wrapper">
         <!-- Render list of all articles in ./content/blog using `path` -->
         <!-- Provide only defined fieldsin the `:query` prop -->
@@ -34,24 +34,31 @@ const snippetsPath = ref("/snippets");
               'img',
               'readingTime',
               'author',
+              'createdAt',
+              'formattedCreatedAt',
               'updatedAt',
               'formattedUpdatedAt',
+              'gitCreatedAt',
+              'formattedGitCreatedAt',
               'gitUpdatedAt',
               'formattedGitUpdatedAt',
+              'fileCreatedAt',
+              'formattedFileCreatedAt',
               'fileUpdatedAt',
               'formattedFileUpdatedAt',
             ],
             $sensitivity: 'base',
             sort: [
-              { gitUpdatedAt: -1 },
-              { fileUpdatedAt: -1 },
-              { updatedAt: -1 },
+              { createdAt: -1 },
+              // { gitUpdatedAt: -1 },
+              // { fileUpdatedAt: -1 },
+              // { updatedAt: -1 },
             ],
           }"
         >
           <!-- Default list slot -->
           <template v-slot="{ list }">
-            <ul class="article-list">
+            <ul class="articles-list">
               <li
                 v-for="article in list"
                 :key="article._path"
@@ -72,14 +79,3 @@ const snippetsPath = ref("/snippets");
     </section>
   </main>
 </template>
-<style scoped>
-.articles-header {
-  @apply p-4 my-12 lg:mt-44;
-}
-.articles-header > .wrapper {
-  @apply w-full max-w-4xl m-auto;
-}
-.article-list {
-  @apply grid lg:grid-cols-1 gap-12 w-full max-w-3xl m-auto;
-}
-</style>

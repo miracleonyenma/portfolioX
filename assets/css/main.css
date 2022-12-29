@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100;
+  @apply bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-100;
 }
 
 @layer components {
@@ -41,11 +41,11 @@ body {
   }
 
   .articles-page-header > .wrapper {
-    @apply w-full max-w-3xl m-auto;
+    @apply w-full max-w-4xl m-auto;
   }
 
   .articles-list-section .articles-list {
-    @apply grid lg:grid-cols-1 gap-16 lg:gap-20 w-full max-w-3xl m-auto;
+    @apply grid lg:grid-cols-1 gap-6 lg:gap-6 w-full max-w-4xl m-auto;
   }
 
   .tags {

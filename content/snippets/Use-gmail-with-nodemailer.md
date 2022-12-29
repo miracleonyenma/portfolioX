@@ -2,8 +2,8 @@
 title: Use Gmail with Nodemailer
 description: Here's how you can successfully use your Gmail account to send emails using Nodemailer.
 tags: [nodemailer, gmail, nodejs, strapi, javascript]
-createdAt: 7-22-2022
-updatedAt: 7-22-2022
+createdAt: 2022-07-21T23:00:00.000Z
+updatedAt: 2022-07-21T23:00:00.000Z
 ---
 
 

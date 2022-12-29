@@ -2,8 +2,8 @@
 title: Earn crypto from your personal site or blog
 description: Allow folks that visit your portfolio site or blog pay you in crypto
 tags: [BAT, Crypto]
-createdAt: 4-24-2022
-updatedAt: 12-27-2022
+createdAt: 2022-04-18T23:00:00.000Z
+updatedAt: 2022-04-21T23:00:00.000Z
 ---
 
 I think it’s amazing, the idea that your readers can say thank you for taking the time to write a post that helped them solve a problem,  taught them something very important or even say thank you for being so awesome on the internet. It’s even more amazing if they could say thank you in sweet cash or better , crypto, in this case.

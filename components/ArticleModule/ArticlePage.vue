@@ -7,28 +7,28 @@ const { article } = defineProps({
 });
 
 const coverImg = ref<HTMLImageElement | null>(null);
-const showToc = ref(article.body.toc.links.length > 0);
+const showToc = ref(article?.body.toc.links.length > 0);
 
 console.log({ article });
 
 const useFallbackImg = () => {
   if (coverImg.value) {
-    coverImg.value.src = article.coverUrl || article.coverPath;
+    coverImg.value.src = article?.coverUrl || article?.coverPath;
     coverImg.value.onerror = null;
   }
 };
 
 const metaImage =
-  article.coverPath ||
-  article.coverUrl ||
-  `/assets/img${article._path}/cover.png`;
+  article?.coverPath ||
+  article?.coverUrl ||
+  `/assets/img${article?._path}/cover.png`;
 
 useHead({
-  title: article.title,
+  title: article?.title,
   meta: [
     {
       name: "description",
-      content: article.description,
+      content: article?.description,
       key: "description",
     },
     //Open Graph
@@ -40,17 +40,17 @@ useHead({
     {
       key: "og-url",
       property: "og:url",
-      content: `https://v3.miracleio.me${article._path}`,
+      content: `https://v3.miracleio.me${article?._path}`,
     },
     {
       key: "og-title",
       property: "og:title",
-      content: article.title,
+      content: article?.title,
     },
     {
       key: "og-description",
       property: "og:description",
-      content: article.description,
+      content: article?.description,
     },
     {
       key: "og-image",
@@ -66,17 +66,17 @@ useHead({
     {
       key: "twitter-url",
       property: "twitter:url",
-      content: `https://miracleio.me${article._path}`,
+      content: `https://miracleio.me${article?._path}`,
     },
     {
       key: "twitter-title",
       property: "twitter:title",
-      content: article.title,
+      content: article?.title,
     },
     {
       key: "twitter-description",
       property: "twitter:description",
-      content: article.description,
+      content: article?.description,
     },
     {
       key: "twitter-image",
@@ -92,17 +92,17 @@ useHead({
       <div class="cover-img img-cont">
         <img
           ref="coverImg"
-          :src="`/assets/img${article._path}/cover.png`"
-          :alt="article.title"
+          :src="`/assets/img${article?._path}/cover.png`"
+          :alt="article?.title"
         />
       </div>
       <div class="wrapper max-w-5xl m-auto">
         <h1 class="title font-heading font-bold text-4xl lg:text-6xl mb-2">
-          {{ article.title }}
+          {{ article?.title }}
         </h1>
-        <p class="description text-xl pt-2">{{ article.description }}</p>
+        <p class="description text-xl pt-2">{{ article?.description }}</p>
         <ul class="tags py-4">
-          <li v-for="tag in article.tags" :key="tag" class="tag">
+          <li v-for="tag in article?.tags" :key="tag" class="tag">
             <span>
               {{ tag }}
             </span>
@@ -114,7 +114,7 @@ useHead({
     <hr class="article-hr" />
     <div class="wrapper">
       <aside v-if="showToc" class="toc-cont">
-        <Toc :links="article.body.toc.links" />
+        <Toc :links="article?.body.toc.links" />
       </aside>
       <article class="article" :class="{ '!col-span-7': !showToc }">
         <ContentRenderer
@@ -171,7 +171,7 @@ useHead({
 }
 
 .toc-cont {
-  @apply sticky top-16 col-span-2 col-start-6 p-4 py-8;
+  @apply sticky top-16 col-span-2 col-start-6 p-4 pt-8 pb-0;
 }
 
 .toc-cont > :deep(.toc) {

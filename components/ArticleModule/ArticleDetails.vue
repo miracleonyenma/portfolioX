@@ -35,13 +35,13 @@ const { article, options } = defineProps({
         <CalendarIcon class="icon" />
         <time
           :datetime="
-            article.gitUpdatedAt || article.fileUpdatedAt || article.updatedAt
+            article.createdAt || article.gitCreatedAt || article.fileCreatedAt
           "
         >
           {{
-            (article.gitUpdatedAt && article.formattedGitUpdatedAt) ||
-            article.formattedFileUpdatedAt ||
-            article.formattedUpdatedAt
+            article.formattedCreatedAt ||
+            article.formattedGitCreatedAt ||
+            article.formattedFileCreatedAt
           }}
         </time>
       </div>
@@ -57,7 +57,7 @@ const { article, options } = defineProps({
 </template>
 <style scoped>
 .details {
-  @apply flex py-2 gap-4 justify-between;
+  @apply flex mt-2 gap-4 justify-between;
 }
 
 .detail-item {

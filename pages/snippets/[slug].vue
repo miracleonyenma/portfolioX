@@ -8,16 +8,23 @@ const { data, error } = await useAsyncData(
     const article = queryContent("snippets", route.params.slug).findOne();
     // get the surround information,
     // which is an array of documeents that come before and after the current document
-    let surround = await queryContent()
-      .only(["_path", "title", "description"])
-      .sort({ date: 1 })
-      .findSurround(`/snippets/${slug.value}`);
 
-    // replace "articles/" with "blog/" in surround paths
-    surround = surround.map((doc) => {
-      doc._path = doc._path.replace("articles", "blog");
-      return doc;
-    });
+    let surround;
+    try {
+      surround = await queryContent()
+        .only(["_path", "title", "description", "createdAt"])
+        .where({ _path: { $regex: "snippets" } })
+        .sort({ createdAt: -1 })
+        .findSurround(`/snippets/${slug.value}`);
+
+      // replace "articles/" with "blog/" in surround paths
+      // surround = surround.map((doc) => {
+      //   doc._path = doc._path.replace("articles", "blog");
+      //   return doc;
+      // });
+    } catch (error) {
+      console.log({ error });
+    }
 
     return { article: await article, surround: surround };
   }

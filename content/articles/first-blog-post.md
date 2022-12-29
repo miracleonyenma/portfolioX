@@ -2,8 +2,8 @@
 title: My First Blog Post
 description: Learning how to create my blog using nuxt, the nuxt content module and tailwindcss
 tags: [dummy, tests]
-createdAt: 9-14-2022
-updatedAt: 12-27-2022
+createdAt: 2021-07-13T23:00:00.000Z
+updatedAt: 2021-07-18T23:00:00.000Z
 ---
 
 Hey there! 👋🏾

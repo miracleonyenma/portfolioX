@@ -48,7 +48,7 @@ const getDates = async (filePath: string) => {
     // });
     return { gitUpdatedAt, gitCreatedAt, fileUpdatedAt, fileCreatedAt };
   } catch (error) {
-    console.log("🎅🏾🎅🏾🎅🏾🎅🏾", { error });
+    console.log("getDates", { error });
     return {
       gitUpdatedAt: null,
       gitCreatedAt: null,
@@ -56,6 +56,19 @@ const getDates = async (filePath: string) => {
       fileCreatedAt: null,
     };
   }
+};
+
+let generationInProgress = false;
+
+const waitForGenerationToFinish = async () => {
+  return new Promise((resolve) => {
+    const interval = setInterval(() => {
+      if (!generationInProgress) {
+        clearInterval(interval);
+        resolve(true);
+      }
+    }, 1000);
+  });
 };
 
 const getCover = async (options: any) => {
@@ -120,6 +133,7 @@ export default defineNitroPlugin((nitroApp) => {
       // console.log({ readingTime: file.readingTime, stats });
     }
   });
+
   nitroApp.hooks.hook("content:file:afterParse", async (file) => {
     if (file._id.endsWith(".md")) {
       file.readingTime = stats;
@@ -134,36 +148,44 @@ export default defineNitroPlugin((nitroApp) => {
       //   cwd: process.cwd(),
       // });
 
-      const gitDates = await getDates(filePath);
-      file.gitCreatedAt = gitDates.gitCreatedAt;
-      file.gitUpdatedAt = gitDates.gitUpdatedAt;
+      const fileDates = await getDates(filePath);
+
+      !file.createdAt &&
+        (file.createdAt = fileDates.gitCreatedAt || fileDates.fileCreatedAt);
+      !file.updatedAt &&
+        (file.updatedAt = fileDates.gitUpdatedAt || fileDates.fileUpdatedAt);
+
+      file.formattedCreatedAt = formatDate(file.createdAt);
+      file.formattedUpdatedAt = formatDate(file.updatedAt);
+
+      file.gitCreatedAt = fileDates.gitCreatedAt;
+      file.gitUpdatedAt = fileDates.gitUpdatedAt;
       file.formattedGitCreatedAt = formatDate(file.gitCreatedAt);
       file.formattedGitUpdatedAt = formatDate(file.gitUpdatedAt);
-      file.fileCreatedAt = gitDates.fileCreatedAt;
-      file.fileUpdatedAt = gitDates.fileUpdatedAt;
+      file.fileCreatedAt = fileDates.fileCreatedAt;
+      file.fileUpdatedAt = fileDates.fileUpdatedAt;
       file.formattedFileCreatedAt = formatDate(file.fileCreatedAt);
       file.formattedFileUpdatedAt = formatDate(file.fileUpdatedAt);
 
       let dates = {
         createdAt: file.createdAt,
         updatedAt: file.updatedAt,
-        ...gitDates,
+        formattedCreatedAt: file.formattedCreatedAt,
+        formattedUpdatedAt: file.formattedUpdatedAt,
+        ...fileDates,
         formattedGitCreatedAt: file.formattedGitCreatedAt,
         formattedGitUpdatedAt: file.formattedGitUpdatedAt,
         formattedFileCreatedAt: file.formattedFileCreatedAt,
         formattedFileUpdatedAt: file.formattedFileUpdatedAt,
       };
 
-      file.formattedCreatedAt = formatDate(dates.createdAt);
-      file.formattedUpdatedAt = formatDate(dates.updatedAt);
+      // console.log(file.title, { dates });
 
-      // console.log({ dates });
-
-      console.log("✨✨", file._path);
+      // console.log("✨✨", file._path);
 
       try {
         const slug = file._path;
-        console.log({ slug });
+        // console.log({ slug });
 
         // check if file exists
         const filePath = path.join(
@@ -173,7 +195,9 @@ export default defineNitroPlugin((nitroApp) => {
 
         const fileExists = fs.existsSync(filePath);
         file.coverPath = `/assets/img${slug}/cover.png`;
-        console.log({ filePath, fileExists, coverPath: file.coverPath });
+        // console.log({ filePath, fileExists, coverPath: file.coverPath });
+
+        // console.log({ fileExists, filePath });
 
         if (!fileExists) {
           // create the directory
@@ -191,8 +215,16 @@ export default defineNitroPlugin((nitroApp) => {
 
           console.log({ file, coverData });
 
+          console.time("generate cover");
+          await waitForGenerationToFinish();
+          console.timeEnd("generate cover");
+
+          generationInProgress = true;
+          console.log({ generationInProgress });
           const cover = await getCover(coverData);
           console.log({ cover });
+          generationInProgress = false;
+          console.log({ generationInProgress });
 
           const coverFile = await createCover({
             filePath,

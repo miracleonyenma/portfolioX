@@ -2,8 +2,8 @@
 title: Add reading time stats to your articles in Nuxt
 description: How to add reading time stats to your articles in Nuxt using the Nuxt Content module and reading-time
 tags: [Nuxt 2, Nuxt Content v1, Vue, Blog features]
-createdAt: 7-27-2022
-updatedAt: 12-27-2022
+createdAt: 2021-07-26T23:00:00.000Z
+updatedAt: 2022-12-26T23:00:00.000Z
 ---
 
 ::info-box{type="warning"}
@@ -85,7 +85,7 @@ and if we check our devtools, we should see `readingStats` as part of our conten
 
 <!-- <img-cont src="Add-reading-time-stats-to-your-articles-in-Nuxt/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools" style="zoom:150%;"></img-cont> -->
 
-:img-cont{src="/assets/img/articles/Add-reading-time-stats-to-your-articles-in-Nuxt/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools"}
+:img-cont{src="/assets/img/articles/reading-time-stats-nuxt2-nuxt-content-v1/add-reading-time-stats-vue-devtools-Annotation 2021-07-27 160819.png" alt="The readingStats object in vue devtools"}
 
 Awesome!
 

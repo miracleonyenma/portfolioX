@@ -2,8 +2,8 @@
 title: Adding images to your nuxt/content articles
 description: Here's a way to add images into your article content in your nuxt/content project
 tags: [Nuxt 2, Nuxt Content v1, Vue, Blog features]
-createdAt: 7-20-2022
-updatedAt: 12-27-2022
+createdAt: 2021-07-19T23:00:00.000Z
+updatedAt: 2022-12-26T23:00:00.000Z
 ---
 
 ::info-box{type="warning"}

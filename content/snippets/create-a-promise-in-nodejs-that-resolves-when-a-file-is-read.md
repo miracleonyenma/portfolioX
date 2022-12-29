@@ -2,8 +2,8 @@
 title: Create a promise in NodeJS that resolves when a file is read
 description: Here's a short snippet by ChatGPT on "Create Promise for Reading File"
 tags: [chatgpt, nodejs, javascript]
-createdAt: 12-27-2022
-updatedAt: 12-27-2022
+createdAt: 2022-12-26T23:00:00.000Z
+updatedAt: 2022-12-26T23:00:00.000Z
 author: {
   name: "Miracle Onyenma, ChatGPT",
   avatar: "/assets/img/chatgpt.jpg"

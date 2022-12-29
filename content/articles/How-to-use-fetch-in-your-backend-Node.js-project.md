@@ -2,8 +2,8 @@
 title: How to use `fetch()` in your backend Node.js project
 description: Here's a quick one on using the Fetch API in Node.js with the `node-fetch` package.
 tags: [Fetch, Node, JavaScript]
-createdAt: 10-10-2022
-updatedAt: 10-10-2022
+createdAt: 2021-10-09T23:00:00.000Z
+updatedAt: 2021-10-09T23:00:00.000Z
 ---
 
 `fetch()` is a global method provided by the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) to send HTTP requests and fetch resources asynchronously.

@@ -9,12 +9,10 @@ defineProps({
   },
 });
 
-const inactive = ref(false);
+const inactive = ref(true);
 
 // flatten TOC links nested arrays to one array
 const flattenLinks = (links: any[]) => {
-  console.log({ links });
-
   let _links = links
     .map(
       (link: {
@@ -32,13 +30,13 @@ const flattenLinks = (links: any[]) => {
       }
     )
     .flat(1);
-  console.log({ _links });
+  // console.log({ _links });
   return _links;
 };
 </script>
 
 <template>
-  <button @click="inactive = !inactive" class="cta mb-4 lg:hidden">
+  <button @click="inactive = !inactive" class="cta mb-4 lg:hidden" :class="{'mb-0': inactive}">
     <ListBulletIcon class="icon" />
   </button>
 
@@ -70,7 +68,7 @@ const flattenLinks = (links: any[]) => {
   @apply transition-all;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .toc.inactive {
     @apply scale-75 -translate-y-12 origin-top-left p-0 h-0 opacity-0 invisible pointer-events-none overflow-hidden;
   }

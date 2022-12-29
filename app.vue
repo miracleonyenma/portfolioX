@@ -84,7 +84,7 @@ useHead({
     },
   ],
   htmlAttrs: {
-    class: theme.value === "dark" ? "dark" : "",
+    class: theme.value === "dark" ? "dark" : "light",
   },
 });
 </script>

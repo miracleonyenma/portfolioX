@@ -2,8 +2,8 @@
 title: Manage multiple versions of Node on your machine
 description: Here's how you can install a specific Node version and use different node versions on your machine
 tags: [NVM, Node]
-createdAt: 4-1-2022
-updatedAt: 4-1-2022
+createdAt: 2022-03-31T23:00:00.000Z
+updatedAt: 2022-03-31T23:00:00.000Z
 ---
 
 The best way I’ve tried to do this on my Linux machine is with [nvm](https://github.com/nvm-sh/nvm).

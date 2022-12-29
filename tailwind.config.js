@@ -21,7 +21,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
-        // heading: ["Lora", ...defaultTheme.fontFamily.sans],
         // heading: ["Syne", ...defaultTheme.fontFamily.sans],
         heading: ["Hepta Slab", ...defaultTheme.fontFamily.sans],
       },

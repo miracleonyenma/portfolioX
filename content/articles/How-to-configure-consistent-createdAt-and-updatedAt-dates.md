@@ -2,8 +2,8 @@
 title: How to keep createdAt and updatedAt dates consistent in Nuxt Content
 description: Here, we'll see a quick way to get our Nuxt Content date values working right in both development and production
 tags: [Nuxt 2, Nuxt Content v1, Vue, nuxt-content-git, Blog Features]
-createdAt: 8-19-2022
-updatedAt: 8-20-2022
+createdAt: 2021-08-18T23:00:00.000Z
+updatedAt: 2021-08-19T23:00:00.000Z
 ---
 
 Using the the Nuxt Content Module is a great way to build blogs and documentation sites with Nuxt. It works as a "Git-based Headless CMS" and comes with a tons of features to manage content using markdown, XML, JSON and CSV files.

@@ -2,8 +2,8 @@
 title: How I implemented TailwindCSS dark mode in my Nuxt blog
 description: Here's how I added dark mode theme functionality that respects user preference using the `prefers-color-scheme` and localStorage and a cool "click" sound effect.
 tags: [Nuxt 2, Vue, TailwindCSS, Dark mode]
-createdAt: 9-17-2022
-updatedAt: 9-17-2022
+createdAt: 2021-09-16T23:00:00.000Z
+updatedAt: 2021-09-16T23:00:00.000Z
 ---
 
 I've always been in love with this dark mode functionality of a thing. So when I learnt that [TailwindCSS - A Utility-first CSS Framework](https://tailwindcss.com/) supports dark mode out of the box, I was excited. That's probably one of the top reasons I fell in love with Tailwind.

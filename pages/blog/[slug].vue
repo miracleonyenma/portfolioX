@@ -5,17 +5,26 @@ const slug = ref(route.params.slug);
 const { data, error } = await useAsyncData(
   `article-${slug.value}`,
   async () => {
+    console.log({ slug: slug.value });
     const article = queryContent("articles", route.params.slug).findOne();
     // get the surround information,
     // which is an array of documeents that come before and after the current document
     let surround = await queryContent()
-      .only(["_path", "title", "description"])
-      .sort({ gitUpdatedAt: 1 })
+      .only([
+        "_path",
+        "title",
+        "description",
+        "createdAt",
+        "fileCreatedAt",
+        "gitCreatedAt",
+      ])
+      .sort({ createdAt: -1 })
+      .where({ _path: { $regex: "articles" } })
       .findSurround(`/articles/${slug.value}`);
 
     // replace "articles/" with "blog/" in surround paths
     surround = surround.map((doc) => {
-      doc._path = doc._path.replace("articles", "blog");
+      if (doc?._path) doc._path = doc._path.replace("articles", "blog");
       return doc;
     });
 
@@ -27,7 +36,7 @@ console.log({ data: data.value, error: error.value });
 </script>
 <template>
   <main>
-    <ArticlePage :article="data.article" />
+    <ArticlePage :article="data?.article" />
     <div class="max-w-6xl m-auto p-4 py-12">
       <PrevNext :prev="data.surround[0]" :next="data.surround[1]" />
     </div>
