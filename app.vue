@@ -8,7 +8,7 @@ const setTheme = useSetSiteTheme;
 setTheme(siteThemeCookie.value || "dark");
 
 const metaTitle = ref(
-  isChristmas.value ? "Merry Christmas! 🎄" : "Miracleio | PortfolioX"
+  isChristmas.value ? "Season Greetings! 🎄" : "Miracleio | PortfolioX"
 );
 
 useHead({

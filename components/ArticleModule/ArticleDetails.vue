@@ -19,7 +19,7 @@ const { article, options } = defineProps({
         <img
           :src="
             article.author?.avatar ||
-            '/assets/images/miracleio.jpg'
+            '/assets/img/miracleio.jpg'
           "
           :alt="article.author?.name || 'Miracle Onyenma'"
           srcset=""

@@ -50,7 +50,8 @@ const isChristmasDay = () => {
 }
 
 .hero-img-cont > img {
-  @apply ring-4 ring-han-purple ring-offset-8 ring-offset-slate-900 rounded-3xl;
+  @apply rounded-3xl;
+  @apply ring-8 ring-blue-ryb dark:ring-han-purple ring-offset-8 ring-offset-slate-50 dark:ring-offset-slate-900 
 }
 
 .site-hero .hero-content {

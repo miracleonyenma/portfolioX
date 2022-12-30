@@ -128,6 +128,7 @@ useHead({
       </article>
     </div>
   </section>
+  <ScrollToButton />
 </template>
 <style scoped>
 .article-section {
