@@ -19,7 +19,7 @@ const { article, options } = defineProps({
         <img
           :src="
             article.author?.avatar ||
-            'https://miracleio.me/_nuxt/img/FullSizeRender%20(2)-edit.67b39b8.webp'
+            '/assets/images/miracleio.jpg'
           "
           :alt="article.author?.name || 'Miracle Onyenma'"
           srcset=""
