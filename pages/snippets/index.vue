@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useIsChristmas } from "~~/composables/special-days/useChristmas";
-
 const isChristmas = useIsChristmas();
+const specialGreeting = useSpecialGreeting();
 const snippetsPath = ref("/snippets");
 // const snippetSlug = (path: string) => {
 //   // replace "snippets/" with "blog"
@@ -12,7 +11,7 @@ const snippetsPath = ref("/snippets");
   <main>
     <header class="articles-page-header page-header">
       <div class="wrapper">
-        <span class="py-4" v-if="isChristmas"> Merry Christmas! 🎄 </span>
+        <span class="py-4" v-if="specialGreeting"> {{ specialGreeting }} </span>
         <h1 class="font-heading font-bold text-4xl lg:text-6xl">Snippets</h1>
         <p class="description text-xl pt-2">
           Short code snippets that I've found useful.

@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { useIsChristmas } from "~~/composables/special-days/useChristmas";
-
-const isChristmas = useIsChristmas();
+const specialGreeting = useSpecialGreeting();
 const articlesPath = ref("/articles");
 const articleSlug = (path: string) => {
   // replace "articles/" with "blog"
@@ -12,7 +10,7 @@ const articleSlug = (path: string) => {
   <main>
     <header class="articles-page-header page-header">
       <div class="wrapper">
-        <span class="py-4" v-if="isChristmas"> Merry Christmas! 🎄 </span>
+        <span class="py-4" v-if="specialGreeting"> {{ specialGreeting }} </span>
         <h1 class="font-heading font-bold text-4xl lg:text-6xl">
           Hey there, <br />
           Welcome to my blog!

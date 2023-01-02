@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { useIsChristmas } from "./composables/special-days/useChristmas";
 const isChristmas = useIsChristmas();
+const isNewYear = useIsNewYear();
 
 const siteThemeCookie = useCookie("site-theme");
 const theme = useSiteTheme();
 const setTheme = useSetSiteTheme;
 setTheme(siteThemeCookie.value || "dark");
 
-const metaTitle = ref(
-  isChristmas.value ? "Season Greetings! 🎄" : "Miracleio | PortfolioX"
-);
+const specialGreeting = useSpecialGreeting();
+
+const metaTitle = ref(specialGreeting || "Miracleio");
 
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | Miracleio` : "Miracleio | PortfolioX";
+    return titleChunk ? `${titleChunk} | Miracleio` : "Miracleio";
   },
   title: metaTitle.value,
   meta: [
