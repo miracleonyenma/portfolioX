@@ -1,12 +1,5 @@
 <script setup>
-const isChristmasDay = () => {
-  const today = new Date();
-  const christmasDay = new Date(today.getFullYear(), 11, 25);
-  return (
-    today.getMonth() === christmasDay.getMonth() &&
-    today.getDate() === christmasDay.getDate()
-  );
-};
+const specialGreeting = useSpecialGreeting();
 </script>
 <template>
   <main>
@@ -19,9 +12,10 @@ const isChristmasDay = () => {
           />
         </div>
         <div class="hero-content">
-          <span v-if="isChristmasDay">
-            Seasons Greetings! 🎄
+          <span class="py-4" v-if="specialGreeting">
+            {{ specialGreeting }}
           </span>
+
           <h1 class="font-heading font-extrabold text-3xl md:text-6xl mb-2">
             Hey there,
             <br />
@@ -51,7 +45,7 @@ const isChristmasDay = () => {
 
 .hero-img-cont > img {
   @apply rounded-3xl;
-  @apply ring-8 ring-blue-ryb dark:ring-han-purple ring-offset-8 ring-offset-slate-50 dark:ring-offset-slate-900 
+  @apply ring-8 ring-blue-ryb dark:ring-han-purple ring-offset-8 ring-offset-slate-50 dark:ring-offset-slate-900;
 }
 
 .site-hero .hero-content {
