@@ -10,7 +10,9 @@ author: {
 
 It's common to encounter the following warning when working with `useEffect()` hook in React:
 
-<img-cont src="/assets/img/snippets/fix-useeffect-missing-dependencies-warning-with-usecallback-in-react/useEffect warning screenshot.png" alt="useEffect warning screenshot" ></img-cont>
+<!-- <img-cont src="/assets/img/snippets/fix-useeffect-missing-dependencies-warning-with-usecallback-in-react/useEffect warning screenshot.png" alt="useEffect warning screenshot" ></img-cont> -->
+
+:img-cont{src="/assets/img/snippets/fix-useeffect-missing-dependencies-warning-with-usecallback-in-react/useEffect warning screenshot.png" alt="useEffect warning screenshot"}
 
 > React Hook useEffect has missing dependencies: 'findSelected', 'list', and 'selected'. Either include them or remove the dependency array.
 
