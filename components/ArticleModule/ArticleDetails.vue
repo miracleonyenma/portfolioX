@@ -57,7 +57,7 @@ const { article, options } = defineProps({
 </template>
 <style scoped>
 .details {
-  @apply flex mt-2 gap-4 justify-between;
+  @apply flex mt-2 gap-4 justify-start;
 }
 
 .detail-item {

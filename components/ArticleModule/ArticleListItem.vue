@@ -27,6 +27,7 @@ const { article } = defineProps({
 </template>
 <style scoped>
 .article-item .article-item-header {
-  @apply flex flex-col gap-2.5 p-4 lg:p-6 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl;
+  @apply flex flex-col gap-2.5 p-4 lg:p-6;
+  /* @apply bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl; */
 }
 </style>
