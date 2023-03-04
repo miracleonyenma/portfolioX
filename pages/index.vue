@@ -1,5 +1,27 @@
 <script setup>
+import { useMotion } from "@vueuse/motion";
 const specialGreeting = useSpecialGreeting();
+
+const heroContent = ref();
+const heroContentText = ref();
+
+const { variant: heroContentTextVariant } = useMotion(heroContentText, {
+  initial: { opacity: 0, y: 20 },
+  enterText: { opacity: 1, y: 0 },
+});
+
+const heroContentMotionInstance = useMotion(heroContent, {
+  initial: { opacity: 0, y: 20 },
+  enter: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      onComplete: () => {
+        heroContentTextVariant.value = "enterText";
+      },
+    },
+  },
+});
 </script>
 <template>
   <main>
@@ -11,7 +33,7 @@ const specialGreeting = useSpecialGreeting();
             alt="A picture of Miracle Onyenma"
           />
         </div>
-        <div class="hero-content">
+        <div ref="heroContent" class="hero-content">
           <span class="py-4" v-if="specialGreeting">
             {{ specialGreeting }}
           </span>
@@ -21,7 +43,7 @@ const specialGreeting = useSpecialGreeting();
             <br />
             I'm Miracle Onyenma
           </h1>
-          <p class="text-lg md:text-2xl">
+          <p ref="heroContentText" class="text-lg md:text-2xl">
             I'm a Designer and Frontend Developer obsessed with crafting
             beautiful experiences ✨
           </p>

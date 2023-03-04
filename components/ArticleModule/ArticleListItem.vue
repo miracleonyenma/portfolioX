@@ -1,13 +1,28 @@
 <script setup>
+import { useMotion } from "@vueuse/motion";
+
 const { article } = defineProps({
   article: {
     type: Object,
     required: true,
   },
 });
+
+const articleItem = ref();
+
+const articleItemMotionInstance = useMotion(articleItem, {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  visibleOnce: {
+    opacity: 1,
+    y: 0,
+  },
+});
 </script>
 <template>
-  <article class="article-item">
+  <article ref="articleItem" class="article-item">
     <header class="article-item-header">
       <h2 class="font-heading text-2xl font-bold">
         {{ article.title }}
