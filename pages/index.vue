@@ -5,7 +5,7 @@
         <header class="hero-header" data-page-trans="children">
           <h1 class="header-txt">
             Hey 👋🏾, <br />
-            I'm Miracleio.
+            This is Miracleio.
           </h1>
           <p>
             I'm a Designer and Frontend Developer obsessed with crafting
