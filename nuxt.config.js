@@ -108,6 +108,15 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-N6FVKMVV4K",
+        async: true
+      },
+      {
+        src: "js/ga.js",
+      }
+    ]
   },
 
   // loading bar config
