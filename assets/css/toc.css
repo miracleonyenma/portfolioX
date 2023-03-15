@@ -1,6 +1,6 @@
 .toc {
   @apply sticky top-16 md:top-20 lg:top-0 mt-0 max-w-full lg:max-w-lg;
-  @apply z-30;
+  @apply z-20;
   min-width: 240px;
 }
 .toc .wrapper {
